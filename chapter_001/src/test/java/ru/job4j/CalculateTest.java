@@ -24,6 +24,12 @@ public void whenTakeNameThenTreeEchoPlusName() {
     String result = calc.echo(input);
     assertThat(result, is(expect));
 }
+public void whenTakeNameThenTreeWorld() {
+    ByteArrayOutputStream out =new ByteArrayOutputStream();
+    System.setOut(new PrintStream(out));
+	Calculate.main(null);
+    assertThat(out.toString(), is("Hello World\r\n"));
+}
  
 }
 	
