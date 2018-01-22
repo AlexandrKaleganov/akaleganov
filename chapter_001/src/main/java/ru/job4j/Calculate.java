@@ -11,12 +11,16 @@ public class Calculate {
         System.out.println("Hello world");
     }
     /**
-     * Method echo.
-     * @param name Your name.
-     * @return Echo plus your name.
+     * Method Calculate.
+     * @param "Hello world".
      */
     public String echo(String name) {
         return "Echo, echo, echo : " + name;
     }
 }
+/**
+ * Method echo.
+ * @param name Your name.
+ * @return Echo plus your name.
+ */
     
