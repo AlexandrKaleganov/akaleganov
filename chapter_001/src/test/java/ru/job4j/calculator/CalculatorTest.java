@@ -5,7 +5,7 @@ package ru.job4j.calculator;
  */
 import org.junit.Test;
 import static org.hamcrest.core.Is.is; // я так и не понял на кой хрен вот этот класс импортируется но без него работать не будет
-import static org.junit.Assert.assertThat; //а вот без этого метода точно не будет сравниваться предсказуемое число и полученный результат теста
+import static org.junit.Assert.assertThat; //а вот без этого класса точно не будет сравниваться предсказуемое число и полученный результат теста
 
 public class CalculatorTest {
     /**создадим объект calc класса Calculator

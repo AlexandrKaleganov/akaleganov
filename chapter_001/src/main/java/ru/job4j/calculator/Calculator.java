@@ -1,5 +1,8 @@
 package ru.job4j.calculator;
-
+/**@autor Alexander Kaleganov
+ * @version 1.001
+ * @since 26.01.2018 22:25
+ */
 public class Calculator {
     private double result;
 
