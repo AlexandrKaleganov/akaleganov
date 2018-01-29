@@ -1,4 +1,4 @@
-package ru.job4j.calculator.max;
+package ru.job4j.max;
 
 /**
  * @autor Alexander Kaleganov
@@ -7,7 +7,7 @@ package ru.job4j.calculator.max;
  */
 
 import org.junit.Test;
-import ru.job4j.max.Max;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 

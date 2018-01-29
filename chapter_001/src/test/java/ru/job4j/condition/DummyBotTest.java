@@ -1,11 +1,11 @@
-package ru.job4j.calculator.condition;
+package ru.job4j.condition;
 /**
  * @autor Alexander Kaleganov
  * @version DummyBotTest 1.000
  * @since 28.01.2018 21:19
  */
 import org.junit.Test;
-import ru.job4j.condition.DummyBot;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 public class DummyBotTest {
