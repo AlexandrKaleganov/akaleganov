@@ -12,11 +12,16 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class MaxTest {
-
+    Max maximum = new Max();
     @Test
     public void whenFirstLessSeconds() {
-        Max maximum = new Max();
+
         int result = maximum.max(1, 2);
         assertThat(result, is(2));
+    }
+    public void whenFirstLessSecondsLessThird() {
+
+        int result = maximum.max3(1, 2, 3);
+        assertThat(result, is(3));
     }
 }
