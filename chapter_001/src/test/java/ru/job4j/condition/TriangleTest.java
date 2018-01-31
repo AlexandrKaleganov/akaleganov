@@ -35,7 +35,7 @@ public class TriangleTest {
         assertThat(result, closeTo(expected, 0.001));
     }
 
-    // НЕ ЗНАЮ КАК ПРВЕРИТЬ МЕТОД EXIST
+
     @Test
     public void whenExistSetThree() {
         boolean result = triangle.exist(2, 2, 2.83) ? true : false;
