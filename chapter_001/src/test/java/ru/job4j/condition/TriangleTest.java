@@ -6,6 +6,8 @@ package ru.job4j.condition;
  * @since 28.01.2018 23:48
  */
 import org.junit.Test;
+
+import static org.hamcrest.core.Is.is;
 import static org.hamcrest.number.IsCloseTo.closeTo;
 import static org.junit.Assert.*;
 public class TriangleTest {
@@ -34,8 +36,12 @@ public class TriangleTest {
     }
 
     // НЕ ЗНАЮ КАК ПРВЕРИТЬ МЕТОД EXIST
-//    @Test
-//    public void whenExistSetThree() {
+    @Test
+    public void whenExistSetThree() {
+        boolean result = triangle.exist(2, 2, 2.83) ? true : false;
+        boolean expected = true;
+//        assertThat(result, is(true);
+        assertThat(result, is(expected));
 //        double ab = this.a.distanceTo(b);
 //        double ac = this.a.distanceTo(c);
 //        double bc = this.b.distanceTo(c);
@@ -43,5 +49,5 @@ public class TriangleTest {
 //        boolean result = triangle.exist();
 //
 //        assertThat(triangle.exist(ab, ac, bc), closeTo(expected, 0.001));
-//    }
+    }
 }

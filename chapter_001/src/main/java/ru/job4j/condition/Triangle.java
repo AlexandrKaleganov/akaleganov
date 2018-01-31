@@ -59,11 +59,12 @@ public class Triangle {
      * @param bc Длина от точки b c.
      * @return
      */
-    private boolean exist(double ab, double ac, double bc) {
-        if ((ab < ac + bc) && (ac < ab + bc) && (bc < ac + ab)) {
-            return true;
-        } else {
-            return false;
-        }
+    public boolean exist(double ab, double ac, double bc) {
+        return  ((ab < ac + bc) && (ac < ab + bc) && (bc < ac + ab)) ? true : false;
+//        if ((ab < ac + bc) && (ac < ab + bc) && (bc < ac + ab)) {
+//            return true;
+//        } else {
+//            return false;
+//        }
     }
 }
