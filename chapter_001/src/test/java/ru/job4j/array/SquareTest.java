@@ -8,12 +8,17 @@ import static org.junit.Assert.assertThat;
 
 public class SquareTest {
     @Test
-    public void testirovanieArraySquareFORi(){
-        int[] excepted = new int[]{1,4,9};
-        Square [] intarray = new Square[3];
-        int []pro = null;
-pro = intarray.calculate(3) ;
-assertThat(pro, is(excepted));
+    public void testirovanieArraySquareFORi() {
+        int[] excepted = new int[]{1, 4, 9};
+        int[] intarray = new Square().calculate(3);
+        assertThat(intarray, is(excepted));
 
- }
+    }
+    @Test
+    public void testirovanieArraySquareFOReach() {
+        int[] excepted = new int[]{1, 4, 9};
+        int[] intarray = new Square().calculate(3);
+        System.out.println(intarray[0] + intarray[1] + intarray[2]);
+        assertThat(intarray, is(excepted));
+    }
 }

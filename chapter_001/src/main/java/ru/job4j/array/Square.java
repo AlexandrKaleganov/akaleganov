@@ -18,10 +18,9 @@ public class Square {
         } return rsl;
     }
 
-    public int[] calculateV2(int bound) { ////метод присваения массивам значения через цикл FOReach
+    public int[] calculateV2(int bound) { //метод присваения массивам значения через цикл FOReach
         int[] rsl = new int[bound];
-        int k = 1;
-        for (int i:rsl) {
+        for (int i:rsl) {                 // правильно ли я понял что не обязательно прям массив писать а достаточно инт переменную создать
             rsl[i] = (int)pow((i + 1), 2);
         }
 
