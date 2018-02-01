@@ -10,7 +10,7 @@ public class SquareTest {
     @Test
     public void testirovanieArraySquareFORi(){
         int[] excepted = new int[]{1,4,9};
-        Square [] intarray = null;
+        Square [] intarray = new Square[3];
         int []pro = null;
 pro = intarray.calculate(3) ;
 assertThat(pro, is(excepted));
