@@ -17,8 +17,7 @@ public class SquareTest {
     @Test
     public void testirovanieArraySquareFOReach() {
         int[] excepted = new int[]{1, 4, 9};
-        int[] intarray = new Square().calculate(3);
-        System.out.println(intarray[0] + intarray[1] + intarray[2]);
+        int[] intarray = new Square().calculateV2(3);
         assertThat(intarray, is(excepted));
     }
 }
