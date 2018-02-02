@@ -9,7 +9,6 @@ public class TurnTest {
     public void testirovanieArrayTurnFOReach() {
         int[] excepted = new int[]{3, 2, 1};
         int[] arr123 = new int[]{1, 2, 3};
-
         int[] intarray = new Turn().backArray(arr123);
         assertThat(intarray, is(excepted));
     }
