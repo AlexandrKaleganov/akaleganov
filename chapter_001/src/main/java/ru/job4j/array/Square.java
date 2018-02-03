@@ -18,13 +18,13 @@ public class Square {
         } return rsl;
     }
 
-    public int[] calculateV2(int bound) { //метод присваения массивам значения через цикл FOReach
-        int index = 0;
-        int[] rsl = new int[bound];
-        for (int i:rsl) {                 // через FORi проще обращаться к индексам
-            rsl[index] = (int)pow((index + 1), 2);
-            index++;
-        }
-        return rsl;
-    }
+//    public int[] calculateV2(int bound) { //метод присваения массивам значения через цикл FOReach
+//        int index = 0;
+//        int[] rsl = new int[bound];
+//        for (int i:rsl) {                 // через FORi проще обращаться к индексам
+//            rsl[index] = (int)pow((index + 1), 2);
+//            index++;
+//        }
+//        return rsl;
+//    }
 }
