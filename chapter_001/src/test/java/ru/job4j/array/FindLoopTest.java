@@ -16,7 +16,6 @@ public class FindLoopTest {
         int result = new FindLoop().indexOf(arrmass, 3);
         assertThat(result, is(2)); //елемент найден, значит метод должен вернуть индекс 2
     }
-
     @Test
     public void proverkaViborkaMass2() {
         int[] arrmass = new int[]{1, 2, 10, 4, 5, 6};
