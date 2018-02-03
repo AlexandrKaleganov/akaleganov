@@ -1,5 +1,8 @@
 package ru.job4j.array;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 /**
  *@version Упорядочить елементы массива
  */
@@ -15,5 +18,8 @@ public class BubbleSort {
                 }
             }
         } return array;
+    }  public int[] sort2(int[] array) {
+        Arrays.sort(array);
+        return array;
     }
-}
+    }
