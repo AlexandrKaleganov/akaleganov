@@ -11,6 +11,7 @@ public class FindLoop {
         for (int i = 0; i < armass.length; i++) {
             if (armass[i] == el) {
                 rsl = i;       //присваиваем индекс элемента      с каждым кругом интдекс увеличиваем на 1
+                break;
             }
         } return rsl;
     }
