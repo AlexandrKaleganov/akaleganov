@@ -1,7 +1,7 @@
 package ru.job4j.array;
 
 /**
- * @autor Alexander Kaleganov
+ * @author Alexander Kaleganov
  * @version 1.0
  * PS: это было проще чем отнять конфету у ребёнка)
  */
