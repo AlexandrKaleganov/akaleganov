@@ -23,12 +23,14 @@ public class StringContains {
         for (int i = 0; i < (origin1.length - sub1.length); i++) {
             if (sub1[0] == origin1[i]) {
                 for (int j = 0; j < sub1.length; j++) {
-                    if (sub1[j] != origin1[i + 1]) {
-                        result = false;
+                    if (sub1[j] == origin1[i + j]) {
+                        result =  true;
                     } else {
-                        result = true;
+                        result = false;
                     }
                 }
+            } else {
+                continue;
             }
         }
         return result;
