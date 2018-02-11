@@ -6,11 +6,9 @@ public class StringContainsTest {
 
     @Test
     public void testirovanieArrayTurnFOReach() {
-        StringContains ca = new StringContains();
         String origins = "vfylfnrhelмамаklsjfksdfjk";
         String sub = "мама";
-
-        boolean k = ca.stringContainsValid(origins, sub);
+        boolean k = new StringContains().stringContainsValid(origins, sub);
         assertThat(k, is(true));
     }
 }
