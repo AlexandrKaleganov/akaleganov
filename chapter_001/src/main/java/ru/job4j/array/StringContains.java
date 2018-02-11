@@ -1,9 +1,6 @@
 package ru.job4j.array;
 
 /**
- * программа будет сравнивать две входящие строки
- * и возвращать значение булеан по завершению работы
- * задача заставляет получить массив символов, также можно было обойтись запросом в подстроку субстринг и сравнить элементы
  * @author Alexander Kaleganov
  * @since 10.02.2018
  */
@@ -17,18 +14,24 @@ public class StringContains {
 
     public boolean stringContainsValid(String origin, String sub) {
         boolean result = false;
-
+        int k =0;
         char[]origin1 = origin.toCharArray();
+        System.out.println(origin1);
         char[]sub1 = sub.toCharArray();
+        System.out.println(sub1);
         for (int i = 0; i < (origin1.length - sub1.length); i++) {
             if (sub1[0] != origin1[i]) {
-                result = false;
+                continue;
             } else {
                 for (int j = 0; j < sub1.length; j++) {
                     if (sub1[j] == origin1[i + j]) {
                         result =  true;
+
+                        System.out.println(result);
+                        break;
                     } else {
                         result = false;
+                        System.out.println(result);
                     }
                 }
             }
