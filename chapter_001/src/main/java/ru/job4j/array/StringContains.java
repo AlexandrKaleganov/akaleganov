@@ -21,7 +21,9 @@ public class StringContains {
         char[]origin1 = origin.toCharArray();
         char[]sub1 = sub.toCharArray();
         for (int i = 0; i < (origin1.length - sub1.length); i++) {
-            if (sub1[0] == origin1[i]) {
+            if (sub1[0] != origin1[i]) {
+                result = false;
+            } else {
                 for (int j = 0; j < sub1.length; j++) {
                     if (sub1[j] == origin1[i + j]) {
                         result =  true;
@@ -29,8 +31,6 @@ public class StringContains {
                         result = false;
                     }
                 }
-            } else {
-                continue;
             }
         }
         return result;

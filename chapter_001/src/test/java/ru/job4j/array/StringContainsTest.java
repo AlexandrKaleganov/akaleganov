@@ -7,7 +7,7 @@ public class StringContainsTest {
     @Test
     public void testirovanieArrayTurnFOReach() {
         String origins = "vfylfnrhelмамаklsjfksdfjk";
-        String sub = "мама";
+        String sub = "мам";
         boolean k = new StringContains().stringContainsValid(origins, sub);
         assertThat(k, is(true));
     }
