@@ -3,7 +3,10 @@ package ru.job4j.array;
 /**
  * @author Alexander Kaleganov
  * @version 1.0
- * PS: это было проще чем отнять конфету у ребёнка)
+ * создали двухмерный массив, и заполнили его
+ * вывовдим его в консоль чтобы посмотреть что получилось
+ * добавили переход на новую строку
+ * добавим услови , если значение меньше 10, то добавим три пробела иначе добвим два пробела
  */
 
 import org.junit.Test;
@@ -14,15 +17,15 @@ public class MatrxTest {
     @Test
     public void proverkaClassaMatrix() {
         int n = 5;
-        int[][] multi = new Matrix().multiple(n);              //создали двухмерный массив, и заполнили его
-        for (int i = 0; i < multi.length; i++) {               //вывовдим его в консоль чтобы посмотреть что получилось
-            System.out.println(" ");                           //переход на новую строку
-            for (int j = 0; j < multi.length; j++) {           //вывод строк
+        int[][] multi = new Matrix().multiple(n);
+        for (int i = 0; i < multi.length; i++) {
+            System.out.println(" ");
+            for (int j = 0; j < multi.length; j++) {
                 System.out.print(multi[i][j]);
-                if (multi[i][j] < 10) {                        //добавим услови , если значение меньше 10, то
-                    System.out.print("   ");                   //добавим три пробела
-                } else {                                       //иначе
-                    System.out.print("  ");                    //добвим два пробела
+                if (multi[i][j] < 10) {
+                    System.out.print("   ");
+                } else {
+                    System.out.print("  ");
                 }
             }
         }
@@ -33,6 +36,5 @@ public class MatrxTest {
                 {4, 8, 12, 16, 20},
                 {5, 10, 15, 20, 25}};
         assertThat(multi, is(expected));
-
     }
 }

@@ -6,25 +6,14 @@ import static java.lang.Math.*;
  * @author  Alexander Kaleganov
  * @version Array V 1.0
  * @since 01.02.18
+ * программа будет заполнять массив числа возведенные в квадрат
+ *  в 16 ой строке делаем явное приведение типов, т.к. данный метод работает с double
  */
-
-
 public class Square {
-
-    public int[]  calculate(int bound) {  //метод присваения массивам значения через цикл FOR i
+    public int[]  calculate(int bound) {
         int[] rsl = new int[bound];
         for (int i = 0; i < bound; i++) {
             rsl[i] = (int)pow((i + 1), 2);
         } return rsl;
     }
-
-//    public int[] calculateV2(int bound) { //метод присваения массивам значения через цикл FOReach
-//        int index = 0;
-//        int[] rsl = new int[bound];
-//        for (int i:rsl) {                 // через FORi проще обращаться к индексам
-//            rsl[index] = (int)pow((index + 1), 2);
-//            index++;
-//        }
-//        return rsl;
-//    }
 }
