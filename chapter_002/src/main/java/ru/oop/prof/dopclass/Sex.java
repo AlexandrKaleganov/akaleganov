@@ -14,24 +14,20 @@ package ru.oop.prof.dopclass;
  *
  */
 public class Sex {
-    private String Mann = "М";
-    private String Woomen = "Ж";
-    private int sex;
+    private String mann = "М";
+    private String woomen = "Ж";
+    int sex;
 
-    public Sex(int sex){
+    public Sex(int sex) {
         this.sex = sex;
     }
 
-    public Sex(){
-        this.sex = sex;
-    }
-
-    public String opredeleniePollaPOznacheniu(int sex){
+    public String opredeleniePollaPOznacheniu(int sex) {
         String result;
-        if (sex == 1){
-            result = this.Mann;
-        } else if (sex ==2){
-            result = this.Woomen;
+        if (sex == 1) {
+            result = this.mann;
+        } else if (sex ==2) {
+            result = this.woomen;
         } else {
             result = "укажите пол";
         }
