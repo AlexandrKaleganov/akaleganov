@@ -5,8 +5,8 @@ import static org.junit.Assert.assertThat;
 public class ArraysX2SortTest {
     @Test
     public void testirovanieArrayDuplicateTEST() {
-        int[] array = {1,3,5};
-        int[] array2 = {2,4,6};
+        int[] array = {1,4,5};
+        int[] array2 = {2,3,6};
         int[] array3 = ArraysX2Sort.SsortirovkaMassiva(array,array2);
         int[] expected = {1,2,3,4,5,6};
         assertThat(array3, is(expected));
