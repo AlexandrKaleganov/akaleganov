@@ -8,7 +8,7 @@ public class ArraysX2SortTest {
         int[] array = {1, 2, 3, 4, 50};
         int[] array2 = {3, 6, 8, 10, 11, 12, 13, 14};
         int[] array3 = ArraysX2Sort.ssortirovkaMassivavodin(array, array2);
-        int[] expected = {1, 2, 3, 3, 4, 6, 8, 10, 12};
+        int[] expected = {1, 2, 3, 3, 4, 6, 8, 10, 12, 13, 14, 50};
         assertThat(array3, is(expected));
     }
 }
