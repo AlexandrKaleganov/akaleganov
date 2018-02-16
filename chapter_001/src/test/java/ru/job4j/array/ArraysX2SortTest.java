@@ -6,10 +6,10 @@ public class ArraysX2SortTest {
 
     @Test
     public void testirovanieArraMASSIVtest() {
-        int[] array = {1, 4, 5};
-        int[] array2 = {2, 3, 6};
+        int[] array = {1, 2, 3, 4};
+        int[] array2 = {3, 6, 7, 8};
         int[] array3 = ArraysX2Sort.ssortirovkaMassivavodin(array, array2);
-        int[] expected = {1, 2, 3, 4, 5, 6};
+        int[] expected = {1, 2, 3, 3, 4, 6, 7, 8};
         assertThat(array3, is(expected));
     }
 }
