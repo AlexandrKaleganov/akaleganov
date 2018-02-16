@@ -41,9 +41,9 @@ public class ArraysX2Sort {
                     ar3[i + 1] = ar2[n];
                     k++;
                     n++;
-                    System.out.println(k + " (ar1[k] == ar2[n]) " + n); }
-            }
-            else if (k == ar1.length - 1  && n < ar2.length - 1) {//если остался один элемент в 1 масиве
+                    System.out.println(k + " (ar1[k] == ar2[n]) " + n);
+                }
+            } else if (k == ar1.length - 1  && n < ar2.length - 1) {  //если остался один элемент в 1 масиве
                 System.out.println(k + " остался один элемент в массиве K " + n);
                 if (ar1[k] <= ar2[n]) {
                     ar3[i] = ar1[k];
@@ -59,20 +59,21 @@ public class ArraysX2Sort {
                     n++;
                     System.out.println(k + " " + n);
                 } else if (ar2[n] < ar1[k] && ar1[k] > ar2[n + 1]) {
+                    System.out.println(k + " (ar2[n] < ar1[k] && ar1[k] > ar2[n + 1]) " + n);
                     ar3[i] = ar2[n];
                     ar3[i + 1] = ar2[n + 1];
                     n += 2;
-                    System.out.println(k + " " + n);
+                     System.out.println(k + " (ar2[n] < ar1[k] && ar1[k] > ar2[n + 1]) " + n);
                 }
-            } else if (k < ar1.length-1 && n == ar2.length - 1){ //если остался один элемент в 2 масиве
+            } else if (k < ar1.length - 1 && n == ar2.length - 1) { //если остался один элемент в 2 масиве
                 System.out.println(k + " остался один элемент в массиве n " + n);
-                if (ar1[k] >= ar2[n]){
-                    ar3[i]=ar2[n];
-                    ar3[i + 1]=ar1[k];
+                if (ar1[k] >= ar2[n]) {
+                    ar3[i] = ar2[n];
+                    ar3[i + 1] = ar1[k];
                     k++;
                     n++;
                     System.out.println(k + " " + n);
-                } else if (ar1[k] < ar2[n] && ar2[n]<= ar1[k + 1]){
+                } else if (ar1[k] < ar2[n] && ar2[n] <= ar1[k + 1]) {
                     System.out.println(k + " выполнился код5" + n);
                     ar3[i] = ar1[k];
                     ar3[i + 1] = ar2[n];
@@ -85,12 +86,13 @@ public class ArraysX2Sort {
                     ar3[i + 1] = ar1[k + 1];
                     k += 2;
                     System.out.println(k + " " + n);
+
                 }
-            } else if (k >= ar1.length && n < ar2.length - 1){
+            } else if (k >= ar1.length && n < ar2.length) {
                 System.out.println(k + " остались только элементы в пассиве n " + n);
                 ar3[i] = ar2[n];
                 ar3[i + 1] = ar2[n + 1];
-            } else if (k < ar1.length - 1 && n >= ar2.length ){
+            } else if (k < ar1.length  && n >= ar2.length) {
                 System.out.println(k + " остались только элементы в пассиве k " + n);
                 ar3[i] = ar1[k];
                 ar3[i + 1] = ar1[k + 1];
