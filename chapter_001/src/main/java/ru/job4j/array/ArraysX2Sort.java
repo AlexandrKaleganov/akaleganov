@@ -88,11 +88,11 @@ public class ArraysX2Sort {
                     System.out.println(k + " " + n);
 
                 }
-            } else if (k >= ar1.length && n < ar2.length) {
+            } else if (k >= ar1.length && n < ar2.length - 1) {
                 System.out.println(k + " остались только элементы в пассиве n " + n);
                 ar3[i] = ar2[n];
                 ar3[i + 1] = ar2[n + 1];
-            } else if (k < ar1.length  && n >= ar2.length) {
+            } else if (k < ar1.length - 1  && n >= ar2.length) {
                 System.out.println(k + " остались только элементы в пассиве k " + n);
                 ar3[i] = ar1[k];
                 ar3[i + 1] = ar1[k + 1];
