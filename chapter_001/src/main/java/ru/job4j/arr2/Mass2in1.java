@@ -1,5 +1,9 @@
 package ru.job4j.arr2;
 
+/**
+ * я сёдня подумал что если мы заранее значем чем закончится массив,
+ * то мы можем заранее знать с чего он начнётся, и вернулся к первоначальному решению
+ */
 public class Mass2in1 {
 
     public static int[] ssortirovkaMassivavodin(int[]ar1, int[]ar2) {

@@ -3,6 +3,7 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 public class Mass2in1Test {
+
     @Test
     public void testirovanieArraMASSIVtest() {
         int[] array = {1, 4, 5};
