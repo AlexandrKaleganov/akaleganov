@@ -1,8 +1,14 @@
 package ru.oop.prof;
 
-public class Doctor extends Profession {
-    String position;
-    int kabinet;
-    Doctor kisa = new Doctor();
+import ru.oop.prof.dopclass.Position;
 
+public class Doctor extends Profession {
+    Position position;
+    int kabinet;
+
+
+
+    Doctor(String n) {
+
+    }
 }
