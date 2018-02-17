@@ -9,7 +9,7 @@ public class Mass2in1Test {
         int[] array = {1, 4, 5};
         int[] array2 = {2, 200, 6300};
         int[] array3 = Mass2in1.ssortirovkaMassivavodin(array, array2);
-        int[] expected = {1, 2, 3, 4, 5, 6};
+        int[] expected = {1, 2, 4, 5, 200, 6300};
         assertThat(array3, is(expected));
     }
 }
