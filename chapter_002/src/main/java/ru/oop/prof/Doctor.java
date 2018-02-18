@@ -9,8 +9,8 @@ package ru.oop.prof;
 import ru.oop.prof.dopclass.*;
 
 public class Doctor extends Profession {
-    Position position;
-    int kabinet;
+    private Position position;
+    private int kabinet;
 
     public int getKabinet() {
         return kabinet;
