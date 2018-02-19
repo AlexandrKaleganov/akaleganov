@@ -1,8 +1,15 @@
 package ru.job4j.arr2;
 
+/**
+ * этот метод перегоняет один двухмерный массив в
+ * два одномерных один чётный второй нет,
+ * но вернуть я могу вроде как только 1 массив либо чётный либо не чётный,
+ * вопрос можно ли как то получить от одного метода и чётный массив и нечётный,
+ * т.к. у нас тут создаётся два необходимых массива
+ */
 public class Mass2mern {
 
-    public static void arrmassDinODINod(int arr[][]) {
+    public static int[] arrmassDinODINod(int arr[][]) {
         int l = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[1].length; j++) {
@@ -23,6 +30,6 @@ public class Mass2mern {
                     arr2[n++] = arr[i][j];
                 }
             }
-        }
+        } return arr1;
     }
 }
