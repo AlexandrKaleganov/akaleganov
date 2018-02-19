@@ -39,9 +39,15 @@ public class Doctor extends Profession {
     }
 
     public void lecarsPacient(Pacient pacient) {
+        if (pacient.getDiagnoz().equals(Diagnoz.БОЛЕН)) {
             pacient.setHealth(30.0);
             System.out.println("Пациент пролечен, нобходимо пройти диагностику");
+        } else if (pacient.getDiagnoz().equals(Diagnoz.ЗДОРОВ)) {
+            System.out.println("Пациент в лечении не нуждается, не тратьте моё время!");
+        } else if (pacient.getDiagnoz().equals(Diagnoz.НЕ_ПРОХОДИЛ_ОБСЛЕДОВАНИЕ)) {
+            System.out.println("Пациенту нобходимо пройти диагностику");
         }
+    }
 }
 
 
