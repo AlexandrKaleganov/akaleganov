@@ -10,6 +10,6 @@ public class Mass2mernTest {
         int[][] arr = new int[][]{
                 {1, 2},
                 {3, 4}};
-        Mass2mern.Arrmass2in1(arr);
+        Mass2mern.arrmassDinODINodnomernii(arr);
     }
 }

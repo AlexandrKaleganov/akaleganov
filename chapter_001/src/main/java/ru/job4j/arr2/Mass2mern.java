@@ -2,11 +2,11 @@ package ru.job4j.arr2;
 
 public class Mass2mern {
 
-    public static void Arrmass2in1(int arr[][]) {
+    public static void arrmassDinODINod(int arr[][]) {
         int l = 0;
-        for (int i = 0; i < arr.length ; i++) {
+        for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[1].length; j++) {
-                if (arr[i][j] % 2 > 0){
+                if (arr[i][j] % 2 > 0) {
                     l++;
                 }
             }
@@ -15,16 +15,12 @@ public class Mass2mern {
         int n = 0;
         int[] arr1 = new int[l];
         int[] arr2 = new int[arr.length * arr[1].length - l];
-        for (int i = 0; i < arr.length ; i++) {
+        for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[1].length; j++) {
-                if (arr[i][j]%2 > 0){
-                    arr1[k] = arr[i][j];
-                    System.out.println("arr1 НЕ чётный " + k + " = " + arr1[k]);
-                     k++;
+                if (arr[i][j] % 2 > 0) {
+                    arr1[k++] = arr[i][j];
                     } else {
-                    arr2[n] = arr[i][j];
-                    System.out.println("arr2 Чётный " + n + " = " + arr2[n]);
-                    n++;
+                    arr2[n++] = arr[i][j];
                 }
             }
         }
