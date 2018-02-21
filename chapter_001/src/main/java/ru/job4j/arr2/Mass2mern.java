@@ -9,11 +9,11 @@ package ru.job4j.arr2;
  */
 public class Mass2mern {
 
-    public static int[] arrmassDinODINod(int arr[][]) {
+    public static int[] arrmassDinODINod(int arr4[][]) {
         int l = 0;
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[1].length; j++) {
-                if (arr[i][j] % 2 > 0) {
+        for (int i = 0; i < arr4.length; i++) {
+            for (int j = 0; j < arr4[1].length; j++) {
+                if (arr4[i][j] % 2 > 0) {
                     l++;
                 }
             }
@@ -21,13 +21,13 @@ public class Mass2mern {
         int k = 0;
         int n = 0;
         int[] arr1 = new int[l];
-        int[] arr2 = new int[arr.length * arr[1].length - l];
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[1].length; j++) {
-                if (arr[i][j] % 2 > 0) {
-                    arr1[k++] = arr[i][j];
+        int[] arr2 = new int[arr4.length * arr4[1].length - l];
+        for (int i = 0; i < arr4.length; i++) {
+            for (int j = 0; j < arr4[1].length; j++) {
+                if (arr4[i][j] % 2 > 0) {
+                    arr1[k++] = arr4[i][j];
                     } else {
-                    arr2[n++] = arr[i][j];
+                    arr2[n++] = arr4[i][j];
                 }
             }
         } return arr1;
