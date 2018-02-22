@@ -58,7 +58,6 @@ public class Tracker {
                 res = it;
                 break;
             }
-
         } return res;
     }
 

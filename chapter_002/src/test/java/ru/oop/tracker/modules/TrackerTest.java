@@ -56,6 +56,7 @@ public class TrackerTest {
         Items[] ekepted  = tracker.findAll();
         assertThat(tracker, is(tracker.findAll()));
     }
+
     @Test
     public void testirovanieTrackerById(){
         Tracker tracker = new Tracker();

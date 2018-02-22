@@ -15,6 +15,7 @@ public class Items {
     private String [] comments = new String[20];
     private String date;
 
+
     String getName() {
         return name;
     }
