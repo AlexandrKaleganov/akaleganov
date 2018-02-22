@@ -9,7 +9,6 @@ public class Tracker {
     public Items add(Items item){
         item.setId(generate());
         this.items[index++] = item;
-        System.out.println(String.valueOf(item));
         return item;
     }
     private static String generate(){
@@ -19,8 +18,11 @@ public class Tracker {
         return id;
     }
     public void replace(String id, Items items){
-        for (:
-             ) {
+        for (int i = 0; i < this.items.length; i++) {
+            if (this.items[i] != null && this.items[i].getId().equals(id)){
+                this.items[i] = items;
+                break;
+            }
 
         }
 
@@ -28,7 +30,9 @@ public class Tracker {
     public void delete(String id){
         for (int i = 0; i < items.length; i++) {
             if (items[i].equals(id)){
-                items[i] = null; }
+                items[i] = null;
+                break;
+            }
         }
     }
 
@@ -39,13 +43,16 @@ public class Tracker {
     public Items getItemsIndex(int i) {
         Items result = null;
         result = this.items[i];
-        System.out.println(result.getId() + " " + result.getName() + "--- " + result.getDesc() + " " + result.getCreated() );
         return result;
     }
 
     public Items fidBlid(String id) {
         Items items = null;
         return items;
+    }
+    public String prtintItems(Items result){
+        String res = result.getId() + " " + result.getName() + "--- " + result.getDesc() + " " + result.getCreated();
+        return res;
     }
 
 }
