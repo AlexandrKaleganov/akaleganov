@@ -11,12 +11,7 @@ public class Tracker {
         this.items[index++] = item;
         return item;
     }
-    private static String generate(){
-        Date date  = new Date();
-        int generator = (int)(0 + Math.random()*100);
-        String id =  String.valueOf(System.currentTimeMillis() + generator);
-        return id;
-    }
+
     public void replace(String id, Items items){
         for (int i = 0; i < this.items.length; i++) {
             if (this.items[i] != null && this.items[i].getId().equals(id)){
@@ -46,13 +41,25 @@ public class Tracker {
         return result;
     }
 
-    public Items fidBlid(String id) {
-        Items items = null;
-        return items;
-    }
     public String prtintItems(Items result){
         String res = result.getId() + " " + result.getName() + "--- " + result.getDesc() + " " + result.getCreated();
         return res;
+    }
+    private static String generate(){
+        Date date  = new Date();
+        int generator = (int)(0 + Math.random()*100);
+        String id =  String.valueOf(System.currentTimeMillis() + generator);
+        return id;
+    }
+    public Items findById(String id){
+        Items res = null;
+        for (Items it:this.items) {
+            if (it.getId().equals(id)){
+                res = it;
+                break;
+            }
+
+        } return res;
     }
 
 }

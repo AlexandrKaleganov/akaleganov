@@ -45,5 +45,26 @@ public class TrackerTest {
         tracker.delete(tracker.getItemsIndex(1).getId());
         assertThat(tracker.getItemsIndex(1), is(expected));
     }
+    @Test
+    public void testirovanieTrackerfindAll(){
+        Tracker tracker = new Tracker();
+        Items items = new Items("Нужна помощь", "Ничего не работает, компьютер не запускается" );
+        Items items1 = new Items("Хелп", "От поддержки никакого толка");
+        tracker.add(items);
+        tracker.add(items1);
+        Tracker tracker1 = null;
+        Items[] ekepted  = tracker.findAll();
+        assertThat(tracker, is(tracker.findAll()));
+    }
+    @Test
+    public void testirovanieTrackerById(){
+        Tracker tracker = new Tracker();
+        Items items = new Items("Нужна помощь", "Ничего не работает, компьютер не запускается" );
+        Items items1 = new Items("Хелп", "От поддержки никакого толка");
+        tracker.add(items);
+        tracker.add(items1);
+        Items res = tracker.findById(items1.getId());
+        assertThat(res, is(tracker.getItemsIndex(1)));
+    }
 
 }
