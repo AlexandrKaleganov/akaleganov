@@ -35,6 +35,10 @@ public class Items {
         this.id = id;
     }
 
+    public String toString(){
+        return this.id + " -- " + this.name + " -- " + desc + " -- " + created;
+    }
+
     public Items(String name, String desc){
         this.id = id;
         this.name = name;

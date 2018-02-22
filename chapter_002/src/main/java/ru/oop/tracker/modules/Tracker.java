@@ -29,7 +29,7 @@ public class Tracker {
     }
     public void delete(String id){
         for (int i = 0; i < items.length; i++) {
-            if (items[i].equals(id)){
+            if (items[i].getId().equals(id)){
                 items[i] = null;
                 break;
             }
