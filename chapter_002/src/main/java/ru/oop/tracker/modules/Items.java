@@ -13,6 +13,7 @@ public class Items {
     private String desc; //описание заявки
     private long created; //дата создания
     private String [] comments = new String[20];
+    private String date;
 
     String getName() {
         return name;
