@@ -77,6 +77,7 @@ public class TrackerTest {
         Items res = tracker.findById(items1.getId());
         assertThat(res, is(tracker.getItemsIndex(1)));
     }
+
     @Test
     public void testirovanieTrackerByName() { // проверка метода поиска заявок  по имени(похожие заявки)
         Tracker tracker = new Tracker();
