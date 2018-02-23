@@ -57,11 +57,11 @@ public class Tracker {
         } return res;
     }
 
-    public Items getItemsIndex(int i) {
+    Items getItemsIndex(int i) {
         return this.items[i];
     }
 
-    public Items findById(String id) {
+    Items findById(String id) {
         Items res = null;
         for (Items it:this.items) {
             if (it.getId().equals(id)) {

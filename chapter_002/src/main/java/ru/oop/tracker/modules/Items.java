@@ -40,7 +40,7 @@ public class Items {
         return id;
     }
 
-    public void setId(String newId) {
+     void setId(String newId) {
         this.id = newId;
     }
 
@@ -49,7 +49,7 @@ public class Items {
     }
 
 
-    public Items(String name, String desc) {
+    Items(String name, String desc) {
         this.id = generate();
         this.name = name;
         this.desc = desc;
