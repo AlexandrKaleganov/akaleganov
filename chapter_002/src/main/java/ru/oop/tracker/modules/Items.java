@@ -24,7 +24,7 @@ public class Items {
      * @param name
      * @param desc
      */
-    Items(String name, String desc) {
+    public Items(String name, String desc) {
         this.id = generate();
         this.name = name;
         this.desc = desc;

@@ -1,7 +1,9 @@
 package ru.oop.tracker.modules;
 
 /**
- *
+ * я так и не понял заким использовался интерфйс в данном случае... ,
+ * к примеру мы могли сделать метод  в этом классе, который бы возвращал сканнер некст лайн.
+ * и было бы тоже самое
  */
 public class Tracker {
     private Items[] items = new Items[100];
@@ -78,7 +80,7 @@ public class Tracker {
      * @param id
      * @return
      */
-    Items findById(String id) {
+    public Items findById(String id) {
         Items res = null;
         for (Items it:this.items) {
             if (it.getId().equals(id)) {
