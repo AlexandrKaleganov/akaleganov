@@ -14,7 +14,7 @@ public class TrackerTest {
         Items items1 = new Items("Хелп", "От поддержки никакого толка");
         tracker.add(items);
         tracker.add(items1);
-        Items expected = tracker.getItemsIndex(0);
+        Items expected = tracker.findAll()[0];
         assertThat(expected, is(items));
     }
 
@@ -27,13 +27,13 @@ public class TrackerTest {
         tracker.add(items1);
         Tracker tracker1 = new Tracker();
         Items items3 = new Items("Я твой дом труба шатал", "слышь админ я тебя найду сцуко!!!");
-        Items items4 = new Items("Цой жив))", "Кипелов тру)");
+        Items items4 = new Items("Цой жив))", "лексир бессмертия тру)");
         tracker1.add(items3);
         tracker1.add(items4);
-        System.out.println(tracker1.getItemsIndex(1));
+        System.out.println(tracker1.findAll()[1]);
         tracker1.replace(items3.getId(), items);
-        System.out.println(tracker1.getItemsIndex(1));
-        assertThat(tracker.getItemsIndex(0), is(tracker1.getItemsIndex(0)));
+        System.out.println(tracker1.findAll()[1]);
+        assertThat(tracker.findAll()[0], is(tracker1.findAll()[0]));
     }
 
     @Test
@@ -44,8 +44,8 @@ public class TrackerTest {
         Items expected = null;
         tracker.add(items);
         tracker.add(items1);
-        tracker.delete(tracker.getItemsIndex(1).getId());
-        assertThat(tracker.getItemsIndex(1), is(expected));
+        tracker.delete(tracker.findAll()[1].getId());
+        assertThat(tracker.findAll()[1], is(expected));
     }
 
     @Test
@@ -75,7 +75,7 @@ public class TrackerTest {
         tracker.add(items);
         tracker.add(items1);
         Items res = tracker.findById(items1.getId());
-        assertThat(res, is(tracker.getItemsIndex(1)));
+        assertThat(res, is(tracker.findAll()[1]));
     }
 
     @Test
