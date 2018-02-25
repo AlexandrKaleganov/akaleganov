@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Arrays;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.is;
@@ -42,7 +43,7 @@ public class PaintTest {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
         new Paint().draw(new Square());
-        assertThat(new String(outputStream.toByteArray()), is(new StringBuilder()
+        assertThat(new String[](Arrays.toString(outputStream)), is(new StringBuilder()
                         .append("####")
                         .append("####")
                         .append("####")
