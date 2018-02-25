@@ -1,6 +1,7 @@
 package ru.oop.tracker.modules;
 
 import java.util.Date;
+import java.util.Random;
 
 /**
  * Класс итемс это сама заявка, точнее один элемент заявки
@@ -16,6 +17,7 @@ public class Items {
     private String desc;
     private long created;
     private String[] comments = new String[20];
+    private Random rn = new Random();
 
     /**
      * в конструкторе при создании я добавил только имя завки и описание
@@ -86,8 +88,8 @@ public class Items {
      * генерацию id  я  перенёс в этот класс мне это показалось более логичным
      * @return
      */
-    private static String generate() {
-        String id =  String.valueOf(millisreturn() + ((int)(0 + Math.random() * 100)));
+    private String generate() {
+        String id =  String.valueOf(millisreturn() + rn.nextInt() * 100);
         return id;
     }
 
@@ -95,7 +97,7 @@ public class Items {
      * если я правильно понял мы тут получаем время в милисекундах текущее
      * @return
      */
-    private static long millisreturn() {
+    private long millisreturn() {
         long k = System.currentTimeMillis();
         return k;
     }
