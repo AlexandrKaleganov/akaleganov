@@ -13,7 +13,7 @@ public class StartUI {
     private static final String DELETE_ITEMS = "3";
     private static final String FIND_ID = "4";
     private static final String FIND_NAME = "5";
-    private static final String EXIT = "0";
+    private static final String EXIT = "6";
 
 
     StartUI(Input input, Tracker tracker) {

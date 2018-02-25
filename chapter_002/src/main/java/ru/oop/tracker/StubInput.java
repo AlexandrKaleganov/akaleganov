@@ -1,13 +1,14 @@
 package ru.oop.tracker;
 
 public class StubInput implements Input {
-private String[] answers;
+private final String[] value;
 private int position = 0;
-public StubInput(String[] answer) {
-    this.answers = answer;
+
+public StubInput(final String[] value) {
+    this.value = value;
 }
     @Override
     public String zaprosNavvod(String schprech) {
-        return answers[position++];
+        return this.value[position++];
     }
 }

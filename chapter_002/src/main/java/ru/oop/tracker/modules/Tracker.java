@@ -95,8 +95,8 @@ public class Tracker {
      * @param i
      * @return
      */
-    Items getItemsIndex(int i) {
-        return this.items[i];
-    }
+//    public Items getItemsIndex(int i) {
+//        return this.items[i];
+//    }
 
 }

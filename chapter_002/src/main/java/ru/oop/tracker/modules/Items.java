@@ -1,5 +1,7 @@
 package ru.oop.tracker.modules;
 
+import ru.oop.tracker.ConsoleInput;
+
 import java.util.Date;
 import java.util.Random;
 
@@ -33,12 +35,15 @@ public class Items {
         this.desc = desc;
         this.created = millisreturn();
     }
+    public Items(){
+
+    }
 
     /**
      * возвращает имя заявки
      * @return
      */
-    String getName() {
+    public String getName() {
         return name;
     }
 
@@ -54,7 +59,7 @@ public class Items {
      * возвращает описание заявки
      * @return
      */
-    String getDesc() {
+    public String getDesc() {
         return desc;
     }
 
@@ -62,7 +67,7 @@ public class Items {
      * возвращает id заявки
      * @return
      */
-    String getId() {
+    public String getId() {
         return id;
     }
 
