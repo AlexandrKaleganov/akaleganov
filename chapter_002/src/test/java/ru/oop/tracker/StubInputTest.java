@@ -76,15 +76,16 @@ public class StubInputTest {
     }
 
     /**
-     * тестирование вывода в консоль заявки по имени
+     * тестирование вывода в консоль заявк по имени
      * не знаю как сравнить значения выводимые в консоль с ожидаемым
      */
     @Test
-    public void whenFindbyNAMEitems(){
+    public void whenFindbyNAMEitems() {
         Tracker tracker = new Tracker();
         tracker.add(new Items("name", "desc"));
         tracker.add(new Items("name2", "desc2"));
         Input input = new StubInput(new String[]{"5", tracker.findAll()[1].getName(), "6"});
-        new  StartUI(input,tracker).init();
+        new StartUI(input, tracker).init();
 
+    }
 }
