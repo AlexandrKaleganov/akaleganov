@@ -15,8 +15,8 @@ import static org.junit.Assert.*;
 public class StubInputTest {
     private final PrintStream stdout = System.out;
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
-    private final Items in1 = new Items("name", "desc");
-    private final Items in2 = new Items("name2", "desc2");
+//    private final Items in1 = new Items("name", "desc");
+//    private final Items in2 = new Items("name2", "desc2");
 
     @Before
     public void loadOutput()  {
@@ -32,8 +32,8 @@ public class StubInputTest {
 
     public Tracker TrackerInput() {
         Tracker tracker = new Tracker();
-        tracker.add(this.in1);
-        tracker.add(this.in2);
+        tracker.add(new Items("name", "desc"));
+        tracker.add(new Items("name2", "desc2"));
         return tracker;
     }
 
@@ -62,9 +62,9 @@ public class StubInputTest {
         new StartUI(retunInput(new String[]{"1", "6"}), TrackerInput()).init();
         assertThat(new String(this.out.toByteArray()), is(new StringBuilder()
                 .append("0. Add new Item\\n1. Show all items\\n2. Edit item\\n3. Delete item\\n4. Find item by Id\\n5. Find items by name\\n6. Exit Program\\nSelect:\\r\\n")
-                        .append(this.in1)
+                        .append(TrackerInput().findAll()[0])
                         .append("\\r\\n")
-                        .append(this.in2)
+                        .append(TrackerInput().findAll()[1])
                         .append("\\r\\n0. Add new Item\\n1. Show all items\\n2. Edit item\\n3. Delete item\\n4. Find item by Id\\n5. Find items by name\\n6. Exit Program\\nSelect:\\r\\n")
                 )
         );
