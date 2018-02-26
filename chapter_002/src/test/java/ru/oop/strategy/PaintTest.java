@@ -1,30 +1,26 @@
 package ru.oop.strategy;
 
-import com.sun.org.apache.xpath.internal.operations.String;
 import org.junit.Test;
-
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Arrays;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.Matchers.is;
+/**
+ * прочитал начало задания, о том что необходимо сделать рефакторинг этого класса и не подсматривал,
+ * вот что получилось
+ * @author Alexander Kaleganov
+ * @version 1.0
+ */
 
 public class PaintTest {
     @Test
     public void testirovanieTRIANGLEpaint() {
         // получаем ссылку на стандартный вывод в консоль.
         PrintStream stdout = System.out;
-        // Создаем буфур для хранения вывода.
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        //Заменяем стандартный вывод на вывод в пямять для тестирования.
-        System.setOut(new PrintStream(out));
-        // выполняем действия пишушиее в консоль.
-        new Paint().draw(new Triangle());
         // проверяем результат вычисления
         assertThat(
-                new String(out.toByteArray()),
+                new String(byttearrReturn(new Triangle()).toByteArray()),
                 is(new StringBuilder()
                         .append("  #  ")
                         .append(" ### ")
@@ -32,7 +28,6 @@ public class PaintTest {
                         .append(System.lineSeparator())
                         .toString()
                 )
-
         );
         System.setOut(stdout);
     }
@@ -40,10 +35,8 @@ public class PaintTest {
     @Test
     public void testirovanieSQUAREpaint() {
         PrintStream stdout = System.out;
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-        new Paint().draw(new Square());
-        assertThat(new String[](Arrays.toString(outputStream)), is(new StringBuilder()
+        assertThat(
+                new String(byttearrReturn(new Square()).toByteArray()), is(new StringBuilder()
                         .append("####")
                         .append("####")
                         .append("####")
@@ -55,4 +48,14 @@ public class PaintTest {
         System.setOut(stdout);
     }
 
+    public ByteArrayOutputStream byttearrReturn(Shape shape) {
+        // Создаем буфур для хранения вывода.
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        //Заменяем стандартный вывод на вывод в пямять для тестирования.
+        System.setOut(new PrintStream(out));
+        // выполняем действия пишушиее в консоль.
+        new Paint().draw(shape);
+        //возвращаем созданный и заполненный буфер
+        return out;
+    }
 }
