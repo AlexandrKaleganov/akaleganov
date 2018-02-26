@@ -3,7 +3,6 @@ package ru.oop.tracker.modules;
 import ru.oop.tracker.ConsoleInput;
 
 import java.util.Date;
-import java.util.Random;
 
 /**
  * Класс итемс это сама заявка, точнее один элемент заявки
@@ -19,7 +18,6 @@ public class Items {
     private String desc;
     private long created;
     private String[] comments = new String[20];
-    private Random rn = new Random();
 
     /**
      * в конструкторе при создании я добавил только имя завки и описание
@@ -30,7 +28,6 @@ public class Items {
      * @param desc
      */
     public Items(String name, String desc) {
-        this.id = generate();
         this.name = name;
         this.desc = desc;
         this.created = millisreturn();
@@ -89,14 +86,7 @@ public class Items {
         return this.id + " -- " + this.name + " -- " + desc + " -- " + new Date(created);
     }
 
-    /**
-     * генерацию id  я  перенёс в этот класс мне это показалось более логичным
-     * @return
-     */
-    private String generate() {
-        String id =  String.valueOf(millisreturn() + rn.nextInt() * 100);
-        return id;
-    }
+
 
     /**
      * если я правильно понял мы тут получаем время в милисекундах текущее

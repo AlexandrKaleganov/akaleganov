@@ -1,5 +1,7 @@
 package ru.oop.tracker.modules;
 
+import java.util.Random;
+
 /**
  * я так и не понял заким использовался интерфйс в данном случае... ,
  * к примеру мы могли сделать метод  в этом классе, который бы возвращал сканнер некст лайн.
@@ -8,6 +10,7 @@ package ru.oop.tracker.modules;
 public class Tracker {
     private Items[] items = new Items[100];
     private int index = 0;
+    private Random rn = new Random();
 
     /**
      * добавление заявок - и мы просто делаем один шаг по элемену++
@@ -15,6 +18,7 @@ public class Tracker {
      * @return
      */
     public Items add(Items item) {
+        item.setId(this.generate());
         this.items[index++] = item;
         return item;
     }
@@ -88,6 +92,14 @@ public class Tracker {
                 break;
             }
         } return res;
+    }
+    /**
+     * генерацию id  я  перенёс в этот класс мне это показалось более логичным
+     * @return
+     */
+    private String generate() {
+        String id =  String.valueOf(System.currentTimeMillis() + rn.nextInt() * 100);
+        return id;
     }
 
     /**

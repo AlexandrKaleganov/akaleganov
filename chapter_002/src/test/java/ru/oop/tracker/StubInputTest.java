@@ -1,16 +1,46 @@
 package ru.oop.tracker;
 
-import com.sun.org.apache.xml.internal.serialize.LineSeparator;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import ru.oop.tracker.modules.Tracker;
 import ru.oop.tracker.modules.Items;
 
-import java.util.StringJoiner;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
 public class StubInputTest {
+    private final PrintStream stdout = System.out;
+    private final ByteArrayOutputStream out = new ByteArrayOutputStream();
+    private final Items in1 = new Items("name", "desc");
+    private final Items in2 = new Items("name2", "desc2");
+
+    @Before
+    public void loadOutput()  {
+        System.out.println("execute before method");
+        System.setOut(new PrintStream(this.out));
+    }
+
+    @After
+    public void backOutput() {
+        System.setOut(this.stdout);
+        System.out.println("execute after method");
+    }
+
+    public Tracker TrackerInput() {
+        Tracker tracker = new Tracker();
+        tracker.add(this.in1);
+        tracker.add(this.in2);
+        return tracker;
+    }
+
+    public Input retunInput(String[] str) {
+        Input input = new StubInput(str);
+        return input;
+    }
 
     /**
      * тест добавления заявки
@@ -29,11 +59,15 @@ public class StubInputTest {
      */
     @Test
     public void whenshouAllTrackshouall() {
-        Tracker tracker = new Tracker();
-        tracker.add(new Items("name", "desc"));
-        tracker.add(new Items("name2", "desc2"));
-        Input input = new StubInput(new String[]{"1", "6"});
-        new StartUI(input, tracker).init();
+        new StartUI(retunInput(new String[]{"1", "6"}), TrackerInput()).init();
+        assertThat(new String(this.out.toByteArray()), is(new StringBuilder()
+                .append("0. Add new Item\\n1. Show all items\\n2. Edit item\\n3. Delete item\\n4. Find item by Id\\n5. Find items by name\\n6. Exit Program\\nSelect:\\r\\n")
+                        .append(this.in1)
+                        .append("\\r\\n")
+                        .append(this.in2)
+                        .append("\\r\\n0. Add new Item\\n1. Show all items\\n2. Edit item\\n3. Delete item\\n4. Find item by Id\\n5. Find items by name\\n6. Exit Program\\nSelect:\\r\\n")
+                )
+        );
     }
 
     /**
