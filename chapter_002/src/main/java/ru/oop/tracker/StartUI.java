@@ -57,7 +57,7 @@ public class StartUI {
     /**
      * вывод списка всех заявок
      */
-    private void showALL() {
+    public void showALL() {
         for (Items items:tracker.findAll()) {
             if (items != null) {
                 System.out.println(items);
@@ -68,7 +68,7 @@ public class StartUI {
     /**
      * изменение заявки
      */
-    private void editITEMS() {
+    public void editITEMS() {
         String id = input.zaprosNavvod("Введите id заявки, которую вы хтите изменить");
         Items items = new Items(input.zaprosNavvod("Введите новое им заявки"), input.zaprosNavvod("Введите новое описание заявки"));
         tracker.replace(id, items);
@@ -77,21 +77,21 @@ public class StartUI {
     /**
      * метод удаления заявки
      */
-    private void deleteITEMS() {
+    public void deleteITEMS() {
         tracker.delete(input.zaprosNavvod("Введите id заявки, которую необходимо удалить"));
     }
 
     /**
      * метод находит заявку по id
      */
-    private void findIDITEMS() {
+    public void findIDITEMS() {
         System.out.println(tracker.findById(input.zaprosNavvod("Введите id заявки, которую необходимо найти")));
     }
 
     /**
      * находит все элементы завки с похожими именами и выводит их
      */
-    private void findNAMEITEMS() {
+    public void findNAMEITEMS() {
         for (Items item: tracker.findByName(input.zaprosNavvod("Введите имя заявки"))) {
             if (item != null) {
             System.out.println(item);
@@ -102,7 +102,7 @@ public class StartUI {
     /**
      * просто вывод меню
      */
-    private void shouMenu() {
+    public void shouMenu() {
         System.out.println("" + "0. Add new Item\n" + "1. Show all items\n" + "2. Edit item\n" + "3. Delete item\n" + "4. Find item by Id\n" + "5. Find items by name\n" + "6. Exit Program\n" + "Select:");
     }
 }
