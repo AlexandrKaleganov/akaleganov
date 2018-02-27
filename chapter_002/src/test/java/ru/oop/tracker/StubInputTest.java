@@ -15,8 +15,8 @@ import static org.junit.Assert.*;
 public class StubInputTest {
     private final PrintStream stdout = System.out;
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
-//    private final Items in1 = new Items("name", "desc");
-//    private final Items in2 = new Items("name2", "desc2");
+    private final Items in1 = new Items("name", "desc");
+    private final Items in2 = new Items("name2", "desc2");
 
     @Before
     public void loadOutput()  {
@@ -30,14 +30,14 @@ public class StubInputTest {
         System.out.println("execute after method");
     }
 
-    public Tracker TrackerInput() {
+    public Tracker trackerReturn() {
         Tracker tracker = new Tracker();
-        tracker.add(new Items("name", "desc"));
-        tracker.add(new Items("name2", "desc2"));
+        tracker.add(this.in1);
+        tracker.add(this.in2);
         return tracker;
     }
 
-    public Input retunInput(String[] str) {
+    public Input inputReturn(String[] str) {
         Input input = new StubInput(str);
         return input;
     }
@@ -47,25 +47,49 @@ public class StubInputTest {
      */
     @Test
     public void whenUserAddItemThenTrackerHasNewItemWithSameName() {
-        Tracker tracker = new Tracker();     // создаём Tracker
+        Tracker tracker1 = new Tracker();     // создаём Tracker
         Input input = new StubInput(new String[]{"0", "test name", "desc", "6"});   //создаём StubInput с последовательностью действий
-        new StartUI(input, tracker).init();     //   создаём StartUI и вызываем метод init()
-        assertThat(tracker.findAll()[0].getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
+        new StartUI(input, tracker1).init();     //   создаём StartUI и вызываем метод init()
+        assertThat(tracker1.findAll()[0].getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
 
     /**
      * тестирование вывода списка всех заявок
-     * не знаю как проверить но мы просто видим что при вызове команды в консоль выводится список наших заявок
+     * не знаю как проверить не пойму в чём моя ошибка,
+     *
      */
     @Test
     public void whenshouAllTrackshouall() {
-        new StartUI(retunInput(new String[]{"1", "6"}), TrackerInput()).init();
-        assertThat(new String(this.out.toByteArray()), is(new StringBuilder()
-                .append("0. Add new Item\\n1. Show all items\\n2. Edit item\\n3. Delete item\\n4. Find item by Id\\n5. Find items by name\\n6. Exit Program\\nSelect:\\r\\n")
-                        .append(TrackerInput().findAll()[0])
-                        .append("\\r\\n")
-                        .append(TrackerInput().findAll()[1])
-                        .append("\\r\\n0. Add new Item\\n1. Show all items\\n2. Edit item\\n3. Delete item\\n4. Find item by Id\\n5. Find items by name\\n6. Exit Program\\nSelect:\\r\\n")
+       StartUI ui =  new StartUI(inputReturn(new String[]{"1", "6"}), trackerReturn());
+        ui.init();
+        assertThat(new String(this.out.toByteArray()), is(new String("0. Add new Item\n" +
+                        "1. Show all items\n" +
+                        "2. Edit item\n" +
+                        "3. Delete item\n" +
+                        "4. Find item by Id\n" +
+                        "5. Find items by name\n" +
+                        "6. Exit Program\n" +
+                        "Select:" +
+                        "\\r\\n" +
+                        in1 +
+                        "\\r\\n" +
+                        in2 +
+                        "\\r\\n" +
+                        "0. Add new Item\n" +
+                        "1. Show all items\n" +
+                        "2. Edit item\n" +
+                        "3. Delete item\n" +
+                        "4. Find item by Id\n" +
+                        "5. Find items by name\n" +
+                        "6. Exit Program\n" +
+                        "Select:" +
+                        "\\r\\n"
+                )
+//                .append("0. Add new Item\\n1. Show all items\\n2. Edit item\\n3. Delete item\\n4. Find item by Id\\n5. Find items by name\\n6. Exit Program\\nSelect:\\r\\n")
+//                        .append(in1)
+//                        .append("\\r\\n")
+//                        .append(in2)
+//                        .append("\\r\\n0. Add new Item\\n1. Show all items\\n2. Edit item\\n3. Delete item\\n4. Find item by Id\\n5. Find items by name\\n6. Exit Program\\nSelect:\\r\\n")
                 )
         );
     }
