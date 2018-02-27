@@ -7,7 +7,6 @@ import ru.oop.tracker.modules.Tracker;
 import ru.oop.tracker.modules.Items;
 
 import java.io.ByteArrayOutputStream;
-import org.junit.Test;
 import java.io.PrintStream;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -60,35 +59,34 @@ public class StubInputTest {
      */
     @Test
     public void whenshouAllTrackshouall() {
-       StartUI ui =  new StartUI(inputReturn(new String[]{"1", "6"}), trackerReturn());
-        ui.init();
+        new StartUI(inputReturn(new String[]{"1", "6"}), trackerReturn()).init();
         assertThat(new String(this.out.toByteArray()), is(
                 new StringBuilder()
                         .append(
                                 "0. Add new Item\n" +
-                                "1. Show all items\n" +
-                                "2. Edit item\n" +
-                                "3. Delete item\n" +
-                                "4. Find item by Id\n" +
-                                "5. Find items by name\n" +
-                                "6. Exit Program\n" +
-                                "Select:" +
-                                "\\r\\n")
+                                        "1. Show all items\n" +
+                                        "2. Edit item\n" +
+                                        "3. Delete item\n" +
+                                        "4. Find item by Id\n" +
+                                        "5. Find items by name\n" +
+                                        "6. Exit Program\n" +
+                                        "Select:")
+                        .append(System.lineSeparator())
                         .append(this.in1)
-                        .append("\\r\\n")
+                        .append(System.lineSeparator())
                         .append(this.in2)
-                        .append("\\r\\n")
+                        .append(System.lineSeparator())
                         .append(
                                 "0. Add new Item\n" +
-                                "1. Show all items\n" +
-                                "2. Edit item\n" +
-                                "3. Delete item\n" +
-                                "4. Find item by Id\n" +
-                                "5. Find items by name\n" +
-                                "6. Exit Program\n" +
-                                "Select:")
-                .append(System.lineSeparator())
-                .toString()
+                                        "1. Show all items\n" +
+                                        "2. Edit item\n" +
+                                        "3. Delete item\n" +
+                                        "4. Find item by Id\n" +
+                                        "5. Find items by name\n" +
+                                        "6. Exit Program\n" +
+                                        "Select:")
+                        .append(System.lineSeparator())
+                        .toString()
                 )
         );
     }
