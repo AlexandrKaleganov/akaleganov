@@ -62,7 +62,7 @@ public class StubInputTest {
     public void whenshouAllTrackshouall() {
        StartUI ui =  new StartUI(inputReturn(new String[]{"1", "6"}), trackerReturn());
         ui.init();
-        assertThat(new StringBuilder().append(new String(this.out.toByteArray())), is(
+        assertThat(new String(this.out.toByteArray()), is(
                 new StringBuilder()
                         .append("0. Add new Item\n" +
                                 "1. Show all items\n" +
@@ -71,11 +71,12 @@ public class StubInputTest {
                                 "4. Find item by Id\n" +
                                 "5. Find items by name\n" +
                                 "6. Exit Program\n" +
-                                "Select:\n")
+                                "Select:" +
+                                "\\r\\n")
                         .append(this.in1)
-                        .append("\n")
+                        .append("\\r\\n")
                         .append(this.in2)
-                        .append("\n")
+                        .append("\\r\\n")
                         .append("0. Add new Item\n" +
                                 "1. Show all items\n" +
                                 "2. Edit item\n" +
@@ -83,7 +84,9 @@ public class StubInputTest {
                                 "4. Find item by Id\n" +
                                 "5. Find items by name\n" +
                                 "6. Exit Program\n" +
-                                "Select:\n")
+                                "Select:")
+                .append(System.lineSeparator())
+                .toString()
                 )
         );
     }
