@@ -20,6 +20,10 @@ public class StartUI {
         this.input = input;
         this.tracker = tracker;
     }
+    StartUI(Tracker tracker, Input input) {
+        this.input = input;
+        this.tracker = tracker;
+    }
 
     public static void main(String[] args) {
         new StartUI(new ConsoleInput(), new Tracker()).init();

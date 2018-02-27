@@ -11,11 +11,16 @@ import java.io.PrintStream;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+/**
+ * конструктор StartUI переделал чтобы первым делом входило значение
+ * возвращаемого трекера со списком заявок, а потом Input типо что будем с ними делать чтобы зарефакторить
+ */
+
 public class StubInputTest {
     private final PrintStream stdout = System.out;
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
-    private final Items in1 = new Items("name", "desc");
-    private final Items in2 = new Items("name2", "desc2");
+    private final Items in1 = new Items("his", "desc");
+    private final Items in2 = new Items("name", "desc2");
 
     @Before
     public void loadOutput()  {
@@ -29,6 +34,10 @@ public class StubInputTest {
         System.out.println("execute after method");
     }
 
+    /**
+     * возвращает готовый список заявок
+     * @return
+     */
     public Tracker trackerReturn() {
         Tracker tracker = new Tracker();
         tracker.add(this.in1);
@@ -54,8 +63,6 @@ public class StubInputTest {
 
     /**
      * тестирование вывода списка всех заявок
-     * не знаю как проверить не пойму в чём моя ошибка,
-     *
      */
     @Test
     public void whenshouAllTrackshouall() {
@@ -73,6 +80,73 @@ public class StubInputTest {
                                         "Select:")
                         .append(System.lineSeparator())
                         .append(this.in1)
+                        .append(System.lineSeparator())
+                        .append(this.in2)
+                        .append(System.lineSeparator())
+                        .append(
+                                "0. Add new Item\n" +
+                                        "1. Show all items\n" +
+                                        "2. Edit item\n" +
+                                        "3. Delete item\n" +
+                                        "4. Find item by Id\n" +
+                                        "5. Find items by name\n" +
+                                        "6. Exit Program\n" +
+                                        "Select:")
+                        .append(System.lineSeparator())
+                        .toString()
+                )
+        );
+    }
+
+    /**
+     * тестирование вывода в консоль заявки по id
+     */
+    @Test
+    public void whenFindbyIDitems() {
+        new  StartUI(trackerReturn(), inputReturn(new String[]{"4", trackerReturn().findAll()[1].getId(), "6"})).init();
+        assertThat(new String(this.out.toByteArray()), is(new StringBuilder()
+                        .append(
+                                "0. Add new Item\n" +
+                                        "1. Show all items\n" +
+                                        "2. Edit item\n" +
+                                        "3. Delete item\n" +
+                                        "4. Find item by Id\n" +
+                                        "5. Find items by name\n" +
+                                        "6. Exit Program\n" +
+                                        "Select:")
+                        .append(System.lineSeparator())
+                        .append(this.in2)
+                        .append(System.lineSeparator())
+                        .append(
+                                "0. Add new Item\n" +
+                                        "1. Show all items\n" +
+                                        "2. Edit item\n" +
+                                        "3. Delete item\n" +
+                                        "4. Find item by Id\n" +
+                                        "5. Find items by name\n" +
+                                        "6. Exit Program\n" +
+                                        "Select:")
+                        .append(System.lineSeparator())
+                        .toString()
+                )
+        );
+    }
+    /**
+     * тестирование вывода в консоль заявк по имени
+     */
+    @Test
+    public void whenFindbyNAMEitems() {
+        new StartUI(trackerReturn(), inputReturn(new String[]{"5", in2.getName(), "6"})).init();
+        assertThat(new String(this.out.toByteArray()), is(new StringBuilder()
+                        .append(
+                                "0. Add new Item\n" +
+                                        "1. Show all items\n" +
+                                        "2. Edit item\n" +
+                                        "3. Delete item\n" +
+                                        "4. Find item by Id\n" +
+                                        "5. Find items by name\n" +
+                                        "6. Exit Program\n" +
+                                        "Select:")
                         .append(System.lineSeparator())
                         .append(this.in2)
                         .append(System.lineSeparator())
@@ -117,29 +191,4 @@ public class StubInputTest {
         assertThat(tracker.findAll()[0], is(expected));
     }
 
-    /**
-     * тестирование вывода в консоль заявки по id
-     * не знаю как сравнить значения выводимые в консоль с ожидаемым
-     */
-    @Test
-    public void whenFindbyIDitems() {
-        Tracker tracker = new Tracker();
-        tracker.add(new Items("name", "desc"));
-        tracker.add(new Items("name2", "desc2"));
-        Input input = new StubInput(new String[]{"4", tracker.findAll()[1].getId(), "6"});
-        new  StartUI(input, tracker).init();
-    }
-
-    /**
-     * тестирование вывода в консоль заявк по имени
-     * не знаю как сравнить значения выводимые в консоль с ожидаемым
-     */
-    @Test
-    public void whenFindbyNAMEitems() {
-        Tracker tracker = new Tracker();
-        tracker.add(new Items("name", "desc"));
-        tracker.add(new Items("name2", "desc2"));
-        Input input = new StubInput(new String[]{"5", tracker.findAll()[1].getName(), "6"});
-        new StartUI(input, tracker).init();
-    }
 }
