@@ -103,7 +103,8 @@ public class StartUI {
      * просто вывод меню
      */
     public void shouMenu() {
-        System.out.println("0. Add new Item\n" +
+        System.out.println(
+                "0. Add new Item\n" +
                 "1. Show all items\n" +
                 "2. Edit item\n" +
                 "3. Delete item\n" +

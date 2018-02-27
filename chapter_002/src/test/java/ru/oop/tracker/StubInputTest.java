@@ -64,7 +64,8 @@ public class StubInputTest {
         ui.init();
         assertThat(new String(this.out.toByteArray()), is(
                 new StringBuilder()
-                        .append("0. Add new Item\n" +
+                        .append(
+                                "0. Add new Item\n" +
                                 "1. Show all items\n" +
                                 "2. Edit item\n" +
                                 "3. Delete item\n" +
@@ -77,7 +78,8 @@ public class StubInputTest {
                         .append("\\r\\n")
                         .append(this.in2)
                         .append("\\r\\n")
-                        .append("0. Add new Item\n" +
+                        .append(
+                                "0. Add new Item\n" +
                                 "1. Show all items\n" +
                                 "2. Edit item\n" +
                                 "3. Delete item\n" +
