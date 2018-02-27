@@ -62,7 +62,8 @@ public class StubInputTest {
     public void whenshouAllTrackshouall() {
        StartUI ui =  new StartUI(inputReturn(new String[]{"1", "6"}), trackerReturn());
         ui.init();
-        assertThat(new String(this.out.toByteArray()), is(new String("0. Add new Item\n" +
+        assertThat(new String(this.out.toByteArray()), is(new String(
+                "0. Add new Item\n" +
                         "1. Show all items\n" +
                         "2. Edit item\n" +
                         "3. Delete item\n" +
