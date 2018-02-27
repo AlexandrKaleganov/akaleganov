@@ -7,10 +7,10 @@ import ru.oop.tracker.modules.Tracker;
 import ru.oop.tracker.modules.Items;
 
 import java.io.ByteArrayOutputStream;
+import org.junit.Test;
 import java.io.PrintStream;
-
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 public class StubInputTest {
     private final PrintStream stdout = System.out;
@@ -62,35 +62,28 @@ public class StubInputTest {
     public void whenshouAllTrackshouall() {
        StartUI ui =  new StartUI(inputReturn(new String[]{"1", "6"}), trackerReturn());
         ui.init();
-        assertThat(new String(this.out.toByteArray()), is(new String(
-                "0. Add new Item\n" +
-                        "1. Show all items\n" +
-                        "2. Edit item\n" +
-                        "3. Delete item\n" +
-                        "4. Find item by Id\n" +
-                        "5. Find items by name\n" +
-                        "6. Exit Program\n" +
-                        "Select:" +
-                        "\\r\\n" +
-                        in1 +
-                        "\\r\\n" +
-                        in2 +
-                        "\\r\\n" +
-                        "0. Add new Item\n" +
-                        "1. Show all items\n" +
-                        "2. Edit item\n" +
-                        "3. Delete item\n" +
-                        "4. Find item by Id\n" +
-                        "5. Find items by name\n" +
-                        "6. Exit Program\n" +
-                        "Select:" +
-                        "\\r\\n"
-                )
-//                .append("0. Add new Item\\n1. Show all items\\n2. Edit item\\n3. Delete item\\n4. Find item by Id\\n5. Find items by name\\n6. Exit Program\\nSelect:\\r\\n")
-//                        .append(in1)
-//                        .append("\\r\\n")
-//                        .append(in2)
-//                        .append("\\r\\n0. Add new Item\\n1. Show all items\\n2. Edit item\\n3. Delete item\\n4. Find item by Id\\n5. Find items by name\\n6. Exit Program\\nSelect:\\r\\n")
+        assertThat(new StringBuilder().append(new String(this.out.toByteArray())), is(
+                new StringBuilder()
+                        .append("0. Add new Item\n" +
+                                "1. Show all items\n" +
+                                "2. Edit item\n" +
+                                "3. Delete item\n" +
+                                "4. Find item by Id\n" +
+                                "5. Find items by name\n" +
+                                "6. Exit Program\n" +
+                                "Select:\n")
+                        .append(this.in1)
+                        .append("\n")
+                        .append(this.in2)
+                        .append("\n")
+                        .append("0. Add new Item\n" +
+                                "1. Show all items\n" +
+                                "2. Edit item\n" +
+                                "3. Delete item\n" +
+                                "4. Find item by Id\n" +
+                                "5. Find items by name\n" +
+                                "6. Exit Program\n" +
+                                "Select:\n")
                 )
         );
     }
