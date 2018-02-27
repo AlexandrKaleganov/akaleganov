@@ -141,6 +141,5 @@ public class StubInputTest {
         tracker.add(new Items("name2", "desc2"));
         Input input = new StubInput(new String[]{"5", tracker.findAll()[1].getName(), "6"});
         new StartUI(input, tracker).init();
-
     }
 }
