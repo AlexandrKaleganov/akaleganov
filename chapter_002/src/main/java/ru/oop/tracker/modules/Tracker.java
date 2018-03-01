@@ -33,7 +33,7 @@ public class Tracker {
     public void replace(String id, Items items) {
         items.setId(id);
         for (int i = 0; i < this.items.length; i++) {
-            if (this.items[i] != null && this.items[i].getId().equals(id)) {
+            if (this.items[i] != null && this.items[i].getId().equals(items.getId())) {
                 this.items[i] = items;
                 break;
             }

@@ -55,10 +55,9 @@ public class StubInputTest {
      */
     @Test
     public void whenUserAddItemThenTrackerHasNewItemWithSameName() {
-        Tracker tracker1 = new Tracker();     // создаём Tracker
-        Input input = new StubInput(new String[]{"0", "test name", "desc", "6"});   //создаём StubInput с последовательностью действий
-        new StartUI(input, tracker1).init();     //   создаём StartUI и вызываем метод init()
-        assertThat(tracker1.findAll()[0].getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
+        Tracker tracker = trackerReturn();     // создаём Tracker
+        new StartUI(tracker, inputReturn(new String[]{"0", "test name", "desc", "6"}) ).init();     //   создаём StartUI и вызываем метод init()
+        assertThat(tracker.findAll()[2].getName(), is("test name")); // проверяем, что 3 элемент массива в трекере содержит имя, введённое при эмуляции.
     }
 
     /**
@@ -170,12 +169,9 @@ public class StubInputTest {
      */
     @Test
     public void whenShouEditThenTrackerHashEdi() {
-        Tracker treck = new Tracker();
-        Items items = new Items("name", "desc");
-        treck.add(items);
-        Input input = new StubInput(new String[]{"2", items.getId(), "test name", "desc new", "6"});
-        new StartUI(input, treck).init();
-        assertThat(treck.findAll()[0].getName(), is("test name"));
+        Tracker track = trackerReturn();
+        new StartUI(track, inputReturn(new String[]{"2", track.findAll()[0].getId(), "test name", "desc new", "6"})).init();
+        assertThat(track.findAll()[0].getName(), is("test name"));
     }
 
     /**
@@ -183,11 +179,9 @@ public class StubInputTest {
      */
     @Test
     public void whenshouDELETitems() {
-        Tracker tracker = new Tracker();
-        tracker.add(new Items("name", "desc"));
-        Input input = new StubInput(new String[]{"3", tracker.findAll()[0].getId(), "6"});
-        new StartUI(input, tracker).init();
         Items expected = null;
+        Tracker tracker = trackerReturn();
+        new StartUI(inputReturn(new String[]{"3", tracker.findAll()[0].getId(), "6"}), tracker).init();
         assertThat(tracker.findAll()[0], is(expected));
     }
 
