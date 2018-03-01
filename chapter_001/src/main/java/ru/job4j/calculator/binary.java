@@ -5,7 +5,7 @@ public class binary {
         Integer res = new binary().binaty();
 
     }
-    public Integer binaty () {
+    public Integer binaty() {
         int x = 0b100111;
         int y = 0b1011;
         int z = x / y;
@@ -15,4 +15,5 @@ public class binary {
                 + "=" + Integer.toBinaryString(z));
 
         return z;
-    }}
+    }
+}
