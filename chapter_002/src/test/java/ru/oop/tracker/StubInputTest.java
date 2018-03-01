@@ -12,8 +12,9 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 /**
- * конструктор StartUI переделал чтобы первым делом входило значение
- * возвращаемого трекера со списком заявок, а потом Input типо что будем с ними делать чтобы зарефакторить
+ * @author Alexander Kaleganov
+ * @version StubInputTest FINAL REFACTORING 4/0
+ * допилил тесты  чтобы метод по созданию готового трекера не простаивал
  */
 
 public class StubInputTest {
