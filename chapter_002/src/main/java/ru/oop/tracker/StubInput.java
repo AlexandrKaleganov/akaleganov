@@ -8,7 +8,7 @@ public class StubInput implements Input {
         this.value = value;
     }
     @Override
-    public String zaprosNavvod(String schprech) {
+    public String inputCommand(String command) {
         return this.value[position++];
     }
 }

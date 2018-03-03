@@ -112,7 +112,7 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-         tracker.setExitPrograpp("Exit");
+         tracker.setExitPrograpp();
         }
 
         @Override

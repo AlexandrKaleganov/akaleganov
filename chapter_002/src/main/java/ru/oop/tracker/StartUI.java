@@ -39,7 +39,7 @@ public class StartUI {
             menu.shou();
             int key = Integer.valueOf(input.inputCommand("Select:"));
             menu.select(key);
-        }        while (tracker.getExitProgramm().equals("6")); // в трекер добавил поле, которое постоянно равно шести, пока его не изменяет метод
+        }        while (tracker.getExitProgramm() == false); // в трекер добавил поле, которое постоянно равно шести, пока его не изменяет метод
 
 
 //        while (!exit) {
