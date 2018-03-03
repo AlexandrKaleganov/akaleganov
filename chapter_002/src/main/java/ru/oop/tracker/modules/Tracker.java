@@ -11,7 +11,7 @@ public class Tracker {
     private Items[] items = new Items[100];
     private int index = 0;
     private Random rn = new Random();
-    private static String exitProgramm = "6"; //пока параметр переменной будет равен шести, программу будет продолжнать работать
+    private String exitProgramm = "6"; //пока параметр переменной будет равен шести, программу будет продолжнать работать
 
     /**
      *  планирую сделать так: привыборе в меню цифры 6, у нас вызовется бьект класса

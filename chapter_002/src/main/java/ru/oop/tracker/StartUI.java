@@ -35,7 +35,8 @@ public class StartUI {
         boolean exit = false;
         MenuTracker menu = new MenuTracker(this.input, this.tracker);
         menu.fillAction();
-       do { menu.shou();
+        do {
+            menu.shou();
             int key = Integer.valueOf(input.zaprosNavvod("Select:"));
             menu.select(key);
         }        while (tracker.getExitProgramm().equals("6")); // в трекер добавил поле, которое постоянно равно шести, пока его не изменяет метод

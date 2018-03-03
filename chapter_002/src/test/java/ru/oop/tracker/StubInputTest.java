@@ -59,7 +59,7 @@ public class StubInputTest {
      * возвращает готовое меню
      * @return
      */
-    public String retunMenu(){
+    public String retunMenu() {
         return new StringBuilder()
                 .append("0. Add new Item")
                 .append(System.lineSeparator())
@@ -153,5 +153,4 @@ public class StubInputTest {
         new StartUI(inputReturn(new String[]{"3", tracker.findAll()[0].getId(), "6"}), tracker).init();
         assertThat(tracker.findAll()[0], is(expected));
     }
-
 }
