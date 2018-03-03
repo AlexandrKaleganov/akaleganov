@@ -99,6 +99,7 @@ public class StubInputTest {
                         .append(System.lineSeparator())
                         .append(this.in2)
                         .append(System.lineSeparator())
+                        .append(retunMenu())
                         .toString()
                 )
         );
@@ -114,6 +115,7 @@ public class StubInputTest {
                         .append(retunMenu())
                         .append(this.in2)
                         .append(System.lineSeparator())
+                        .append(retunMenu())
                         .toString()
                 )
         );
@@ -128,6 +130,7 @@ public class StubInputTest {
                         .append(retunMenu())
                         .append(this.in2)
                         .append(System.lineSeparator())
+                        .append(retunMenu())
                         .toString()
                 )
         );
