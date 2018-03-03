@@ -14,8 +14,8 @@ class EditItemsclass implements UserAction {
 
     @Override
     public void execute(Input input, Tracker tracker) {
-        String id = input.zaprosNavvod("Введите id заявки, которую вы хтите изменить");
-        Items items = new Items(input.zaprosNavvod("Введите новое им заявки"), input.zaprosNavvod("Введите новое описание заявки"));
+        String id = input.inputCommand("Введите id заявки, которую вы хтите изменить");
+        Items items = new Items(input.inputCommand("Введите новое им заявки"), input.inputCommand("Введите новое описание заявки"));
         tracker.replace(id, items);
     }
 
@@ -52,7 +52,7 @@ public class MenuTracker {
     public void shou() {
         for (UserAction action:this.actions) {
             if (action != null) {
-                output.outthet(new String(action.info().toString()));
+                output.outthet(action.info().toString());
             }
         }
     }
@@ -70,7 +70,7 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            tracker.add(new Items(input.zaprosNavvod("Пожалусто введите имя заявки"), input.zaprosNavvod("Пожалусто введите описание заявки")));
+            tracker.add(new Items(input.inputCommand("Пожалусто введите имя заявки"), input.inputCommand("Пожалусто введите описание заявки")));
 
         }
 
@@ -89,9 +89,9 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            for (Items item: tracker.findByName(input.zaprosNavvod("Введите имя заявки"))) {
+            for (Items item: tracker.findByName(input.inputCommand("Введите имя заявки"))) {
                 if (item != null) {
-                    this.output.outthet(new String(item.toString()));
+                    this.output.outthet(item.toString());
                 }
             }
         }
@@ -135,7 +135,7 @@ public class MenuTracker {
         public void execute(Input input, Tracker tracker) {
             for (Items items:tracker.findAll()) {
                 if (items != null) {
-                    this.output.outthet(new String(items.toString()));
+                    this.output.outthet(items.toString());
                 }
             }
         }
@@ -155,7 +155,7 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            tracker.delete(input.zaprosNavvod("Введите id заявки, которую необходимо удалить"));
+            tracker.delete(input.inputCommand("Введите id заявки, которую необходимо удалить"));
         }
 
         @Override
@@ -173,7 +173,7 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            this.output.outthet(new String((tracker.findById(input.zaprosNavvod("Введите id заявки, которую необходимо найти"))).toString()));
+            this.output.outthet((tracker.findById(input.inputCommand("Введите id заявки, которую необходимо найти")).toString()));
         }
 
         @Override
@@ -191,7 +191,7 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            this.output.outthet(new String((tracker.findById(input.zaprosNavvod("Введите id заявки, которую необходимо найти"))).toString()));
+            this.output.outthet((tracker.findById(input.inputCommand("Введите id заявки, которую необходимо найти")).toString()));
         }
 
         @Override

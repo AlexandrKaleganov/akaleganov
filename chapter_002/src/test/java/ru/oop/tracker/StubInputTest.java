@@ -45,6 +45,7 @@ public class StubInputTest {
         tracker.add(this.in2);
         return tracker;
     }
+
     /**
      * готовый ввод данных
      * @param str

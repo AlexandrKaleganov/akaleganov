@@ -1,5 +1,5 @@
 package ru.oop.tracker;
 
 public interface Input {
-    String zaprosNavvod(String schprech);
+    String inputCommand(String command);
 }

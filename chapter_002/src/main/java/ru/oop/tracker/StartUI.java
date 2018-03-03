@@ -37,7 +37,7 @@ public class StartUI {
         menu.fillAction();
         do {
             menu.shou();
-            int key = Integer.valueOf(input.zaprosNavvod("Select:"));
+            int key = Integer.valueOf(input.inputCommand("Select:"));
             menu.select(key);
         }        while (tracker.getExitProgramm().equals("6")); // в трекер добавил поле, которое постоянно равно шести, пока его не изменяет метод
 
@@ -67,7 +67,7 @@ public class StartUI {
      * метод добавления новой заявки
      */
     private void addITEMS() {
-        tracker.add(new Items(input.zaprosNavvod("Пожалусто введите имя заявки"), input.zaprosNavvod("Пожалусто введите описание заявки")));
+        tracker.add(new Items(input.inputCommand("Пожалусто введите имя заявки"), input.inputCommand("Пожалусто введите описание заявки")));
 
 
 
@@ -79,7 +79,7 @@ public class StartUI {
     public void showALL() {
         for (Items items:tracker.findAll()) {
             if (items != null) {
-               this.output.outthet(new String(items.toString()));
+               this.output.outthet(items.toString());
             }
         }
     }
@@ -88,8 +88,8 @@ public class StartUI {
      * изменение заявки
      */
     public void editITEMS() {
-        String id = input.zaprosNavvod("Введите id заявки, которую вы хтите изменить");
-        Items items = new Items(input.zaprosNavvod("Введите новое им заявки"), input.zaprosNavvod("Введите новое описание заявки"));
+        String id = input.inputCommand("Введите id заявки, которую вы хтите изменить");
+        Items items = new Items(input.inputCommand("Введите новое им заявки"), input.inputCommand("Введите новое описание заявки"));
         tracker.replace(id, items);
     }
 
@@ -97,23 +97,23 @@ public class StartUI {
      * метод удаления заявки
      */
     public void deleteITEMS() {
-        tracker.delete(input.zaprosNavvod("Введите id заявки, которую необходимо удалить"));
+        tracker.delete(input.inputCommand("Введите id заявки, которую необходимо удалить"));
     }
 
     /**
      * метод находит заявку по id
      */
     public void findIDITEMS() {
-        this.output.outthet(new String((tracker.findById(input.zaprosNavvod("Введите id заявки, которую необходимо найти"))).toString()));
+        this.output.outthet((tracker.findById(input.inputCommand("Введите id заявки, которую необходимо найти"))).toString());
     }
 
     /**
      * находит все элементы завки с похожими именами и выводит их
      */
     public void findNAMEITEMS() {
-        for (Items item: tracker.findByName(input.zaprosNavvod("Введите имя заявки"))) {
+        for (Items item: tracker.findByName(input.inputCommand("Введите имя заявки"))) {
             if (item != null) {
-                this.output.outthet(new String(item.toString()));
+                this.output.outthet(item.toString());
             }
         }
     }
