@@ -11,6 +11,22 @@ public class Tracker {
     private Items[] items = new Items[100];
     private int index = 0;
     private Random rn = new Random();
+    private static String exitProgramm = "6"; //пока параметр переменной будет равен шести, программу будет продолжнать работать
+
+    /**
+     *  планирую сделать так: привыборе в меню цифры 6, у нас вызовется бьект класса
+     *  Exitprogramm , и его метод  public void execute(Input input, Tracker tracker)
+     *  этот метод вызовет нашь метод setExitProgramm. который в свою очередь изменит параметр
+     *  переменно exitProgramm и программа завершит свою работу
+     * @param exitProgramm
+     */
+    public void setExitPrograpp(String exitProgramm) {
+        this.exitProgramm = exitProgramm;
+    }
+
+    public String getExitProgramm() {
+        return exitProgramm;
+    }
 
     /**
      * добавление заявок - и мы просто делаем один шаг по элемену++
@@ -86,7 +102,7 @@ public class Tracker {
      */
     public Items findById(String id) {
         Items res = null;
-        for (int i = 0; i < this.items.length ; i++) {
+        for (int i = 0; i < this.items.length; i++) {
 
             if (items[i].getId().equals(id)) {
                 res = items[i];

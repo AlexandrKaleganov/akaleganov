@@ -45,19 +45,45 @@ public class StubInputTest {
         tracker.add(this.in2);
         return tracker;
     }
-
+    /**
+     * готовый ввод данных
+     * @param str
+     * @return
+     */
     public Input inputReturn(String[] str) {
         Input input = new StubInput(str);
         return input;
     }
 
     /**
+     * возвращает готовое меню
+     * @return
+     */
+    public String retunMenu(){
+        return new StringBuilder()
+                .append("0. Add new Item")
+                .append(System.lineSeparator())
+                .append("1. Show all items")
+                .append(System.lineSeparator())
+                .append("2. Edit item")
+                .append(System.lineSeparator())
+                .append("3. Delete item")
+                .append(System.lineSeparator())
+                .append("4. Find item by Id")
+                .append(System.lineSeparator())
+                .append("5. Find items by name")
+                .append(System.lineSeparator())
+                .append("6. Exit Program")
+                .append(System.lineSeparator())
+                .toString();
+    }
+    /**
      * тест добавления заявки
      */
     @Test
     public void whenUserAddItemThenTrackerHasNewItemWithSameName() {
         Tracker tracker = trackerReturn();     // создаём Tracker
-        new StartUI(tracker, inputReturn(new String[]{"0", "test name", "desc", "6"}) ).init();     //   создаём StartUI и вызываем метод init()
+        new StartUI(tracker, inputReturn(new String[]{"0", "test name", "desc", "6"})).init();     //   создаём StartUI и вызываем метод init()
         assertThat(tracker.findAll()[2].getName(), is("test name")); // проверяем, что 3 элемент массива в трекере содержит имя, введённое при эмуляции.
     }
 
@@ -67,31 +93,11 @@ public class StubInputTest {
     @Test
     public void whenshouAllTrackshouall() {
         new StartUI(inputReturn(new String[]{"1", "6"}), trackerReturn()).init();
-        assertThat(new String(this.out.toByteArray()), is(
-                new StringBuilder()
-                        .append(
-                                "0. Add new Item\n" +
-                                        "1. Show all items\n" +
-                                        "2. Edit item\n" +
-                                        "3. Delete item\n" +
-                                        "4. Find item by Id\n" +
-                                        "5. Find items by name\n" +
-                                        "6. Exit Program\n" +
-                                        "Select:")
-                        .append(System.lineSeparator())
+        assertThat(new String(this.out.toByteArray()), is(new StringBuilder()
+                        .append(retunMenu())
                         .append(this.in1)
                         .append(System.lineSeparator())
                         .append(this.in2)
-                        .append(System.lineSeparator())
-                        .append(
-                                "0. Add new Item\n" +
-                                        "1. Show all items\n" +
-                                        "2. Edit item\n" +
-                                        "3. Delete item\n" +
-                                        "4. Find item by Id\n" +
-                                        "5. Find items by name\n" +
-                                        "6. Exit Program\n" +
-                                        "Select:")
                         .append(System.lineSeparator())
                         .toString()
                 )
@@ -105,27 +111,8 @@ public class StubInputTest {
     public void whenFindbyIDitems() {
         new  StartUI(trackerReturn(), inputReturn(new String[]{"4", trackerReturn().findAll()[1].getId(), "6"})).init();
         assertThat(new String(this.out.toByteArray()), is(new StringBuilder()
-                        .append(
-                                "0. Add new Item\n" +
-                                        "1. Show all items\n" +
-                                        "2. Edit item\n" +
-                                        "3. Delete item\n" +
-                                        "4. Find item by Id\n" +
-                                        "5. Find items by name\n" +
-                                        "6. Exit Program\n" +
-                                        "Select:")
-                        .append(System.lineSeparator())
+                        .append(retunMenu())
                         .append(this.in2)
-                        .append(System.lineSeparator())
-                        .append(
-                                "0. Add new Item\n" +
-                                        "1. Show all items\n" +
-                                        "2. Edit item\n" +
-                                        "3. Delete item\n" +
-                                        "4. Find item by Id\n" +
-                                        "5. Find items by name\n" +
-                                        "6. Exit Program\n" +
-                                        "Select:")
                         .append(System.lineSeparator())
                         .toString()
                 )
@@ -138,27 +125,8 @@ public class StubInputTest {
     public void whenFindbyNAMEitems() {
         new StartUI(trackerReturn(), inputReturn(new String[]{"5", in2.getName(), "6"})).init();
         assertThat(new String(this.out.toByteArray()), is(new StringBuilder()
-                        .append(
-                                "0. Add new Item\n" +
-                                        "1. Show all items\n" +
-                                        "2. Edit item\n" +
-                                        "3. Delete item\n" +
-                                        "4. Find item by Id\n" +
-                                        "5. Find items by name\n" +
-                                        "6. Exit Program\n" +
-                                        "Select:")
-                        .append(System.lineSeparator())
+                        .append(retunMenu())
                         .append(this.in2)
-                        .append(System.lineSeparator())
-                        .append(
-                                "0. Add new Item\n" +
-                                        "1. Show all items\n" +
-                                        "2. Edit item\n" +
-                                        "3. Delete item\n" +
-                                        "4. Find item by Id\n" +
-                                        "5. Find items by name\n" +
-                                        "6. Exit Program\n" +
-                                        "Select:")
                         .append(System.lineSeparator())
                         .toString()
                 )
