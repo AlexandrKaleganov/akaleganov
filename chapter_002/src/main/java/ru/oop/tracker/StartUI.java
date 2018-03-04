@@ -29,7 +29,7 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-        new StartUI(new ValidateInput(), new Tracker()).init();
+        new StartUI(new ValidateInput(input), new Tracker()).init();
     }
 
     public void init() {

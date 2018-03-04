@@ -1,6 +1,16 @@
 package ru.oop.tracker;
 
-public class ValidateInput extends ConsoleInput {
+public class ValidateInput implements Input {
+private final Input input;
+
+    public ValidateInput(Input input) {
+        this.input = input;
+    }
+
+    @Override
+    public String inputCommand(String command) {
+        return this.input.inputCommand(command);
+    }
 
     @Override
     public int inputCommand(String command, int[] range) {
@@ -8,7 +18,7 @@ public class ValidateInput extends ConsoleInput {
         int value = -1;
         do {
             try {
-               value = super.inputCommand(command, range);
+               value = this.input.inputCommand(command, range);
                invalid = false;
             } catch (MenuOutException tes) {
                 System.out.println("Пожалусто выберете ключ меню");
