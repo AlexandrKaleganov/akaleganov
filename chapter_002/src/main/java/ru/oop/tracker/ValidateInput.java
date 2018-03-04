@@ -7,6 +7,7 @@ private final Input input;
         this.input = input;
     }
 
+
     @Override
     public String inputCommand(String command) {
         return this.input.inputCommand(command);
