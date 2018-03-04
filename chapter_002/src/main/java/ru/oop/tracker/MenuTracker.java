@@ -31,12 +31,20 @@ class EditItemsclass implements UserAction {
 public class MenuTracker {
     private Input input;
     private Tracker tracker;
-    private UserAction[] actions = new UserAction[10];
+    private UserAction[] actions = new UserAction[7];
     private Output output = new OutConsole();
     public MenuTracker(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
     }
+
+    public MenuTracker() {
+    }
+
+    public UserAction[] getActions() {
+        return actions;
+    }
+
     public void fillAction() {
         this.actions[0] = new AddItem();
         this.actions[1] = new MenuTracker.ShouALLitems();
@@ -45,6 +53,13 @@ public class MenuTracker {
         this.actions[4] = new MenuTracker.FindByaItemsId(); // зачем мы так написали? у нас итак всё будет работать если мы напишем new FindByaItemsId();
         this.actions[5] = new Finditemsbyname();
         this.actions[6] = new Exitprogramm();
+    }
+    public static int[] returnFINALmenu(UserAction[] actions) {
+        int[] result = new int[actions.length];
+        for (int i = 0; i < actions.length; i++) {
+            result[i] = i;
+        } return result;
+
     }
     public void select(int key) {
         this.actions[key].execute(this.input, this.tracker);

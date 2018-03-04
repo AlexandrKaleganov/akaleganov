@@ -11,4 +11,10 @@ public class StubInput implements Input {
     public String inputCommand(String command) {
         return this.value[position++];
     }
+
+    @Override
+    public int inputCommand(String command, int[] range) {
+       // throw  new UnsupportedOperationException("не понял зачем мы его написали");
+        return -1;
+    }
 }

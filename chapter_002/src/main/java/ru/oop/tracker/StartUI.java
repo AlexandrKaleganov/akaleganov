@@ -4,6 +4,7 @@ import ru.oop.tracker.modules.Items;
 import ru.oop.tracker.modules.Tracker;
 
 public class StartUI {
+    private int[] range = MenuTracker.returnFINALmenu(new MenuTracker().getActions());
     private final Tracker tracker;
     private final Input input;
     private final Output output = new OutConsole();
@@ -28,7 +29,7 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-        new StartUI(new ConsoleInput(), new Tracker()).init();
+        new StartUI(new ValidateInput(), new Tracker()).init();
     }
 
     public void init() {
@@ -37,9 +38,8 @@ public class StartUI {
         menu.fillAction();
         do {
             menu.shou();
-            int key = Integer.valueOf(input.inputCommand("Select:"));
-            menu.select(key);
-        }        while (tracker.getExitProgramm() == false); // в трекер добавил поле, которое постоянно равно шести, пока его не изменяет метод
+            menu.select(input.inputCommand("Select:", range));
+        } while (tracker.getExitProgramm()); // в трекер добавил поле, boolean, пока его не изменяет метод
 
 
 //        while (!exit) {

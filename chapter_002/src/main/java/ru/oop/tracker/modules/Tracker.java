@@ -11,7 +11,7 @@ public class Tracker {
     private Items[] items = new Items[100];
     private int index = 0;
     private Random rn = new Random();
-    private boolean exitProgramm = false; //пока параметр переменной будет равен шести, программу будет продолжнать работать
+    private boolean exitProgramm = true; //пока параметр переменной будет равен шести, программу будет продолжнать работать
 
     /**
      *  планирую сделать так: привыборе в меню цифры 6, у нас вызовется бьект класса
@@ -20,7 +20,7 @@ public class Tracker {
      *  переменно exitProgramm и программа завершит свою работу
      */
     public void setExitPrograpp() {
-        this.exitProgramm = true;
+        this.exitProgramm = false;
     }
 
     public boolean getExitProgramm() {
