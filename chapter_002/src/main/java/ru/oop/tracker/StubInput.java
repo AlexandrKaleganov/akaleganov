@@ -14,7 +14,19 @@ public class StubInput implements Input {
 
     @Override
     public int inputCommand(String command, int[] range) {
-       // throw  new UnsupportedOperationException("не понял зачем мы его написали");
-        return -1;
+        int key = Integer.valueOf(this.inputCommand(command));
+        boolean exit = false;
+        for (int value:  range) {
+            if (value == key) {
+                exit = true;
+                break;
+            }
+        } if (exit) {
+            return key;
+        } else {
+             throw  new UnsupportedOperationException("не понял зачем мы его написали");
+        }
     }
+
+
 }
