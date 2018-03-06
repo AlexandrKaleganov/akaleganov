@@ -33,6 +33,7 @@ public class MenuTracker {
     private Tracker tracker;
     private UserAction[] actions = new UserAction[7];
     private Output output = new OutConsole();
+    private int position = 0;
     public MenuTracker(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
@@ -46,13 +47,16 @@ public class MenuTracker {
     }
 
     public void fillAction() {
-        this.actions[0] = new AddItem();
-        this.actions[1] = new MenuTracker.ShouALLitems();
-        this.actions[2] = new EditItemsclass();
-        this.actions[3] = new MenuTracker.Deleteitems();
-        this.actions[4] = new MenuTracker.FindByaItemsId(); // зачем мы так написали? у нас итак всё будет работать если мы напишем new FindByaItemsId();
-        this.actions[5] = new Finditemsbyname();
-        this.actions[6] = new Exitprogramm();
+        this.actions[position++] = new AddItem(0, "Add new Item");
+        this.actions[position++] = new MenuTracker.ShouALLitems();
+        this.actions[position++] = new EditItemsclass();
+        this.actions[position++] = new MenuTracker.Deleteitems();
+        this.actions[position++] = new MenuTracker.FindByaItemsId(); // зачем мы так написали? у нас итак всё будет работать если мы напишем new FindByaItemsId();
+        this.actions[position++] = new Finditemsbyname(5, "Find items by name");
+        this.actions[position++] = new Exitprogramm();
+    }
+    public void addAction(UserAction action){
+        this.actions[position++] = action;
     }
     public static int[] returnFINALmenu(UserAction[] actions) {
         int[] result = new int[actions.length];
@@ -76,32 +80,23 @@ public class MenuTracker {
     /**
      * внутренние не статичные классы
      */
-    private class AddItem implements UserAction {
+    private class AddItem extends BaseAction {
 
-        @Override
-        public int key() {
-            return 0;
+        AddItem(int key, String name){
+            super(key, name);
         }
 
         @Override
         public void execute(Input input, Tracker tracker) {
             tracker.add(new Items(input.inputCommand("Пожалусто введите имя заявки"), input.inputCommand("Пожалусто введите описание заявки")));
-
-        }
-
-        @Override
-        public String info() {
-            return String.format("%s. %s", this.key(), "Add new Item");
         }
     }
-    private class Finditemsbyname implements UserAction {
-        private Output output = new OutConsole();
+    private class Finditemsbyname extends BaseAction {
 
-        @Override
-        public int key() {
-            return 5;
+        Finditemsbyname(int key, String name){
+        super(key, name);
         }
-
+    }
         @Override
         public void execute(Input input, Tracker tracker) {
             for (Items item: tracker.findByName(input.inputCommand("Введите имя заявки"))) {
@@ -110,12 +105,6 @@ public class MenuTracker {
                 }
             }
         }
-
-        @Override
-        public String info() {
-            return String.format("%s. %s", this.key(), "Find items by name");
-        }
-    }
 
     private class Exitprogramm implements UserAction {
         private Output output = new OutConsole();
