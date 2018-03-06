@@ -49,7 +49,7 @@ public class MenuTracker {
         this.actions[position++] = new Finditemsbyname(5, "Find items by name");
         this.actions[position++] = new Exitprogramm(6, "Exit Program");
     }
-    public void addAction(UserAction action){
+    public void addAction(UserAction action) {
         this.actions[position++] = action;
     }
     public static int[] returnFINALmenu(UserAction[] actions) {
@@ -73,7 +73,7 @@ public class MenuTracker {
      * внутренние не статичные классы
      */
     private class AddItem extends BaseAction {
-        AddItem(int key, String name){
+        AddItem(int key, String name) {
             super(key, name);
         }
 
@@ -109,7 +109,7 @@ public class MenuTracker {
     }
 
     private class ShouALLitems extends BaseAction {
-        ShouALLitems(int key, String name){
+        ShouALLitems(int key, String name) {
             super(key, name);
         }
 
@@ -124,7 +124,7 @@ public class MenuTracker {
     }
 
     private class FindByaItemsId extends BaseAction {
-        FindByaItemsId(int key, String name){
+        FindByaItemsId(int key, String name) {
             super(key, name);
         }
 
