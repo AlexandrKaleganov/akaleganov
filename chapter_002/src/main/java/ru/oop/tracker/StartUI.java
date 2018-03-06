@@ -9,6 +9,7 @@ public class StartUI {
     private final Input input;
     private final Output output = new OutConsole();
 
+
     private static final String ADD = "0";
     private static final String SHOW_ALL = "1";
     private static final String EDIT_ITEMS = "2";

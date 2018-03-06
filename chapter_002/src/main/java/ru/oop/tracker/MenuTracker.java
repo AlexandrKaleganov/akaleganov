@@ -42,7 +42,7 @@ public class MenuTracker {
 
     public void fillAction() {
         this.actions[position++] = new AddItem(0, "Add new Item");
-        this.actions[position++] = new MenuTracker.ShouALLitems(1, "Show all items");
+        this.actions[position++] = new ShouALLitems(1, "Show all items");
         this.actions[position++] = new EditItemsclass(2, "Edit item");
         this.actions[position++] = new MenuTracker.Deleteitems(3, "Delete item");
         this.actions[position++] = new FindByaItemsId(4, "Find item by Id");
