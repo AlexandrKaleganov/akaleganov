@@ -1,6 +1,7 @@
 package ru.oop.tracker;
 
 public abstract class BaseAction implements UserAction {
+
     private Output output = new OutConsole();
     private final int key;
     private final String name;

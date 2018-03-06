@@ -6,10 +6,9 @@ import ru.oop.tracker.modules.Tracker;
 /**
  * внешний класс
  */
-class EditItemsclass implements UserAction {
-    @Override
-    public int key() {
-        return 2;
+class EditItemsclass extends BaseAction {
+    EditItemsclass(int key, String name) {
+        super(key, name);
     }
 
     @Override
@@ -17,11 +16,6 @@ class EditItemsclass implements UserAction {
         String id = input.inputCommand("Введите id заявки, которую вы хтите изменить");
         Items items = new Items(input.inputCommand("Введите новое им заявки"), input.inputCommand("Введите новое описание заявки"));
         tracker.replace(id, items);
-    }
-
-    @Override
-    public String info() {
-        return String.format("%s. %s", this.key(), "Edit item");
     }
 }
 
@@ -48,12 +42,12 @@ public class MenuTracker {
 
     public void fillAction() {
         this.actions[position++] = new AddItem(0, "Add new Item");
-        this.actions[position++] = new MenuTracker.ShouALLitems();
-        this.actions[position++] = new EditItemsclass();
-        this.actions[position++] = new MenuTracker.Deleteitems();
-        this.actions[position++] = new MenuTracker.FindByaItemsId(); // зачем мы так написали? у нас итак всё будет работать если мы напишем new FindByaItemsId();
+        this.actions[position++] = new MenuTracker.ShouALLitems(1, "Show all items");
+        this.actions[position++] = new EditItemsclass(2, "Edit item");
+        this.actions[position++] = new MenuTracker.Deleteitems(3, "Delete item");
+        this.actions[position++] = new FindByaItemsId(4, "Find item by Id");
         this.actions[position++] = new Finditemsbyname(5, "Find items by name");
-        this.actions[position++] = new Exitprogramm();
+        this.actions[position++] = new Exitprogramm(6, "Exit Program");
     }
     public void addAction(UserAction action){
         this.actions[position++] = action;
@@ -63,7 +57,6 @@ public class MenuTracker {
         for (int i = 0; i < actions.length; i++) {
             result[i] = i;
         } return result;
-
     }
     public void select(int key) {
         this.actions[key].execute(this.input, this.tracker);
@@ -76,12 +69,10 @@ public class MenuTracker {
         }
     }
 
-
     /**
      * внутренние не статичные классы
      */
     private class AddItem extends BaseAction {
-
         AddItem(int key, String name){
             super(key, name);
         }
@@ -91,116 +82,69 @@ public class MenuTracker {
             tracker.add(new Items(input.inputCommand("Пожалусто введите имя заявки"), input.inputCommand("Пожалусто введите описание заявки")));
         }
     }
-    private class Finditemsbyname extends BaseAction {
 
-        Finditemsbyname(int key, String name){
-        super(key, name);
+    private class Finditemsbyname extends BaseAction {
+        Finditemsbyname(int key, String name) {
+            super(key, name);
         }
-    }
+
         @Override
         public void execute(Input input, Tracker tracker) {
-            for (Items item: tracker.findByName(input.inputCommand("Введите имя заявки"))) {
+            for (Items item : tracker.findByName(input.inputCommand("Введите имя заявки"))) {
                 if (item != null) {
-                    this.output.outthet(item.toString());
+                    output.outthet(item.toString());
                 }
             }
         }
-
-    private class Exitprogramm implements UserAction {
-        private Output output = new OutConsole();
-
-        @Override
-        public int key() {
-            return 6;
+    }
+    private class Exitprogramm extends BaseAction {
+        Exitprogramm(int key, String name) {
+            super(key, name);
         }
 
         @Override
         public void execute(Input input, Tracker tracker) {
-         tracker.setExitPrograpp();
-        }
-
-        @Override
-        public String info() {
-            return String.format("%s. %s", this.key(), "Exit Program");
+            tracker.setExitPrograpp();
         }
     }
-    /**
-     * внутренние статичные классы
-     */
-    private static class ShouALLitems implements UserAction {
-        private Output output = new OutConsole();
 
-        @Override
-        public int key() {
-            return 1;
+    private class ShouALLitems extends BaseAction {
+        ShouALLitems(int key, String name){
+            super(key, name);
         }
 
         @Override
         public void execute(Input input, Tracker tracker) {
             for (Items items:tracker.findAll()) {
                 if (items != null) {
-                    this.output.outthet(items.toString());
+                    output.outthet(items.toString());
                 }
             }
         }
+    }
+
+    private class FindByaItemsId extends BaseAction {
+        FindByaItemsId(int key, String name){
+            super(key, name);
+        }
 
         @Override
-        public String info() {
-            return String.format("%s. %s", this.key(), "Show all items");
+        public void execute(Input input, Tracker tracker) {
+            output.outthet((tracker.findById(input.inputCommand("Введите id заявки, которую необходимо найти")).toString()));
         }
     }
-    private static class Deleteitems implements UserAction {
-        private Output output = new OutConsole();
 
-        @Override
-        public int key() {
-            return 3;
+    /**
+     * внутренние статичные классы
+     */
+    private static class Deleteitems extends BaseAction {
+        Deleteitems(int key, String name) {
+            super(key, name);
         }
 
         @Override
         public void execute(Input input, Tracker tracker) {
             tracker.delete(input.inputCommand("Введите id заявки, которую необходимо удалить"));
-        }
-
-        @Override
-        public String info() {
-            return String.format("%s. %s", this.key(), "Delete item");
-        }
-    }
-    private static class FindByaItemsId implements UserAction {
-        private Output output = new OutConsole();
-
-        @Override
-        public int key() {
-            return 4;
-        }
-
-        @Override
-        public void execute(Input input, Tracker tracker) {
-            this.output.outthet((tracker.findById(input.inputCommand("Введите id заявки, которую необходимо найти")).toString()));
-        }
-
-        @Override
-        public String info() {
-            return String.format("%s. %s", this.key(), "Find item by Id");
-        }
-    }
-    private static class Select implements UserAction {
-        private Output output = new OutConsole();
-
-        @Override
-        public int key() {
-            return 4;
-        }
-
-        @Override
-        public void execute(Input input, Tracker tracker) {
-            this.output.outthet((tracker.findById(input.inputCommand("Введите id заявки, которую необходимо найти")).toString()));
-        }
-
-        @Override
-        public String info() {
-            return String.format("%s. %s", this.key(), "Find item by Id");
         }
     }
 }

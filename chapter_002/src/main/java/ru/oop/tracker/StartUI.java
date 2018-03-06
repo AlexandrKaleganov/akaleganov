@@ -9,8 +9,6 @@ public class StartUI {
     private final Input input;
     private final Output output = new OutConsole();
 
-
-
     private static final String ADD = "0";
     private static final String SHOW_ALL = "1";
     private static final String EDIT_ITEMS = "2";
@@ -40,27 +38,6 @@ public class StartUI {
             menu.shou();
             menu.select(input.inputCommand("Select:", range));
         } while (tracker.getExitProgramm()); // в трекер добавил поле, boolean, пока его не изменяет метод
-
-
-//        while (!exit) {
-//            shouMenu();
-//            String answer = input.zaprosNavvod("Выберете пункт меню");
-//            if (answer.equals(ADD)) {
-//                this.addITEMS();
-//            } else if (answer.equals(SHOW_ALL)) {
-//                this.showALL();
-//            } else if (answer.equals(EDIT_ITEMS)) {
-//                this.editITEMS();
-//            } else if (answer.equals(DELETE_ITEMS)) {
-//                this.deleteITEMS();
-//            } else if (answer.equals(FIND_ID)) {
-//                this.findIDITEMS();
-//            } else if (answer.equals(FIND_NAME)) {
-//                this.findNAMEITEMS();
-//            } else if (answer.equals(EXIT)) {
-//                exit = true;
-//            }
-//        }
     }
 
     /**
@@ -68,9 +45,6 @@ public class StartUI {
      */
     private void addITEMS() {
         tracker.add(new Items(input.inputCommand("Пожалусто введите имя заявки"), input.inputCommand("Пожалусто введите описание заявки")));
-
-
-
     }
 
     /**
