@@ -1,5 +1,8 @@
 package ru.job4j.calculator;
 
+/**
+ * двоичная система счисления
+ */
 public class binary {
     public static void main(String[] args) {
         Integer res = new binary().binaty();

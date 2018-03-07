@@ -11,6 +11,6 @@ public class Min {
         return first < seconds ? first : seconds;
     }
     public int min(int first, int seconds, int third, int fir) {
-        return min(min(min(first, seconds), third),fir);
+        return min(min(min(first, seconds), third), fir);
     }
 }
