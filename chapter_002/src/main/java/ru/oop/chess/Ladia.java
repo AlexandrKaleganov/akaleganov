@@ -1,10 +1,9 @@
-package ru.oop.chess.allfigur;
+package ru.oop.chess;
 /**
  * класс ладья для создания объекта ладья
  * пока не доработан, создавался для тестов и эксперементов
  */
 
-import ru.oop.chess.Cell;
 import ru.oop.chess.exception.ImpossibleMoveException;
 
 public class Ladia extends Figure {

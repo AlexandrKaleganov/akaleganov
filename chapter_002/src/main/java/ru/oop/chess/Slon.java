@@ -1,5 +1,4 @@
-package ru.oop.chess.allfigur;
-import ru.oop.chess.Cell;
+package ru.oop.chess;
 import ru.oop.chess.exception.ImpossibleMoveException;
 public class Slon extends Figure {
 
@@ -23,18 +22,18 @@ public class Slon extends Figure {
         int y = source.getY();
         boolean exit = true;
         for (int i = 0; i < result.length; i++) {
-            if (source.getX() < dest.getX() &&source.getY() < dest.getY()) {
+            if (source.getX() < dest.getX() && source.getY() < dest.getY()) {
                 result[i] = new Cell(x++, y++);
-            } else if (source.getX() > dest.getX() &&source.getY() > dest.getY()){
+            } else if (source.getX() > dest.getX() && source.getY() > dest.getY()) {
                 result[i] = new Cell(x--, y--);
-            } else if (source.getX() < dest.getX() &&source.getY() > dest.getY()){
+            } else if (source.getX() < dest.getX() && source.getY() > dest.getY()) {
                 result[i].setX(x++);
                 result[i].setY(y--);
-            } else if (source.getX() > dest.getX() &&source.getY() < dest.getY()){
+            } else if (source.getX() > dest.getX() && source.getY() < dest.getY()) {
                 result[i].setX(x--);
                 result[i].setY(y++);
             }
-            if (x == dest.getX() && y != dest.getY() || x != dest.getX() && y == dest.getY()){
+            if (x == dest.getX() && y != dest.getY() || x != dest.getX() && y == dest.getY()) {
                 exit = false;
                 break;
             }
@@ -54,5 +53,4 @@ public class Slon extends Figure {
         Slon slon = new Slon(dest);
         return slon;
     }
-
 }

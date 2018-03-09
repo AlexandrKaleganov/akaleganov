@@ -1,6 +1,5 @@
-package ru.oop.chess.allfigur;
+package ru.oop.chess;
 
-import ru.oop.chess.Cell;
 import ru.oop.chess.exception.ImpossibleMoveException;
 import java.util.Random;
 

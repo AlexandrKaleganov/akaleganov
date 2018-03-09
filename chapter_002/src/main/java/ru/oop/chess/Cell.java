@@ -17,23 +17,21 @@ public class Cell {
      */
     public Cell(int x, int y) {
         if (x < 1) {
-        this.x = 1;
-        }
-        if(x > 8) {
+            this.x = 1;
+        } else if (x > 8) {
             this.x = 8;
         } else {
             this.x = x;
         }
         if (y < 1) {
             this.y = 1;
-        }
-        if(y > 8) {
+        } else if (y > 8) {
             this.y = 8;
         } else {
             this.y = y;
         }
     }
-   public Cell() {
+    public Cell() {
         this.x = 0;
         this.x = 0;
     }
