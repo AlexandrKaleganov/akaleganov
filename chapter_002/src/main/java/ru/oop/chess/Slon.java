@@ -1,16 +1,20 @@
 package ru.oop.chess;
+
 import ru.oop.chess.exception.ImpossibleMoveException;
+
 public class Slon extends Figure {
 
     public Slon(Cell begincoordinat) {
         super(begincoordinat);
     }
+
     public Slon() {
         super();
     }
 
     /**
      * возрващает путь пройденный фигурой
+     *
      * @param source
      * @param dest
      * @return
@@ -37,7 +41,8 @@ public class Slon extends Figure {
                 exit = false;
                 break;
             }
-        } if (exit) {
+        }
+        if (exit) {
             return result;
         } else {
             throw new ImpossibleMoveException();
@@ -46,6 +51,7 @@ public class Slon extends Figure {
 
     /**
      * возвращает новую фигуру с новыми координатами
+     *
      * @param dest
      * @return
      */

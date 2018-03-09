@@ -9,16 +9,17 @@ import ru.oop.chess.exception.ImpossibleMoveException;
 public class Ladia extends Figure {
 
 
-
     public Ladia(Cell begincoordinat) {
         super(begincoordinat);
     }
+
     public Ladia() {
         super();
     }
 
     /**
      * возрващает путь пройденный фигурой
+     *
      * @param source
      * @param dest
      * @return
@@ -35,6 +36,7 @@ public class Ladia extends Figure {
 
     /**
      * возвращает новую фигуру с новыми координатами
+     *
      * @param dest
      * @return
      */

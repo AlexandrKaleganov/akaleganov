@@ -1,4 +1,5 @@
 package ru.oop.chess;
+
 import ru.oop.chess.exception.FigureNotFoundException;
 import ru.oop.chess.exception.ImpossibleMoveException;
 import ru.oop.chess.exception.OccupiedWayException;
@@ -9,6 +10,7 @@ public class Board {
 
     /**
      * принимает фигуру и проверяет не занята ли данная клетка другой фигурой после добавляет её
+     *
      * @param newFigure
      */
     public void add(Figure newFigure) {
@@ -17,11 +19,12 @@ public class Board {
             if (!newFigure.equals(figures[i])) {
                 test = true;
             } else if (newFigure.equals(figures[i])) {
-                System.out.println("извините, данная клетка " + figures[i] + "занята другой  фигурой " + figures[i].getClass()  + ", фигуру нельзя поставить на клетку");
+                System.out.println("извините, данная клетка " + figures[i] + "занята другой  фигурой " + figures[i].getClass() + ", фигуру нельзя поставить на клетку");
                 test = false;
                 break;
             }
-        } if (test) {
+        }
+        if (test) {
             this.figures[position++] = newFigure;
         }
     }
@@ -50,8 +53,9 @@ public class Board {
                         expected = false;
                     }
                 }
-            } if (expected) {
-                figures[index] =  figures[index].figureCopy(dest);
+            }
+            if (expected) {
+                figures[index] = figures[index].figureCopy(dest);
                 return expected;
             } else {
                 throw new OccupiedWayException();

@@ -1,6 +1,7 @@
 package ru.oop.chess;
 
 import ru.oop.chess.exception.ImpossibleMoveException;
+
 import java.util.Random;
 
 /**
@@ -18,7 +19,7 @@ public abstract class Figure {
     private int y = rn.nextInt(8) + 1;
     private Cell start = new Cell(x, y);
 
-    private  Cell begincoordinat;
+    private Cell begincoordinat;
 
     /**
      * если мы не хотим изначально указывать клетку фигуры
@@ -41,18 +42,21 @@ public abstract class Figure {
 
     /**
      * может ли фигура пойти по заданым координатам если да, то вернуть пройденный путь
+     *
      * @param source
      * @param dest
      * @return
      * @throws ImpossibleMoveException
      */
     abstract Cell[] way(Cell source, Cell dest) throws ImpossibleMoveException;
+
     abstract Figure figureCopy(Cell dest);
 
     /**
      * переопределим метод экуалс, зараза ссылки сравнивает
      * этим макаром мы сможем сравнивать между собой все слассы наследникик
      * будь то слон, будь то ладья или другие фигуры, он удет сравнивать только координаты
+     *
      * @param obj
      * @return
      */
@@ -62,7 +66,7 @@ public abstract class Figure {
         if (obj == this) {
             test = true;
         }
-        Figure valid = (Figure)obj;
+        Figure valid = (Figure) obj;
         if (obj != null && begincoordinat.getX() == valid.begincoordinat.getX() && begincoordinat.getY() == valid.begincoordinat.getY()) {
             test = true;
         } else {
@@ -77,6 +81,7 @@ public abstract class Figure {
      * так получится сравнивать абсолютно разные классы , а именно параметры классов
      * изначально я через тостринг начал сравнивать с помощью contains  но совсем забыл про то что можно также переопределить
      * методы хеш код и  экуалс для удобства
+     *
      * @return
      */
     @Override
@@ -87,6 +92,7 @@ public abstract class Figure {
 
     /**
      * переопределим метод toString  от класса Object для удобстав вывода
+     *
      * @return
      */
     @Override

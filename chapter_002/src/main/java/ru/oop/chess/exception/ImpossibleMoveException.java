@@ -3,6 +3,7 @@ package ru.oop.chess.exception;
 /**
  * ошибка фигура туда пойти не может
  */
+
 public class ImpossibleMoveException extends UnsupportedOperationException {
 
 

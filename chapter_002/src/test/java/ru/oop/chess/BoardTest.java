@@ -4,10 +4,10 @@ import org.junit.Test;
 import ru.oop.chess.exception.ImpossibleMoveException;
 
 import static org.junit.Assert.assertThat;
-
 import static org.hamcrest.Matchers.is;
 
 public class BoardTest {
+
     @Test
     public void testSlonadd() throws ImpossibleMoveException {
         Board board = new Board();
