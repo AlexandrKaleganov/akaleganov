@@ -26,16 +26,11 @@ public class Slon extends Figure {
         int y = source.getY();
         boolean exit = true;
         for (int i = 0; i < result.length; i++) {
-            if (source.getX() < dest.getX() && source.getY() < dest.getY()) {
-                result[i] = new Cell(x++, y++);
-            } else if (source.getX() > dest.getX() && source.getY() > dest.getY()) {
-                result[i] = new Cell(x--, y--);
-            } else if (source.getX() < dest.getX() && source.getY() > dest.getY()) {
-                result[i].setX(x++);
-                result[i].setY(y--);
-            } else if (source.getX() > dest.getX() && source.getY() < dest.getY()) {
-                result[i].setX(x--);
-                result[i].setY(y++);
+            if (source.hashCode() == dest.hashCode()) {
+                result[0] = source;
+                break;
+            } else if (source.getX() != dest.getX() && source.getY() != dest.getY()) {
+                result[i] = new Cell(x < dest.getX() ? x++ : x--, y < dest.getY() ? y++ : y--);
             }
             if (x == dest.getX() && y != dest.getY() || x != dest.getX() && y == dest.getY()) {
                 exit = false;

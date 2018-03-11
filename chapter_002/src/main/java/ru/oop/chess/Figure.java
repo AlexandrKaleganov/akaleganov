@@ -86,8 +86,7 @@ public abstract class Figure {
      */
     @Override
     public int hashCode() {
-        int res = this.begincoordinat.getX() * 10 + this.begincoordinat.getY();
-        return res;
+        return this.begincoordinat.getX() * 10 + this.begincoordinat.getY();
     }
 
     /**

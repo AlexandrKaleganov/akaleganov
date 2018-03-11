@@ -27,11 +27,26 @@ public class Ladia extends Figure {
      */
     public Cell[] way(Cell source, Cell dest) throws ImpossibleMoveException {
         Cell[] result = new Cell[8];
-//        if (source.x)
-//        for (int i = 0; i < ; i++) {
-//
-//        }
-        return result;
+        int x = source.getX();
+        int y = source.getY();
+        boolean exit = true;
+        for (int i = 0; i < result.length; i++) {
+            if (source.hashCode() == dest.hashCode()) {
+                result[0] = source;
+                break;
+            } else if (source.getX() != dest.getX() && source.getY() == dest.getY()) {
+                result[i] = new Cell(x < dest.getX() ? x++ : x--, y);
+            } else if (source.getX() == dest.getX() && source.getY() != dest.getY()) {
+                result[i] = new Cell(x, y < dest.getY() ? y++ : y--);
+            } else {
+                exit = false;
+            }
+        }
+        if (exit) {
+            return result;
+        } else {
+            throw new ImpossibleMoveException();
+        }
     }
 
     /**

@@ -14,12 +14,13 @@ public class SlonTest {
     @Test
     public void slonReturnwayValid() {
         Slon slon = new Slon(new Cell(2, 2));
-        Cell[] wayslon = slon.way(new Cell(2, 2), new Cell(8, 8));
-        assertThat(wayslon[7].hashCode(), is(new Cell(8, 8).hashCode()));
+
+        Cell[] wayslon = slon.way(new Cell(2, 2), new Cell(5, 5));
+        assertThat(wayslon[0].hashCode(), is(new Cell(2, 2).hashCode()));
     }
 
     @Test
     public void slonReturnwayNoValid() {
-        Cell[] wayslon = new Slon().way(new Cell(1, 2), new Cell(8, 8));
+        Cell[] wayslon = new Slon().way(new Cell(1, 2), new Cell(8, 1));
     }
 }
