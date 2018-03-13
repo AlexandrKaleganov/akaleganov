@@ -54,4 +54,5 @@ public class Slon extends Figure {
         Slon slon = new Slon(dest);
         return slon;
     }
+
 }

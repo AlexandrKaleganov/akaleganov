@@ -7,7 +7,7 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 public class BoardTest {
-    public static Board BeoardAllFigureReturn(){
+    public  Board BeoardAllFigureReturn(){
         Board board = new Board();
         Slon slon = new Slon(new Cell(1, 1));
         Slon slon2 = new Slon(new Cell(1, 1));
@@ -22,13 +22,13 @@ public class BoardTest {
 
     @Test
     public void testSlonaddmove() throws ImpossibleMoveException {
-        Board board = BeoardAllFigureReturn();
+        Board board = this.BeoardAllFigureReturn();
         board.move(new Cell(2, 2), new Cell(8, 8));
         assertThat(board.getFigures()[1].hashCode(), is(new Cell(8, 8).hashCode()));
     }
     @Test
     public void testLadiaddmove() throws ImpossibleMoveException {
-        Board board = BeoardAllFigureReturn();
+        Board board = this.BeoardAllFigureReturn();
         board.move(new Cell(5, 5), new Cell(5,8));
         assertThat(board.getFigures()[2].hashCode(), is(new Cell(5, 8).hashCode()));
     }

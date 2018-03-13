@@ -19,7 +19,7 @@ public class Board {
             if (!newFigure.equals(figures[i])) {
                 add = true;
             } else if (newFigure.equals(figures[i])) {
-                System.out.println("извините, данная клетка " + figures[i] + "занята другой  фигурой " + figures[i].getClass() + ", фигуру нельзя поставить на клетку");
+                System.out.println("извините, данная клетка, " + figures[i] + ", занята другой  фигурой " + figures[i].getClass() + ", фигуру нельзя поставить на клетку");
                 add = false;
                 break;
             }
@@ -34,7 +34,7 @@ public class Board {
         int index = 0;
         boolean expected = false;
         for (int i = 0; i < figures.length; i++) {
-            if (figures[i].hashCode() == source.hashCode()) {
+            if (figures[i] != null && figures[i].hashCode() == source.hashCode()) {
                 index = i;                                            //запомним нужный  индекс элемента чтобы не бегать по массиву
                 expected = true;
                 cellWAY = figures[i].way(source, dest);
@@ -43,7 +43,7 @@ public class Board {
                 expected = false;
             }
         }
-        //проверяем нет ли на пути вигур
+        //проверяем нет ли на пути фигур
         if (expected) {
             for (int i = 0; i < figures.length; i++) {
                 if (cellWAY[1] == null) {
