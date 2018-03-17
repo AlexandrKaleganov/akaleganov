@@ -19,6 +19,12 @@ public class BoardTest {
         board.add(ladia);
         return board;
     }
+    @Test
+    public void testLadiaddmove() throws ImpossibleMoveException {
+        Board board = this.BeoardAllFigureReturn();
+        board.move(new Cell(5, 5), new Cell(5,8));
+        assertThat(board.getFigures()[2].hashCode(), is(new Cell(5, 8).hashCode()));
+    }
 
     @Test
     public void testSlonaddmove() throws ImpossibleMoveException {
@@ -26,10 +32,5 @@ public class BoardTest {
         board.move(new Cell(2, 2), new Cell(8, 8));
         assertThat(board.getFigures()[1].hashCode(), is(new Cell(8, 8).hashCode()));
     }
-    @Test
-    public void testLadiaddmove() throws ImpossibleMoveException {
-        Board board = this.BeoardAllFigureReturn();
-        board.move(new Cell(5, 5), new Cell(5,8));
-        assertThat(board.getFigures()[2].hashCode(), is(new Cell(5, 8).hashCode()));
-    }
+
 }
