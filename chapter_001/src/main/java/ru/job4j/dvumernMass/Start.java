@@ -13,6 +13,6 @@ public class Start {
         };
         int proverka = new MetodReshenia().returnresult(mass);
         System.out.println(" ");
-        System.out.println("должно получиться 12 " + proverka);
+        System.out.println("должно получиться  " + proverka);
     }
 }
