@@ -1,5 +1,8 @@
 package ru.oop.bankomat;
 
+/**
+ * банкомат дающий сдачу
+ */
 public class Bankomat {
 
     public int[] changes(int value, int price) {

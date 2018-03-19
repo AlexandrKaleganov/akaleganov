@@ -1,4 +1,7 @@
 package ru.oop.bankomat;
+/**
+ * тест банкомат
+ */
 
 import org.junit.Test;
 import static org.hamcrest.Matchers.is;
