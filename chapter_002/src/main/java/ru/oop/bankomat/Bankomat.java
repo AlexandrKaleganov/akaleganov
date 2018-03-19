@@ -29,5 +29,4 @@ public class Bankomat {
         }
         return result;
     }
-
 }
