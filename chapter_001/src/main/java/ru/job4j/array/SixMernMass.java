@@ -52,6 +52,6 @@ public class SixMernMass {
                 res = 1;
             }
         } while (a < sizeArr);
-        System.out.println(SixMass[4][4][4][4][4][4]);
+        System.out.println(SixMass[1][1][1][1][1][1]);
     }
 }
