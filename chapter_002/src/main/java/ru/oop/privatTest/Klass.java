@@ -7,6 +7,7 @@ public class Klass {
         this.spisok[i++] = student;
         student.say("sada");
         student.her();
+
     }
      public Klass(){
 
