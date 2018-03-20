@@ -29,6 +29,9 @@ public class BoardTest {
     @Test
     public void testSlonaddmove() throws ImpossibleMoveException {
         Board board = this.BeoardAllFigureReturn();
+        if (board.getFigures()[0].equals(new Cell(1, 1))){
+            System.out.println("hf,jnftn");
+        }
         board.move(new Cell(2, 2), new Cell(8, 8));
         assertThat(board.getFigures()[1].hashCode(), is(new Cell(8, 8).hashCode()));
     }

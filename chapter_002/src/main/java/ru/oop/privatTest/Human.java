@@ -12,6 +12,6 @@ abstract class Human {
     public static void mens(){
 
     }
-    abstract void mensh2();
+
 
 }

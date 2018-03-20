@@ -7,8 +7,11 @@ import java.util.Scanner;
 
 public class Massrevers {
     static void returnReversArray(int[] arr){
+        int temp;
         for (int i = arr.length-1, j = 0; i >=arr.length/2 ; i--,j++) {
+            temp = arr[j];
             arr[j] = arr[i];
+            arr[i] = temp;
         }
     }
     public static void main(String[] args) {

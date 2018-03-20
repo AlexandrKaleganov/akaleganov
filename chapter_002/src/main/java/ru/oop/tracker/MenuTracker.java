@@ -16,6 +16,7 @@ class EditItemsclass extends BaseAction {
         String id = input.inputCommand("Введите id заявки, которую вы хтите изменить");
         Items items = new Items(input.inputCommand("Введите новое им заявки"), input.inputCommand("Введите новое описание заявки"));
         tracker.replace(id, items);
+        MenuTracker rt = new MenuTracker();
     }
 }
 
@@ -25,7 +26,7 @@ class EditItemsclass extends BaseAction {
 public class MenuTracker {
     private Input input;
     private Tracker tracker;
-    private UserAction[] actions = new UserAction[7];
+    private  UserAction[] actions = new UserAction[7];
     private Output output = new OutConsole();
     private int position = 0;
     public MenuTracker(Input input, Tracker tracker) {
@@ -38,6 +39,11 @@ public class MenuTracker {
 
     public UserAction[] getActions() {
         return actions;
+    }
+    public static void fillactions(){
+        MenuTracker tr = new MenuTracker();
+        Deleteitems items = new MenuTracker.Deleteitems(3, "Delete item");
+
     }
 
     public void fillAction() {

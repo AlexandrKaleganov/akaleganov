@@ -68,7 +68,7 @@ public abstract class Figure {
         }
         Figure valid = (Figure) obj;
         if (obj != null && begincoordinat.getX() == valid.begincoordinat.getX() && begincoordinat.getY() == valid.begincoordinat.getY()) {
-            test = true;
+            test = false;
         } else {
             test = false;
         }
