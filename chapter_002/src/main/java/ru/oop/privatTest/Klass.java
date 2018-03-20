@@ -12,4 +12,9 @@ public class Klass {
      public Klass(){
 
     }
+
+    public static void main(String[] args) {
+        Klass a = new Klass(new Student("vasa", 12));
+        a.spisok[0].say("wqer");
+    }
 }
