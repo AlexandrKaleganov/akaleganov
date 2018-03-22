@@ -1,18 +1,17 @@
 package ru.collection.startcollection;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 import static java.lang.String.format;
 
 /**
  * /тестирование интерфеса List
  */
-public class StertCollection {
+public class CollectionList {
     static class Node {
         Node next;
     }
+
     public static void main(String[] args) {
 
         Node first = new Node();
@@ -41,7 +40,21 @@ public class StertCollection {
         System.out.println(format("Выводим интекс элемента, начинаем искать с конца  = %s", list.lastIndexOf(2)));
         list.remove(5); //удаляем объект по индексу
         System.out.println(format("Выводим интекс элемента, начинаем искать с конца  = %s", list.lastIndexOf(2)));
-        list.remove(testint); //удаляем объект
+        list.remove(Integer.valueOf(testint)); //удаляем объект
         System.out.println(format("Выводим интекс элемента, начинаем искать сначала  = %s", list.indexOf(2)));
+        NavigableSet<Integer> test = new TreeSet<Integer>();
+        test.add(1);
+        test.add(2);
+        test.add(3);
+        test.add(5);
+        test.add(6);
+        System.out.println(format("выводим E ceiling(N объект)   = %s", test.ceiling(4)));
+        System.out.println(format("выводим test.higher   = %s", test.higher(5)));
+        System.out.println(format("выводим test.lower(5)   = %s", test.lower(5)));
+        Iterator<Integer> iterator  = test.iterator();
+        while (iterator.hasNext()){
+            System.out.println(format("ща поржом %s", iterator.next()));
+        }
     }
+
 }
