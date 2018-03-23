@@ -52,15 +52,14 @@ public class Cell {
     @Override
     public boolean equals(Object obj) {
         boolean test = true;
-        if (obj == this) {
+        if (obj instanceof Cell) {
             test = true;
-        } else {
-            test = false;
-        }
-
-        Cell valid = (Cell) obj;
-        if (obj != null && getX() == valid.getX() && getY() == valid.getY()) {
-            test = true;
+            Cell valid = (Cell) obj;
+            if (obj != null && getX() == valid.getX() && getY() == valid.getY()) {
+                test = true;
+            } else {
+                test = false;
+            }
         } else {
             test = false;
         }

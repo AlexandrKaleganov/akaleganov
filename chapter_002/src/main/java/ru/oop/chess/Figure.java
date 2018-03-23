@@ -63,12 +63,14 @@ public abstract class Figure {
     @Override
     public boolean equals(Object obj) {
         boolean test = true;
-        if (obj == this) {
-            test = true;
-        }
-        Figure valid = (Figure) obj;
-        if (obj != null && begincoordinat.getX() == valid.begincoordinat.getX() && begincoordinat.getY() == valid.begincoordinat.getY()) {
-            test = false;
+        if (obj instanceof Figure) {
+
+            Figure valid = (Figure) obj;
+            if (obj != null && begincoordinat.getX() == valid.begincoordinat.getX() && begincoordinat.getY() == valid.begincoordinat.getY()) {
+                test = true;
+            } else {
+                test = false;
+            }
         } else {
             test = false;
         }
