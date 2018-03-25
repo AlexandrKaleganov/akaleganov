@@ -12,6 +12,7 @@ public class PriorityQueue {
      *
      * @param task задача
      */
+
     public void put(Task task) {
         if (this.tasks.size() == 0) {  // если длинна списка ровна нулю то мы просто добавим элемент
             this.tasks.add(task);

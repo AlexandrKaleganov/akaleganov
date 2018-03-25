@@ -1,6 +1,7 @@
 package ru.collection.search;
 
 public class Task {
+
     private String desc;
     private int prioriti;
 
