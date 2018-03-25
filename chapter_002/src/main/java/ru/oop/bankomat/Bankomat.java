@@ -7,12 +7,7 @@ public class Bankomat {
 
     public int[] changes(int value, int price) {
         int[] zdacha = new int[]{1, 2, 5, 10};
-        int k = 0;
-        try {
-            k = value - price;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        int k = value - price;
         int[] result = new int[30];
         int sdacha_result = 0;
         int j = 0;
