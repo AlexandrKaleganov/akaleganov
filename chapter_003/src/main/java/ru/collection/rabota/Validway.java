@@ -24,7 +24,7 @@ public class Validway {
                 System.exit(0);
             }
             try {
-                returnBuffer = new BufferedReader(new FileReader(way ));
+                returnBuffer = new BufferedReader(new FileReader(way));
                 exit = false;
             } catch (FileNotFoundException e) {
                 System.out.println("файл не найден, у тебя ещё мнооого попыток, или введи exit");

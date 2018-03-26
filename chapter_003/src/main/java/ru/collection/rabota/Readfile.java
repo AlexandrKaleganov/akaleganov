@@ -10,11 +10,12 @@ import java.io.*;
 
 
 public class Readfile implements Inputmenu {
-    private BufferedReader buffer;
+    private BufferedReader buffer = null;
 
     @Override
     public BufferedReader input(String command) {
         System.out.println(command);
-        return buffer = new Validway().inputTestfile();
+        buffer = new Validway().inputTestfile();
+        return buffer;
     }
 }

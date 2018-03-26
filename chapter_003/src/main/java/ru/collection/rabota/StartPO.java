@@ -1,8 +1,8 @@
 package ru.collection.rabota;
 /**
- *  @author Alexande Kaleganov
+ * @author Alexande Kaleganov
  * @since ProgrReadInputFileCONSOLE v.1.0
- *
+ * <p>
  * начало работы программы
  * программа считывает информацию с csv файла,
  * csv файл находится в корне проекта в папке file
@@ -33,6 +33,7 @@ public class StartPO {
         }
 
     }
+
     public static void main(String[] args) {
         StartPO startPO = new StartPO(new Readfile(), new OutputFileconsole());
         startPO.arbeitenProgramm();

@@ -7,6 +7,7 @@ package ru.collection.rabota;
 import ru.collection.rabota.interfaceprogramm.OutputInterfac;
 
 import java.io.BufferedReader;
+
 public class OutputFileconsole implements OutputInterfac {
 
     @Override
@@ -16,7 +17,7 @@ public class OutputFileconsole implements OutputInterfac {
             while ((lessen = readFile.readLine()) != null) {
                 System.out.println(lessen);
             }
-            System.out.println( lessen );
+            System.out.println(lessen);
         } catch (Exception e) {
             e.printStackTrace();
         }
