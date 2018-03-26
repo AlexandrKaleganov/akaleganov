@@ -51,8 +51,8 @@ public class CollectionList {
         System.out.println(format("выводим E ceiling(N объект)   = %s", test.ceiling(4)));
         System.out.println(format("выводим test.higher   = %s", test.higher(5)));
         System.out.println(format("выводим test.lower(5)   = %s", test.lower(5)));
-        Iterator<Integer> iterator  = test.iterator();
-        while (iterator.hasNext()){
+        Iterator<Integer> iterator = test.iterator();
+        while (iterator.hasNext()) {
             System.out.println(format("ща поржом %s", iterator.next()));
         }
     }

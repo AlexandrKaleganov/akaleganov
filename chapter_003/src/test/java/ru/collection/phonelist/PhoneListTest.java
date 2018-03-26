@@ -1,4 +1,4 @@
-package ru.collection.phoneList;
+package ru.collection.phonelist;
 
 import org.junit.Test;
 import java.util.List;

@@ -1,4 +1,4 @@
-package ru.collection.phoneList;
+package ru.collection.phonelist;
 
 /**
  * @autor Alexander
@@ -9,7 +9,8 @@ public class Person {
     private String surname;
     private String phone;
     private String adres;
-    public Person(String name, String surname, String phone,String adres){
+
+    public Person(String name, String surname, String phone, String adres) {
         this.name = name;
         this.surname = surname;
         this.adres = adres;

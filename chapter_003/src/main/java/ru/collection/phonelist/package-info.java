@@ -1,4 +1,4 @@
-package ru.collection.phoneList;
+package ru.collection.phonelist;
 /**
  * Программа телефонный справочник, думал что мы
  * будем для неё использовать коллекцию типа ключ-значение
