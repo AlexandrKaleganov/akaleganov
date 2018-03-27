@@ -7,7 +7,6 @@ package ru.collection.rabota;
 
 import java.io.*;
 
-
 public class Validway {
 
     public BufferedReader inputTestfile() {

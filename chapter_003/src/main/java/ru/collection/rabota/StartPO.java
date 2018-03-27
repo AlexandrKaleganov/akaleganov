@@ -15,9 +15,11 @@ import ru.collection.rabota.interfaceprogramm.OutputInterfac;
 
 import java.io.FileNotFoundException;
 
+
 public class StartPO {
     private final Inputmenu rid;
     private final OutputInterfac outt;
+
 
     StartPO(Inputmenu rid, OutputInterfac outt) {
         this.rid = rid;
@@ -25,11 +27,13 @@ public class StartPO {
     }
 
     public void arbeitenProgramm() {
+        Redactorcoda redactor = new Redactorcoda();
         try {
-            this.outt.conclusion(this.rid.input("введите путь к файлу формата \"file//google.csv \", или введите \"exit\" для выхода из программы"));
+            redactor.formatADDfullist(this.rid.input());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        this.outt.conclusion(redactor.getFulllist());
 
     }
 
@@ -37,4 +41,6 @@ public class StartPO {
         StartPO startPO = new StartPO(new Readfile(), new OutputFileconsole());
         startPO.arbeitenProgramm();
     }
+
+
 }

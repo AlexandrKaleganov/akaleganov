@@ -1,8 +1,7 @@
 package ru.collection.rabota.interfaceprogramm;
 
-import java.io.BufferedReader;
+import java.util.List;
 
 public interface OutputInterfac {
-
-    public void conclusion(BufferedReader readFile);
+    public void conclusion(List<String> readFile);
 }

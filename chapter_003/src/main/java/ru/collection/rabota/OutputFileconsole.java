@@ -4,21 +4,16 @@ package ru.collection.rabota;
  * надо будет додумать как раскдывать файл по таблице
  */
 
+
 import ru.collection.rabota.interfaceprogramm.OutputInterfac;
 
 import java.io.BufferedReader;
+import java.util.List;
 
 public class OutputFileconsole implements OutputInterfac {
 
     @Override
-    public void conclusion(BufferedReader readFile) {
-        String lessen = null;
-        try {
-            while ((lessen = readFile.readLine()) != null) {
-                System.out.println(lessen);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void conclusion(List<String> readFile) {
+        System.out.println(readFile);
     }
 }

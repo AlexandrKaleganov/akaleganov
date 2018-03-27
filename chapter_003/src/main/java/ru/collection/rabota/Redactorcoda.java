@@ -4,12 +4,11 @@ package ru.collection.rabota;
  */
 
 import java.io.BufferedReader;
-
 import java.util.Arrays;
 import java.util.LinkedList;
 
 
-public class Radactorcoda {
+public class Redactorcoda {
     private LinkedList<String> fulllist = new LinkedList<>();
 
     public void formatADDfullist(BufferedReader readFile) {
@@ -24,14 +23,16 @@ public class Radactorcoda {
         }
     }
 
-
-    public static void main(String[] args) {
-        Radactorcoda redactor = new Radactorcoda();
-        Readfile rid = new Readfile();
-        redactor.formatADDfullist(rid.input("введите file//google.csv"));
-        System.out.println(redactor.fulllist);
-
-            }
-        }
+    public LinkedList<String> getFulllist() {
+        return fulllist;
+    }
+//    public static void main(String[] args) {
+//        Redactorcoda redactor = new Redactorcoda();
+//        Readfile rid = new Readfile();
+//        redactor.formatADDfullist(rid.input());
+//        System.out.println(redactor.fulllist);
+//
+//    }
+}
 
 
