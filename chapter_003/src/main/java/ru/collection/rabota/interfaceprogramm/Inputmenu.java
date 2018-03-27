@@ -5,5 +5,6 @@ import java.io.FileNotFoundException;
 
 public interface Inputmenu {
 
+
     public BufferedReader input() throws FileNotFoundException;
 }

@@ -27,15 +27,15 @@ public class StartPO {
     }
 
     public void arbeitenProgramm() {
-        Redactorcoda redactor = new Redactorcoda();
+        Redactorcoda redactor = null;
         try {
-            redactor.formatADDfullist(this.rid.input());
+            redactor = new Redactorcoda(this.rid.input());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        this.outt.conclusion(redactor.getFulllist());
 
     }
+
 
     public static void main(String[] args) {
         StartPO startPO = new StartPO(new Readfile(), new OutputFileconsole());

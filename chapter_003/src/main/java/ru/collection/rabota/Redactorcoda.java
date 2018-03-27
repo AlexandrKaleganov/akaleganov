@@ -1,6 +1,7 @@
 package ru.collection.rabota;
 /**
  * в этом классе я попробую раскидать входящую строку по параметрам ключ - значение
+ * в данном классе у нас будет осуществляться основная работа программы
  */
 
 import java.io.BufferedReader;
@@ -10,8 +11,9 @@ import java.util.LinkedList;
 
 public class Redactorcoda {
     private LinkedList<String> fulllist = new LinkedList<>();
+    private boolean exitProgramm = true;
 
-    public void formatADDfullist(BufferedReader readFile) {
+    public Redactorcoda(BufferedReader readFile) {
         String lessen = null;
 
         try {
@@ -26,13 +28,14 @@ public class Redactorcoda {
     public LinkedList<String> getFulllist() {
         return fulllist;
     }
-//    public static void main(String[] args) {
-//        Redactorcoda redactor = new Redactorcoda();
-//        Readfile rid = new Readfile();
-//        redactor.formatADDfullist(rid.input());
-//        System.out.println(redactor.fulllist);
-//
-//    }
+
+    public boolean getExitProgramm() {
+        return exitProgramm;
+    }
+
+    public void setExitProgramm() {
+        this.exitProgramm = false;
+    }
 }
 
 
