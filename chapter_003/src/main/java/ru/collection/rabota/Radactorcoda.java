@@ -5,12 +5,12 @@ package ru.collection.rabota;
 
 import java.io.BufferedReader;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 
 public class Radactorcoda {
-    private ArrayList<String> fulllist = new ArrayList<>();
+    private LinkedList<String> fulllist = new LinkedList<>();
 
     public void formatADDfullist(BufferedReader readFile) {
         String lessen = null;

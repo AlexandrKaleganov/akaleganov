@@ -17,7 +17,6 @@ public class OutputFileconsole implements OutputInterfac {
             while ((lessen = readFile.readLine()) != null) {
                 System.out.println(lessen);
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }

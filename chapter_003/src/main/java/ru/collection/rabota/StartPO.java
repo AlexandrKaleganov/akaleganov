@@ -24,7 +24,6 @@ public class StartPO {
         this.outt = outt;
     }
 
-
     public void arbeitenProgramm() {
         try {
             this.outt.conclusion(this.rid.input("введите путь к файлу формата \"file//google.csv \", или введите \"exit\" для выхода из программы"));

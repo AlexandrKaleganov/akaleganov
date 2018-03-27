@@ -8,7 +8,6 @@ import ru.collection.rabota.interfaceprogramm.Inputmenu;
 
 import java.io.*;
 
-
 public class Readfile implements Inputmenu {
     private BufferedReader buffer = null;
 
