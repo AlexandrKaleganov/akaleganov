@@ -1,7 +1,6 @@
 package ru.collection.rabota;
 /**
- * этот класс будет вызывать мобъект класса Validway и принимать готовый буфер,
- * то что будет происходить в самом классе проверка пути имя говорит само за себя
+ * меню ввода файла
  */
 
 import ru.collection.rabota.interfaceprogramm.Inputmenu;
