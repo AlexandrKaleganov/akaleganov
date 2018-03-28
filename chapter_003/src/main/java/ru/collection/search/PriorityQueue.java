@@ -14,16 +14,10 @@ public class PriorityQueue {
      */
 
     public void put(Task task) {
-        if (this.tasks.size() == 0) {  // если длинна списка ровна нулю то мы просто добавим элемент
+        if (this.tasks.size() == 0 || this.tasks.getLast().getPrioriti() < task.getPrioriti()) {
             this.tasks.add(task);
-        } else if (this.tasks.size() < task.getPrioriti()) {  //иначе если новый нужный индекс больше длинны массива, то:
-            if (this.tasks.getLast().getPrioriti() < task.getPrioriti()) { //мы проверим чья позиция больше
-                this.tasks.add(task);        //если позиция нового элемента больше то мы добавим его в конец списка
-            } else { //иначе мы поставим его вместо последнего элемента а последний элемент двинем
-                this.tasks.add(this.tasks.size() - 1, task);
-            }
         } else {
-            this.tasks.add(task.getPrioriti() - 1, task);
+            this.tasks.add(this.tasks.size() - 1, task);
         }
     }
 

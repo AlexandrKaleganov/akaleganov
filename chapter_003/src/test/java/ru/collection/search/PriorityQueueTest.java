@@ -7,6 +7,7 @@ import java.util.Iterator;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+
 public class PriorityQueueTest {
     @Test
     public void whenHigherPriority() {
@@ -16,6 +17,7 @@ public class PriorityQueueTest {
         queue.put(new Task("middle", 3));
         Task result = queue.take();
         assertThat(result.getDesc(), is("urgent"));
+
     }
 }
 
