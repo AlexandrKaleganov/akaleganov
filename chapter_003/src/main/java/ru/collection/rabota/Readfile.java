@@ -11,7 +11,6 @@ import java.io.*;
 
 public class Readfile implements Inputmenu {
 
-
     @Override
     public BufferedReader input() {
         BufferedReader buffer = null;

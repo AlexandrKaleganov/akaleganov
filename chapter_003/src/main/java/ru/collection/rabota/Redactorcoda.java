@@ -11,9 +11,8 @@ import java.util.LinkedList;
 
 public class Redactorcoda {
     private LinkedList<String> fulllist = new LinkedList<>();
-    private boolean exitProgramm = true;
 
-    public Redactorcoda(BufferedReader readFile) {
+    public void addBuferToList(BufferedReader readFile) {
         String lessen = null;
 
         try {
@@ -29,13 +28,6 @@ public class Redactorcoda {
         return fulllist;
     }
 
-    public boolean getExitProgramm() {
-        return exitProgramm;
-    }
-
-    public void setExitProgramm() {
-        this.exitProgramm = false;
-    }
 }
 
 

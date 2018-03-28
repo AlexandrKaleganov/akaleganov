@@ -19,7 +19,11 @@ import java.io.FileNotFoundException;
 public class StartPO {
     private final Inputmenu rid;
     private final OutputInterfac outt;
+    Redactorcoda redactor = new Redactorcoda();
 
+    private static final String ADD = "1";
+    private static final String SHOW_ALL = "2";
+    private static final String EXIT = "3";
 
     StartPO(Inputmenu rid, OutputInterfac outt) {
         this.rid = rid;
@@ -27,12 +31,16 @@ public class StartPO {
     }
 
     public void arbeitenProgramm() {
-        Redactorcoda redactor = null;
         try {
-            redactor = new Redactorcoda(this.rid.input());
+            redactor.addBuferToList(this.rid.input());
+            System.out.println("Читаю и закидываю в коллекцию");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+
         }
+        System.out.println("вывожу в консоль");
+        this.outt.conclusion(redactor.getFulllist());
+
 
     }
 
