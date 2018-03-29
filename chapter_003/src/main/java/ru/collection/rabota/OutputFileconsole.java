@@ -7,7 +7,6 @@ package ru.collection.rabota;
 
 import ru.collection.rabota.interfaceprogramm.OutputInterfac;
 
-import java.io.BufferedReader;
 import java.util.List;
 
 public class OutputFileconsole implements OutputInterfac {

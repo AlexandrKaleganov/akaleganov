@@ -5,7 +5,6 @@ package ru.collection.rabota;
 
 import ru.collection.rabota.interfaceprogramm.Inputmenu;
 
-import java.io.*;
 import java.util.Scanner;
 
 
