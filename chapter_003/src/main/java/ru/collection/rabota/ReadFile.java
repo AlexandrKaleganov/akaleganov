@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 
-public class Redactorcoda {
+public class ReadFile {
     private LinkedList<String> fulllist = new LinkedList<>();
 
     public void addBuferToList(BufferedReader readFile) {
