@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class InputFile implements Inputmenu {
 Scanner scanner = new Scanner(System.in);
     @Override
+
     public String input(String command) {
         if (command!=null){
             System.out.println(command);
