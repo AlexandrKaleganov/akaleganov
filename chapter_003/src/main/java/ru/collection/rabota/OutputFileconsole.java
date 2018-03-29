@@ -12,7 +12,7 @@ import java.util.List;
 public class OutputFileconsole implements OutputInterfac {
 
     @Override
-    public void conclusion(List<String> readFile) {
+    public void conclusion(List readFile) {
         System.out.println(readFile);
     }
 }

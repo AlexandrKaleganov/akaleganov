@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface OutputInterfac {
 
-    public void conclusion(List<String> readFile);
+    public void conclusion(List readFile);
 }

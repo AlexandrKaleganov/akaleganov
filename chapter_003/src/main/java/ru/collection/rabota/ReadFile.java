@@ -3,13 +3,12 @@ package ru.collection.rabota;
  * чтение файла
  */
 
+import com.sun.xml.internal.fastinfoset.util.CharArray;
 import jdk.internal.util.xml.impl.Input;
 import ru.collection.rabota.interfaceprogramm.Inputmenu;
 import ru.collection.rabota.interfaceprogramm.OutputInterfac;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -24,22 +23,29 @@ public class ReadFile {
         boolean exit = true;
         Scanner scan = null;
         String list = null;
+        BufferedReader bufer =null;
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
         do {
             if (way.contains("exit")) {
                 System.exit(0);
             } else {
                 try {
-                    scan = new Scanner(new File(way));
+                    bufer = new BufferedReader(new FileReader(way));
                     System.out.println("Файл найден, начинаю читать");
                     exit = false;
-                } catch (FileNotFoundException e) {
-                    this.addBuferToList(this.input.input("файл не найден, повторите попытку ввода, или введите \"exit\", для выхода из программы"));
-                }
+            } catch (FileNotFoundException e) {
+                this.addBuferToList(this.input.input("файл не найден, повторите попытку ввода, или введите \"exit\", для выхода из программы"));
             }
-        } while (exit);
-        while (scan.hasNextLine()) {
-            fulllist.add(scan.nextLine());
-        }
+        } } while (exit);
+        String c;
+            try {
+                while((c=bufer.readLine())!=null){
+                    this.fulllist.addAll(c.)
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
     }
 
     public LinkedList<String> getFulllist() {
