@@ -18,5 +18,4 @@ Scanner scanner = new Scanner(System.in);
         System.out.println("укажите путь к файлу, паример \"file//google.csv\"");}
         return scanner.nextLine();
     }
-
 }
