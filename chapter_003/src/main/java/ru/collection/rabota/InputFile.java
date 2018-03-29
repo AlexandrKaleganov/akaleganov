@@ -8,7 +8,7 @@ import ru.collection.rabota.interfaceprogramm.Inputmenu;
 import java.io.*;
 
 
-public class Readfile implements Inputmenu {
+public class InputFile implements Inputmenu {
 
     @Override
     public BufferedReader input() {
