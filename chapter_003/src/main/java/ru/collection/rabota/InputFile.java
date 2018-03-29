@@ -6,16 +6,18 @@ package ru.collection.rabota;
 import ru.collection.rabota.interfaceprogramm.Inputmenu;
 
 import java.io.*;
+import java.util.Scanner;
 
 
 public class InputFile implements Inputmenu {
-
+Scanner scanner = new Scanner(System.in);
     @Override
-    public BufferedReader input() {
-        BufferedReader buffer = null;
-        System.out.println("укажите путь к файлу, паример \"file//google.csv\"");
-        buffer = new Validway().inputTestfile();
-        return buffer;
+    public String input(String command) {
+        if (command!=null){
+            System.out.println(command);
+        } else {
+        System.out.println("укажите путь к файлу, паример \"file//google.csv\"");}
+        return scanner.nextLine();
     }
 
 }
