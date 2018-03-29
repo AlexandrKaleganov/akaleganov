@@ -19,7 +19,7 @@ import java.io.FileNotFoundException;
 public class StartPO {
     private final Inputmenu rid;
     private final OutputInterfac outt;
-    Redactorcoda redactor = new Redactorcoda();
+    ReadFile redactor = new ReadFile();
 
     private static final String ADD = "1";
     private static final String SHOW_ALL = "2";
@@ -46,7 +46,7 @@ public class StartPO {
 
 
     public static void main(String[] args) {
-        StartPO startPO = new StartPO(new Readfile(), new OutputFileconsole());
+        StartPO startPO = new StartPO(new InputFile(), new OutputFileconsole());
         startPO.arbeitenProgramm();
     }
 
