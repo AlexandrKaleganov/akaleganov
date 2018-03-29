@@ -1,12 +1,11 @@
-package ru.collection.rabota;
+package ru.collection.chtenieFile;
 /**
  * чтение файла
  */
 
-import ru.collection.rabota.interfaceprogramm.Inputmenu;
+import ru.collection.chtenieFile.interfaceprogramm.Inputmenu;
 
 import java.io.*;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 

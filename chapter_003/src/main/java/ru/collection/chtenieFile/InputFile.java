@@ -1,9 +1,9 @@
-package ru.collection.rabota;
+package ru.collection.chtenieFile;
 /**
  * меню ввода файла
  */
 
-import ru.collection.rabota.interfaceprogramm.Inputmenu;
+import ru.collection.chtenieFile.interfaceprogramm.Inputmenu;
 
 import java.util.Scanner;
 
