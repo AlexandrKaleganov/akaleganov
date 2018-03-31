@@ -4,8 +4,10 @@ package ru.oop.chess;
  */
 
 import org.junit.Test;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
+
 public class SlonTest {
 
     /**
@@ -14,7 +16,7 @@ public class SlonTest {
     @Test
     public void slonReturnwayValid() {
         Slon slon = new Slon(new Cell(2, 2));
-        if (slon.equals(new Cell(2, 2))){
+        if (slon.equals(new Cell(2, 2))) {
             System.out.println("заработало");
         }
         Cell[] wayslon = slon.way(new Cell(2, 2), new Cell(5, 5));

@@ -5,15 +5,18 @@ abstract class Human {
     private int rost;
     private static int k = 2;
 
-    public Human(String name, int rost){
+    public Human(String name, int rost) {
         this.name = name;
         this.rost = rost;
     }
+
     abstract void say(String slovo);
-    public static void mens(){
+
+    public static void mens() {
 
     }
-    public static String statTest(){
+
+    public static String statTest() {
         return "ntcn";
     }
 

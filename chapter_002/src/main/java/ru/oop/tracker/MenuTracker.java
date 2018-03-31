@@ -26,9 +26,10 @@ class EditItemsclass extends BaseAction {
 public class MenuTracker {
     private Input input;
     private Tracker tracker;
-    private  UserAction[] actions = new UserAction[7];
+    private UserAction[] actions = new UserAction[7];
     private Output output = new OutConsole();
     private int position = 0;
+
     public MenuTracker(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
@@ -40,7 +41,8 @@ public class MenuTracker {
     public UserAction[] getActions() {
         return actions;
     }
-    public static void fillactions(){
+
+    public static void fillactions() {
         MenuTracker tr = new MenuTracker();
         Deleteitems items = new MenuTracker.Deleteitems(3, "Delete item");
 
@@ -55,20 +57,25 @@ public class MenuTracker {
         this.actions[position++] = new Finditemsbyname(5, "Find items by name");
         this.actions[position++] = new Exitprogramm(6, "Exit Program");
     }
+
     public void addAction(UserAction action) {
         this.actions[position++] = action;
     }
+
     public static int[] returnFINALmenu(UserAction[] actions) {
         int[] result = new int[actions.length];
         for (int i = 0; i < actions.length; i++) {
             result[i] = i;
-        } return result;
+        }
+        return result;
     }
+
     public void select(int key) {
         this.actions[key].execute(this.input, this.tracker);
     }
+
     public void shou() {
-        for (UserAction action:this.actions) {
+        for (UserAction action : this.actions) {
             if (action != null) {
                 output.outthet(action.info().toString());
             }
@@ -103,6 +110,7 @@ public class MenuTracker {
             }
         }
     }
+
     private class Exitprogramm extends BaseAction {
         Exitprogramm(int key, String name) {
             super(key, name);
@@ -121,7 +129,7 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            for (Items items:tracker.findAll()) {
+            for (Items items : tracker.findAll()) {
                 if (items != null) {
                     output.outthet(items.toString());
                 }

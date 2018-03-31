@@ -2,25 +2,28 @@ package ru.oop.privatTest;
 
 public class Student extends Human {
 
-    public Student(String name, int rost){
+    public Student(String name, int rost) {
         super(name, rost);
     }
-//    public static String statTest(int k){
+
+    //    public static String statTest(int k){
 //        return "rer";
 //
 //    }
-    public void say(String slovo){
+    public void say(String slovo) {
         System.out.println(slovo);
     }
-    private   void intelect2(){
+
+    private void intelect2() {
     }
 
     public static void main(String[] args) {
-        Student vasia = new Student("sadas",54);
+        Student vasia = new Student("sadas", 54);
         Student.statTest();
         int l = Student.getK();
     }
-    final public void her(){
+
+    final public void her() {
 
     }
 }
