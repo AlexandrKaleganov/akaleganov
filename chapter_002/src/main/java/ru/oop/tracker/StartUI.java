@@ -4,7 +4,6 @@ import ru.oop.tracker.modules.Items;
 import ru.oop.tracker.modules.Tracker;
 
 public class StartUI {
-    private int[] range = MenuTracker.returnFINALmenu(new MenuTracker().getActions());
     private final Tracker tracker;
     private final Input input;
     private final Output output = new OutConsole();
@@ -35,6 +34,8 @@ public class StartUI {
         boolean exit = false;
         MenuTracker menu = new MenuTracker(this.input, this.tracker);
         menu.fillAction();
+         int[] range = menu.returnFINALmenu();
+
         do {
             menu.shou();
             menu.select(input.inputCommand("Select:", range));

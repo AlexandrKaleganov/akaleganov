@@ -2,7 +2,9 @@ package ru.oop.tracker.modules;
 
 import ru.oop.tracker.ConsoleInput;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * Класс итемс это сама заявка, точнее один элемент заявки
@@ -82,11 +84,21 @@ public class Items {
      * не поле created  а new Date(created) - не знаю на сколько правильно написал, но он выводит какую то дату.
      * @return
      */
+//    public String toString() {
+//        return this.id + " -- " + this.name + " -- " + desc + " -- " + new Date(created);
+//    }
+
+
+    @Override
     public String toString() {
-        return this.id + " -- " + this.name + " -- " + desc + " -- " + new Date(created);
+        return "Items{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", desc='" + desc + '\'' +
+                ", created=" + created +
+                ", comments=" + Arrays.toString(comments) +
+                '}';
     }
-
-
 
     /**
      * если я правильно понял мы тут получаем время в милисекундах текущее
@@ -97,4 +109,17 @@ public class Items {
         return k;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Items items = (Items) o;
+        return Objects.equals(id, items.id);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id);
+    }
 }

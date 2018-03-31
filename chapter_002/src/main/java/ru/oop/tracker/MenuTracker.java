@@ -3,6 +3,8 @@ package ru.oop.tracker;
 import ru.oop.tracker.modules.Items;
 import ru.oop.tracker.modules.Tracker;
 
+import java.util.ArrayList;
+
 /**
  * внешний класс
  */
@@ -26,7 +28,7 @@ class EditItemsclass extends BaseAction {
 public class MenuTracker {
     private Input input;
     private Tracker tracker;
-    private UserAction[] actions = new UserAction[7];
+    private ArrayList<UserAction> actions = new ArrayList<>();
     private Output output = new OutConsole();
     private int position = 0;
 
@@ -38,7 +40,7 @@ public class MenuTracker {
     public MenuTracker() {
     }
 
-    public UserAction[] getActions() {
+    public ArrayList<UserAction> getActions() {
         return actions;
     }
 
@@ -49,29 +51,34 @@ public class MenuTracker {
     }
 
     public void fillAction() {
-        this.actions[position++] = new AddItem(0, "Add new Item");
-        this.actions[position++] = new ShouALLitems(1, "Show all items");
-        this.actions[position++] = new EditItemsclass(2, "Edit item");
-        this.actions[position++] = new MenuTracker.Deleteitems(3, "Delete item");
-        this.actions[position++] = new FindByaItemsId(4, "Find item by Id");
-        this.actions[position++] = new Finditemsbyname(5, "Find items by name");
-        this.actions[position++] = new Exitprogramm(6, "Exit Program");
+        this.actions.add(new AddItem(0, "Add new Item"));
+        this.actions.add(new ShouALLitems(1, "Show all items"));
+        this.actions.add(new EditItemsclass(2, "Edit item"));
+        this.actions.add(new MenuTracker.Deleteitems(3, "Delete item"));
+        this.actions.add(new FindByaItemsId(4, "Find item by Id"));
+        this.actions.add(new Finditemsbyname(5, "Find items by name"));
+        this.actions.add(new Exitprogramm(6, "Exit Program"));
     }
 
     public void addAction(UserAction action) {
-        this.actions[position++] = action;
+        this.actions.add(action);
     }
 
-    public static int[] returnFINALmenu(UserAction[] actions) {
-        int[] result = new int[actions.length];
-        for (int i = 0; i < actions.length; i++) {
+    /**
+     * метод нужен чтобы знать количество пунктов меню, он возвращает этот массив в StartUI в поле ange
+     * @param
+     * @return
+     */
+    public int[] returnFINALmenu() {
+        int[] result = new int[this.actions.size()];
+        for (int i = 0; i < result.length; i++) {
             result[i] = i;
         }
         return result;
     }
 
     public void select(int key) {
-        this.actions[key].execute(this.input, this.tracker);
+        this.actions.get(key).execute(this.input, this.tracker);
     }
 
     public void shou() {

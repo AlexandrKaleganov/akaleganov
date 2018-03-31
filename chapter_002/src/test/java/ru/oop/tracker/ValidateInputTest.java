@@ -16,7 +16,7 @@ public class ValidateInputTest {
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
 
     @Before
-    public void loadOutput()  {
+    public void loadOutput() {
         System.out.println("execute before method");
         System.setOut(new PrintStream(this.out));
     }
@@ -26,12 +26,15 @@ public class ValidateInputTest {
         System.setOut(this.stdout);
         System.out.println("execute after method");
     }
+
     @Test
     public void whenInvalidInput() {
         ValidateInput input = new ValidateInput(
-                new StubInput(new String[] {"invalid", "1"})
+                new StubInput(new String[]{"invalid", "1"})
         );
-        input.inputCommand("Enter", MenuTracker.returnFINALmenu(new MenuTracker().getActions()));
+        MenuTracker menu = new MenuTracker();
+        menu.fillAction();
+        input.inputCommand("Enter", menu.returnFINALmenu());
         assertThat(
                 this.out.toString(),
                 is(
