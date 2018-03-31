@@ -43,7 +43,7 @@ public class Genericcollection {
             System.out.println(iterator.next());
         }
         System.out.println(users);
-        for (Users user:users) {
+        for (Users user : users) {
             System.out.println(user);
         }
         users.forEach(new Consumer<Users>() {
