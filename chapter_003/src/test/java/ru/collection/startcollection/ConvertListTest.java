@@ -26,12 +26,13 @@ public class ConvertListTest {
         result.addAll(list.toList(array));
         assertThat(expected, is(result));
     }
+
     @Test
-    public void listtoMasstest(){
+    public void listtoMasstest() {
         ConvertList listtoMass = new ConvertList();
 
 
-        List<Integer>  list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
         list.add(3);

@@ -1,7 +1,5 @@
 package ru.collection.startcollection;
 
-import org.omg.CORBA.MARSHAL;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
