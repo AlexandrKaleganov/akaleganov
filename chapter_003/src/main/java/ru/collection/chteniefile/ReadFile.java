@@ -1,9 +1,9 @@
-package ru.collection.chtenieFile;
+package ru.collection.chteniefile;
 /**
  * чтение файла
  */
 
-import ru.collection.chtenieFile.interfaceprogramm.Inputmenu;
+import ru.collection.chteniefile.interfaceprogramm.Inputmenu;
 
 import java.io.*;
 import java.util.Scanner;
