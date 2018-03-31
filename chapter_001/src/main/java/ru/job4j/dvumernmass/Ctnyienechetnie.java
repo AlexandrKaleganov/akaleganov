@@ -1,4 +1,4 @@
-package ru.job4j.dvumernMass;
+package ru.job4j.dvumernmass;
 
 public class Ctnyienechetnie {
 

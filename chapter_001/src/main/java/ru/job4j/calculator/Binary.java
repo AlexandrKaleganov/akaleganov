@@ -3,9 +3,9 @@ package ru.job4j.calculator;
 /**
  * двоичная система счисления
  */
-public class binary {
+public class Binary {
     public static void main(String[] args) {
-        Integer res = new binary().binaty();
+        Integer res = new Binary().binaty();
 
     }
     public Integer binaty() {

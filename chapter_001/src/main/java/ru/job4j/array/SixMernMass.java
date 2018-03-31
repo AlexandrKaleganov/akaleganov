@@ -11,14 +11,14 @@ public class SixMernMass {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите размерность массива: ");
         int sizeArr = in.nextInt();
-        int[][][][][][] SixMass = new int[sizeArr][sizeArr][sizeArr][sizeArr][sizeArr][sizeArr];
+        int[][][][][][] sixMass = new int[sizeArr][sizeArr][sizeArr][sizeArr][sizeArr][sizeArr];
         int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0;
         int res = 1;
         do {
             if (b < sizeArr && c < sizeArr && d < sizeArr && e < sizeArr && f < sizeArr) {
                 System.out.print("a = " + a + " b = " + b + " c= " + c + " d = " + d + " e = " + e + " f= " + f + "; элемент = ");
-                SixMass[a][b][c][d][e][f] = res++;
-                System.out.println(SixMass[a][b][c][d][e][f] + " ");
+                sixMass[a][b][c][d][e][f] = res++;
+                System.out.println(sixMass[a][b][c][d][e][f] + " ");
                 f++;
             } else if (e < sizeArr) {
                 e++;
@@ -52,6 +52,6 @@ public class SixMernMass {
                 res = 1;
             }
         } while (a < sizeArr);
-        System.out.println(SixMass[1][1][1][1][1][1]);
+        System.out.println(sixMass[1][1][1][1][1][1]);
     }
 }

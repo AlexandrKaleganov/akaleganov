@@ -1,6 +1,4 @@
-package ru.job4j.dvumernMass;
-
-import java.util.Arrays;
+package ru.job4j.dvumernmass;
 
 public class MetodReshenia {
 
