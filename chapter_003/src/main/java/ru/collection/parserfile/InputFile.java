@@ -1,9 +1,9 @@
-package ru.collection.chteniefile;
+package ru.collection.parserfile;
 /**
  * меню ввода файла
  */
 
-import ru.collection.chteniefile.interfaceprogramm.Inputmenu;
+import ru.collection.parserfile.interfaceprogramm.Inputmenu;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package ru.collection.chteniefile.interfaceprogramm;
+package ru.collection.parserfile.interfaceprogramm;
 
 public interface Inputmenu {
     public String input(String command);
