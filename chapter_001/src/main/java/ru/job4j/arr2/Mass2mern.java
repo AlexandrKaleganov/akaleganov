@@ -26,10 +26,11 @@ public class Mass2mern {
             for (int j = 0; j < arr4[1].length; j++) {
                 if (arr4[i][j] % 2 > 0) {
                     arr1[k++] = arr4[i][j];
-                    } else {
+                } else {
                     arr2[n++] = arr4[i][j];
                 }
             }
-        } return arr1;
+        }
+        return arr1;
     }
 }

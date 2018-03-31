@@ -12,14 +12,14 @@ public class MetodReshenia {
             int[][] arrTemp = new int[arr.length - kvadrat][arr[1].length - kvadrat];
             for (int i = 0 + kvadrat, k = 0; i < arr.length - kvadrat; i++, k++) {
                 System.out.println(" ");
-                for (int j = 0 + kvadrat, v=0; j < arr[i].length - kvadrat; j++, v++) {
+                for (int j = 0 + kvadrat, v = 0; j < arr[i].length - kvadrat; j++, v++) {
                     arrTemp[k][v] = arr[i][j];
                     System.out.print(arrTemp[k][v] + " ");
                 }
             }
 
-            result+= (getMax(arrTemp) - getMin(arrTemp));
-            System.out.println("result+= (" + getMax(arrTemp) + " - " +  getMin(arrTemp) + ") = "+result);
+            result += (getMax(arrTemp) - getMin(arrTemp));
+            System.out.println("result+= (" + getMax(arrTemp) + " - " + getMin(arrTemp) + ") = " + result);
             kvadrat++;
             if (arrTemp.length == 1) {
                 exit = false;
