@@ -1,4 +1,7 @@
 package ru.collection.generic;
+/**
+ * тестирование дженериков
+ */
 
 import java.util.*;
 import java.util.function.Consumer;
