@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * Конвертация листа массивов в один лист Integer
  */
+
 public class Convertlisttomas {
 
     public List convert(ArrayList list) {
