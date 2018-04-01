@@ -10,13 +10,11 @@ import java.util.List;
 
 public class Convertlisttomas {
 
-    public List convert(ArrayList list) {
-        List<Integer> returnList = new ArrayList<>();
-        Iterator<int[]> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            for (Integer i :
-                    iterator.next()) {
-                returnList.add(i);
+    public List<Integer> convert(List<int[]> list) {
+        List<Integer> returnList = new ArrayList<>() ;
+        for (int[]k:list) {
+            for (Integer n:k) {
+                returnList.add(n);
             }
         }
         return returnList;
