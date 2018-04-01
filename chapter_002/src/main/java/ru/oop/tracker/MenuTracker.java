@@ -1,4 +1,7 @@
 package ru.oop.tracker;
+/**
+ * меню трекера , кадый класс отвечает за отдельное меню
+ */
 
 import ru.oop.tracker.modules.Items;
 import ru.oop.tracker.modules.Tracker;
@@ -57,7 +60,8 @@ public class MenuTracker {
         this.actions.add(new MenuTracker.Deleteitems(3, "Delete item"));
         this.actions.add(new FindByaItemsId(4, "Find item by Id"));
         this.actions.add(new Finditemsbyname(5, "Find items by name"));
-        this.actions.add(new Exitprogramm(6, "Exit Program"));
+        this.actions.add(new AddCommentByItems(6, "Add comment by Items"));
+        this.actions.add(new Exitprogramm(7, "Exit Program"));
     }
 
     public void addAction(UserAction action) {
@@ -168,5 +172,16 @@ public class MenuTracker {
             tracker.delete(input.inputCommand("Введите id заявки, которую необходимо удалить"));
         }
     }
+    private class AddCommentByItems extends BaseAction {
+        AddCommentByItems(int key, String name) {
+            super(key, name);
+        }
+
+        @Override
+        public void execute(Input input, Tracker tracker) {
+            tracker.addComment(input.inputCommand("Введите id заявки, которую необходимо найти"),input.inputCommand("Введите комментарий к заявке"));
+        }
+    }
+
 }
 

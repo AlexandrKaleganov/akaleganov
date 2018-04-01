@@ -74,7 +74,9 @@ public class StubInputTest {
                 .append(System.lineSeparator())
                 .append("5. Find items by name")
                 .append(System.lineSeparator())
-                .append("6. Exit Program")
+                .append("6. Add comment by Items")
+                .append(System.lineSeparator())
+                .append("7. Exit Program")
                 .append(System.lineSeparator())
                 .toString();
     }

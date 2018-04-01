@@ -2,6 +2,7 @@ package ru.oop.tracker.modules;
 
 import ru.oop.tracker.ConsoleInput;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Objects;
@@ -19,7 +20,7 @@ public class Items {
     private String name;
     private String desc;
     private long created;
-    private String[] comments = new String[20];
+    private ArrayList<String> comments = new ArrayList<>();
 
     /**
      * в конструкторе при создании я добавил только имя завки и описание
@@ -36,6 +37,9 @@ public class Items {
     }
     public Items() {
 
+    }
+    public void AddComment(String string){
+        this.comments.add(string);
     }
 
     /**
@@ -96,7 +100,7 @@ public class Items {
                 ", name='" + name + '\'' +
                 ", desc='" + desc + '\'' +
                 ", created=" + created +
-                ", comments=" + Arrays.toString(comments) +
+                ", comments=" + comments +
                 '}';
     }
 

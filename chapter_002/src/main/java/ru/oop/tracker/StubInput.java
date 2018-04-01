@@ -24,9 +24,8 @@ public class StubInput implements Input {
         } if (exit) {
             return key;
         } else {
-             throw  new UnsupportedOperationException("не понял зачем мы его написали");
+             throw  new UnsupportedOperationException("Пункта меню не существует");
         }
     }
-
 
 }

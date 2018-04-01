@@ -129,12 +129,11 @@ public class Tracker {
     }
 
     /**
-     * этот метод для удобства проверки по сути он нам в дальнейшем и не понадобится
-     * @param i
-     * @return
+     * Метод добавления комментарий в заявку
      */
-//    public Items getItemsIndex(int i) {
-//        return this.items[i];
-//    }
+    public void addComment(String id, String comments){
+        Items res = findById(id);
+        res.AddComment(comments);
+    }
 
 }

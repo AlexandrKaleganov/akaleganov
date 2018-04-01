@@ -15,7 +15,8 @@ public class StartUI {
     private static final String DELETE_ITEMS = "3";
     private static final String FIND_ID = "4";
     private static final String FIND_NAME = "5";
-    private static final String EXIT = "6";
+    private static final String ADD_COMMENT = "6";
+    private static final String EXIT = "7";
 
     StartUI(Input input, Tracker tracker) {
         this.input = input;
@@ -98,6 +99,6 @@ public class StartUI {
      * просто вывод меню
      */
     public void shouMenu() {
-        this.output.outthet(new String("0. Add new Item\n" + "1. Show all items\n" + "2. Edit item\n" + "3. Delete item\n" + "4. Find item by Id\n" + "5. Find items by name\n" + "6. Exit Program\n" + "Select:"));
+        this.output.outthet(new String("0. Add new Item\n" + "1. Show all items\n" + "2. Edit item\n" + "3. Delete item\n" + "4. Find item by Id\n" + "5. Find items by name\n" + "7. Exit Program\n" + "7. Exit Program\n" + "Select:"));
     }
 }
