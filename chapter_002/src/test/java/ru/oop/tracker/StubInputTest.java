@@ -94,7 +94,7 @@ public class StubInputTest {
      * тестирование вывода списка всех заявок
      */
     @Test
-    public void whenshouAllTrackshouall() {
+    public void whenshouAllThenTrackshouall() {
         new StartUI(inputReturn(new String[]{"1", "7"}), trackerReturn()).init();
         assertThat(new String(this.out.toByteArray()), is(new StringBuilder()
                         .append(retunMenu())
@@ -112,7 +112,7 @@ public class StubInputTest {
      * тестирование вывода в консоль заявки по id
      */
     @Test
-    public void whenFindbyIDitems() {
+    public void whenFindbyIDitemsThenTrackFindbyID() {
         new  StartUI(trackerReturn(), inputReturn(new String[]{"4", trackerReturn().findAll().get(1).getId(), "7"})).init();
         assertThat(new String(this.out.toByteArray()), is(new StringBuilder()
                         .append(retunMenu())
@@ -127,7 +127,7 @@ public class StubInputTest {
      * тестирование вывода в консоль заявк по имени
      */
     @Test
-    public void whenFindbyNAMEitems() {
+    public void whenFindbyNAMEitemsThenTrackFindbyNAME() {
         new StartUI(trackerReturn(), inputReturn(new String[]{"5", in2.getName(), "7"})).init();
         assertThat(new String(this.out.toByteArray()), is(new StringBuilder()
                         .append(retunMenu())
@@ -153,7 +153,7 @@ public class StubInputTest {
      * проверка метода удаления заявки
      */
     @Test
-    public void whenshouDELETitems() {
+    public void whenshouDELETitemsThenTrackDELET() {
         int expected = 1;
         Tracker tracker = trackerReturn();
         new StartUI(inputReturn(new String[]{"3", tracker.findAll().get(0).getId(), "7"}), tracker).init();
