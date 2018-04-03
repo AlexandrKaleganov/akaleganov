@@ -1,4 +1,4 @@
-package ru.collection.generic;
+package ru.collection.startcollection;
 /**
  * тестирование дженериков
  */
@@ -6,8 +6,8 @@ package ru.collection.generic;
 import java.util.*;
 import java.util.function.Consumer;
 
-public class Genericcollection {
-    static class Users {
+public class ListExample {
+    static class Users implements Comparable<Users>{
         private final String name;
 
         Users(String name) {
@@ -34,27 +34,35 @@ public class Genericcollection {
                     "name='" + name + '\'' +
                     '}';
         }
+
+
+        @Override
+        public int compareTo(Users o) {
+            return this.name.compareTo(o.name);
+        }
     }
 
     public static void main(String[] args) {
         List<Users> users = new ArrayList<Users>();
-        users.addAll(Arrays.asList(new Users("Alex"), new Users("peter")));
+        users.addAll(Arrays.asList(new Users("zuma"), new Users("peter"), new Users("Alex")));
+        Set<Users> users2 = new TreeSet<Users>();
+        users2.addAll(Arrays.asList(new Users("zuma"), new Users("peter"), new Users("Alex")));
+
         boolean result = users.contains(new Users("Alex"));
         System.out.println(result);
+
         Iterator<Users> iterator = users.iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
-        System.out.println(users);
-        for (Users user : users) {
-            System.out.println(user);
-        }
-        users.forEach(new Consumer<Users>() {
-            @Override
-            public void accept(Users user) {
-                System.out.println(user);
-            }
-        });
+        users.sort(
+                new Comparator<Users>() {
+                    @Override
+                    public int compare(Users o1, Users o2) {
+                        return o1.name.compareTo(o2.name);
+                    }
+                }
+        );
         users.forEach(user -> System.out.println(user));
     }
 }
