@@ -17,8 +17,8 @@ public class UsersConvertTest {
 
     @Test
     public void process() {
-        User user1 = new User("Саша", "ChanyCity");
-        User user2 = new User("Григорич", "VengerovoCity");
+        User user1 = new User("Саша",  30, "ChanyCity");
+        User user2 = new User("Григорич", 34, "VengerovoCity");
         List<User> userlist = new ArrayList<>();
         userlist.addAll(Arrays.asList(user1, user2));
         HashMap<Integer, User> userExpected = new HashMap<>();
