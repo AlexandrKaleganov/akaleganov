@@ -23,25 +23,27 @@ public class User implements Comparable<User> {
                 '}' + "\n";
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return age == user.age &&
-                Objects.equals(id, user.id) &&
+        return Objects.equals(id, user.id) &&
                 Objects.equals(name, user.name) &&
+                Objects.equals(age, user.age) &&
                 Objects.equals(city, user.city);
     }
 
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, name, age, city);
+    }
+
+    public Integer getAge() {
+        return age;
+    }
     public Integer getId() {
         return id;
     }
