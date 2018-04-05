@@ -20,7 +20,15 @@ public class User implements Comparable<User> {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", city='" + city + '\'' +
-                '}';
+                '}' + "\n";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getAge() {
+        return age;
     }
 
     @Override
@@ -40,7 +48,7 @@ public class User implements Comparable<User> {
 
     User(String name, int age, String city) {
         this.name = name;
-        this.name = city;
+        this.city = city;
         this.id = generateId();
         this.age = age;
     }
