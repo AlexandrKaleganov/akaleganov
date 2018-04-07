@@ -1,6 +1,9 @@
 package ru.collection.CompareString;
+/**
+ * компоратор для стринга
+ */
+
 import java.util.Comparator;
-import java.util.List;
 public class ListCompare implements Comparator<String> {
     @Override
     public int compare(String left, String right) {
@@ -13,7 +16,6 @@ public class ListCompare implements Comparator<String> {
                 result =  1;
             break;
         }
-
         return result;
     }
 
