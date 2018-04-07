@@ -35,6 +35,10 @@ public class User implements Comparable<User> {
                 Objects.equals(city, user.city);
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public int hashCode() {
 
