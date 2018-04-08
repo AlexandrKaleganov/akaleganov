@@ -48,6 +48,7 @@ public class User implements Comparable<User> {
     public Integer getAge() {
         return age;
     }
+
     public Integer getId() {
         return id;
     }
