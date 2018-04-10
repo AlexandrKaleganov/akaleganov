@@ -1,4 +1,4 @@
-package ru.oop.privatTest;
+package ru.oop.privattest;
 
 public class Uchitel {
 

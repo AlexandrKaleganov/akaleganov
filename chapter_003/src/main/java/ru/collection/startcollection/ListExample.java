@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.function.Consumer;
 
 public class ListExample {
-    static class Users implements Comparable<Users>{
+    static class Users implements Comparable<Users> {
         private final String name;
 
         Users(String name) {
@@ -16,8 +16,12 @@ public class ListExample {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
             Users users = (Users) o;
             return Objects.equals(name, users.name);
         }
@@ -30,9 +34,7 @@ public class ListExample {
 
         @Override
         public String toString() {
-            return "Users{" +
-                    "name='" + name + '\'' +
-                    '}';
+            return "Users{" + "name='" + name + '\'' + '}';
         }
 
 

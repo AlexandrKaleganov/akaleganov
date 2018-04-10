@@ -11,7 +11,7 @@ import java.util.List;
 public class Convertlisttomas {
 
     public List<Integer> convert(List<int[]> list) {
-        List<Integer> returnList = new ArrayList<>() ;
+        List<Integer> returnList = new ArrayList<>();
         for (int[]k:list) {
             for (Integer n:k) {
                 returnList.add(n);
