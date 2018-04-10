@@ -29,7 +29,7 @@ public class MetodReshenia {
         return result;
     }
 
-    public int getMin(int arr[][]) {
+    public int getMin(int[][] arr) {
         int min = arr[0][0];
         System.out.println();
         for (int[] arr2 : arr) {
@@ -43,7 +43,7 @@ public class MetodReshenia {
         return min;
     }
 
-    public int getMax(int arr[][]) {
+    public int getMax(int[][] arr) {
         int max = arr[0][0];
         for (int[] arr2 : arr) {
             for (int vol : arr2) {

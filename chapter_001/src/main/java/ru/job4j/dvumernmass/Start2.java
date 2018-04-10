@@ -12,12 +12,12 @@ public class Start2 {
         int[] a = new int[25];
         int[] b = new int[25];
         new Ctnyienechetnie().sortmassiv(arr, a, b);
-        new Start2().OutputMass(a);
-        new Start2().OutputMass(b);
+        new Start2().outputMass(a);
+        new Start2().outputMass(b);
 
     }
 
-    public void OutputMass(int[] arr) {
+    public void outputMass(int[] arr) {
         for (int k : arr) {
             if (k != 0) {
                 System.out.print(k + "  ");

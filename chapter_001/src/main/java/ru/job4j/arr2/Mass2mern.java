@@ -9,7 +9,7 @@ package ru.job4j.arr2;
  */
 public class Mass2mern {
 
-    public static int[] arrmassDinODINod(int arr4[][]) {
+    public static int[] arrmassDinODINod(int[][] arr4) {
         int l = 0;
         for (int i = 0; i < arr4.length; i++) {
             for (int j = 0; j < arr4[1].length; j++) {
