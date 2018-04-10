@@ -27,6 +27,7 @@ public class Items {
      * всё остальное добавляется автоматом,комментарии к заявке я не стал пока добавлять
      * эти данные мы наверно будетм как то потом вносить , как пока не знаю
      * id - генерируется методом generate
+     *
      * @param name
      * @param desc
      */
@@ -35,15 +36,18 @@ public class Items {
         this.desc = desc;
         this.created = millisreturn();
     }
+
     public Items() {
 
     }
-    public void AddComment(String string){
+
+    public void addComment(String string) {
         this.comments.add(string);
     }
 
     /**
      * возвращает имя заявки
+     *
      * @return
      */
     public String getName() {
@@ -52,6 +56,7 @@ public class Items {
 
     /**
      * возвращает дату в виде long
+     *
      * @return
      */
     long getCreated() {
@@ -60,6 +65,7 @@ public class Items {
 
     /**
      * возвращает описание заявки
+     *
      * @return
      */
     public String getDesc() {
@@ -68,6 +74,7 @@ public class Items {
 
     /**
      * возвращает id заявки
+     *
      * @return
      */
     public String getId() {
@@ -76,36 +83,21 @@ public class Items {
 
     /**
      * меняет id  заявки
+     *
      * @param newId
      */
     void setId(String newId) {
         this.id = newId;
     }
 
-    /**
-     * переопределил метод toString,
-     * чтобы мы могли сразу выводить необходимые данные о нашей заявки на печать , в этом ж методе для пользователя я отображаю
-     * не поле created  а new Date(created) - не знаю на сколько правильно написал, но он выводит какую то дату.
-     * @return
-     */
-//    public String toString() {
-//        return this.id + " -- " + this.name + " -- " + desc + " -- " + new Date(created);
-//    }
-
-
     @Override
     public String toString() {
-        return "Items{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", desc='" + desc + '\'' +
-                ", created=" + created +
-                ", comments=" + comments +
-                '}';
+        return "Items{" + "id='" + id + '\'' + ", name='" + name + '\'' + ", desc='" + desc + '\'' + ", created=" + created + ", comments=" + comments + '}';
     }
 
     /**
      * если я правильно понял мы тут получаем время в милисекундах текущее
+     *
      * @return
      */
     private long millisreturn() {
@@ -115,8 +107,12 @@ public class Items {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Items items = (Items) o;
         return Objects.equals(id, items.id);
     }

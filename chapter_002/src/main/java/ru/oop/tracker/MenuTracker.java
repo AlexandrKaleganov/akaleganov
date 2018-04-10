@@ -70,6 +70,7 @@ public class MenuTracker {
 
     /**
      * метод нужен чтобы знать количество пунктов меню, он возвращает этот массив в StartUI в поле ange
+     *
      * @param
      * @return
      */
@@ -172,6 +173,7 @@ public class MenuTracker {
             tracker.delete(input.inputCommand("Введите id заявки, которую необходимо удалить"));
         }
     }
+
     private class AddCommentByItems extends BaseAction {
         AddCommentByItems(int key, String name) {
             super(key, name);
@@ -179,7 +181,7 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            tracker.addComment(input.inputCommand("Введите id заявки, которую необходимо найти"),input.inputCommand("Введите комментарий к заявке"));
+            tracker.addComment(input.inputCommand("Введите id заявки, которую необходимо найти"), input.inputCommand("Введите комментарий к заявке"));
         }
     }
 

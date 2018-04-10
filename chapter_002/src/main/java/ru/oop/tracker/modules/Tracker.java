@@ -109,8 +109,8 @@ public class Tracker {
      */
     public Items findById(String id) {
         Items res = null;
-        for (Items i:this.items) {
-            if (i.getId().equals(id)){
+        for (Items i : this.items) {
+            if (i.getId().equals(id)) {
                 res = i;
             }
 
@@ -131,9 +131,9 @@ public class Tracker {
     /**
      * Метод добавления комментарий в заявку
      */
-    public void addComment(String id, String comments){
+    public void addComment(String id, String comments) {
         Items res = findById(id);
-        res.AddComment(comments);
+        res.addComment(comments);
     }
 
 }
