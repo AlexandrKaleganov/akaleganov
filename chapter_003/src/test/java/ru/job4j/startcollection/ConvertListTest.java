@@ -19,8 +19,8 @@ public class ConvertListTest {
         List<Integer> expected = new ArrayList<>();
         expected.add(1);
         expected.add(2);
+        expected.add(3);
         expected.add(4);
-        expected.add(5);
 
         List<Integer> result = new ArrayList<>();
         result.addAll(list.toList(array));
