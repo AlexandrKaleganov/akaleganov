@@ -1,6 +1,4 @@
+[![Build Status](https://travis-ci.org/AlexandrKaleganov/akaleganov.svg?branch=master)](https://travis-ci.org/AlexandrKaleganov/akaleganov)
+[![codecov](https://codecov.io/gh/AlexandrKaleganov/akaleganov/branch/master/graph/badge.svg)](https://codecov.io/gh/AlexandrKaleganov/akaleganov)
 # akaleganov
-http://job4j.ru/
-1. разобраться с коммитами, не по конца понял что куда
-2. всегда пользоавться командами через командную строку ?
-3. почему через повер шелл не работает?
-4. быть повнимательней
+РЅР°С‡Р°Р»СЊРЅС‹Р№ РїСЂРѕРµРєС‚ РґР»СЏ РєСѓСЂСЃР° Junior
