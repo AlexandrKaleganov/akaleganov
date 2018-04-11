@@ -1,8 +1,8 @@
-package ru.job4j.arr2;
+package ru.job4j.arr;
 
 /**
  */
-public class Mass2in1 {
+public class Masstwoinone {
 
     public static int[] ssortirovkaMassivavodin(int[]ar1, int[]ar2) {
         int[]ar3 = new int[ar1.length + ar2.length];

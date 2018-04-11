@@ -1,4 +1,4 @@
-package ru.job4j.arr2;
+package ru.job4j.arr;
 
 /**
  * @author Alexander KAleganov
@@ -9,7 +9,7 @@ package ru.job4j.arr2;
  * далее  программа ищет знаки в полученном массиве и если находит то
  * производит действия с элементам  i-1  и i+1
  */
-public class Calk2 {
+public class Calk {
     public static double kkkalCullator(String primer) {
         double result = 0;
         String[] operator = new String[]{"+", "-", "*", "/"};

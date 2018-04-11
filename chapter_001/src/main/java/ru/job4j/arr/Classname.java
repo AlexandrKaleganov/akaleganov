@@ -1,4 +1,4 @@
-package ru.job4j.arr2;
+package ru.job4j.arr;
 
 public class Classname {
     public static double[] methodName1() {

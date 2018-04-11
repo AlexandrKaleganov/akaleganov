@@ -1,4 +1,4 @@
-package ru.job4j.arr2;
+package ru.job4j.arr;
 
 /**
  * этот метод перегоняет один двухмерный массив в
@@ -7,7 +7,7 @@ package ru.job4j.arr2;
  * вопрос можно ли как то получить от одного метода и чётный массив и нечётный,
  * т.к. у нас тут создаётся два необходимых массива
  */
-public class Mass2mern {
+public class Masstwomernarr {
 
     public static int[] arrmassDinODINod(int[][] arr4) {
         int l = 0;
