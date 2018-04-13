@@ -36,25 +36,28 @@ public class Account {
         boolean success = false;
         if (amount > 0 && amount < this.values && destination != null) {
             success = true;
-            this.values -= amount;
-            destination.values += amount;
+            //две строки лишние
+//            this.values -= amount;
+//            destination.values += amount;
         }
         return success;
     }
 
     /**
-     * создана лишняя переменная, можно ократить
+     * создана лишняя переменная, можно сократить и вместо закрывающей ковычки чёрточка - опечатка наверно
      * @return
      */
+
+
     public String toString() {
 //        String otvet;
 //        otvet = "Account{" + "values=" + values + ", reqs='" + reqs + "\\" + "}";
 //        return otvet;
-        return "Account{" + "values=" + values + ", reqs='" + reqs + "\\" + "}";
+        return "Account{" + "values=" + values + ", reqs='" + reqs + "\'" + "}";
     }
 
     /**
-     * чтобы проверить одентичны ли оъекты, необходимо сравнивать оба его  поля
+     * чтобы проверить идентичны ли оъекты, необходимо сравнивать оба его  поля
      * @param o
      * @return
      */
@@ -63,8 +66,7 @@ public class Account {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
-        return Double.compare(account.values, values) == 0 &&
-                Objects.equals(reqs, account.reqs);
+        return  Objects.equals(reqs, account.reqs);
     }
 
     /**
@@ -75,6 +77,6 @@ public class Account {
     @Override
     public int hashCode() {
 
-        return Objects.hash(values, reqs);
+        return Objects.hash(reqs);
     }
 }

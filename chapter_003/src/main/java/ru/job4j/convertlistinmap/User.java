@@ -1,6 +1,5 @@
 package ru.job4j.convertlistinmap;
 
-import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -18,27 +17,25 @@ public class User implements Comparable<User> {
         return "User{" + "id=" + id + ", name='" + name + '\'' + ", age=" + age + ", city='" + city + '\'' + '}' + "\n";
     }
 
-
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(name, user.name) && Objects.equals(age, user.age) && Objects.equals(city, user.city);
-    }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-    public String getName() {
-        return name;
+        User user = (User) o;
+
+        if (!name.equals(user.name)) return false;
+        if (!age.equals(user.age)) return false;
+        return city.equals(user.city);
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(id, name, age, city);
+        int result = id.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + age.hashCode();
+        result = 31 * result + city.hashCode();
+        return result;
     }
 
     public Integer getAge() {
@@ -49,7 +46,7 @@ public class User implements Comparable<User> {
         return id;
     }
 
-    User(String name, int age, String city) {
+    public User(String name, int age, String city) {
         this.name = name;
         this.city = city;
         this.id = generateId();
@@ -62,6 +59,9 @@ public class User implements Comparable<User> {
 
     }
 
+    public String getName() {
+        return name;
+    }
 
     @Override
     public int compareTo(User o) {
