@@ -99,4 +99,25 @@ public class BankTest {
         assertThat(accountList, Is.is(bank.getAccounts(user2)));
 
     }
+
+    @Test
+    public void transfer() {
+        Bank bank = new Bank();
+        ArrayList<Account> accountList = new ArrayList<>();
+        Account account1 = new Account(654654, "one");
+        Account account2 = new Account(32434432, "two");
+        Account account3 = new Account(654654, "fri");
+        Account account4 = new Account(654654, "foo");
+        accountList.addAll(Arrays.asList(account1, account2, account3, account4));
+        User user1 = new User("User1", 30, "Piter");
+        User user2 = new User("User2", 31, "Novosib");
+        bank.addUser(user1);
+        bank.addUser(user2);
+        bank.add(user1, account1);
+        bank.add(user2, account2);
+        boolean expected = true;
+        boolean res = bank.transfer(user1, account1, user2, account2, 654653);
+        System.out.println(res);
+        assertThat(expected, Is.is(res));
+    }
 }

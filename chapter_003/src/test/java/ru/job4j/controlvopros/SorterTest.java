@@ -28,6 +28,7 @@ public class SorterTest {
         assertThat(expected, Is.is(result));
     }
 
+
     @Test
     public void sortTestnameLenght() {
         ArrayList<User> listuesers = new ArrayList<>();

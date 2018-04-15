@@ -27,6 +27,7 @@ public class Account {
      * метод просто возвращает булеан значение, при этом ничего не делает с обектом, т.е. он от поля объекта
      * values отнимает amount после прибавляет к нему обратно amount не понятно зачем это делается ?
      * чтобы просто получить истину или лож?
+     *
      * @param destination
      * @param amount
      * @return
@@ -44,6 +45,7 @@ public class Account {
 
     /**
      * создана лишняя переменная, можно сократить и вместо закрывающей ковычки чёрточка - опечатка наверно
+     *
      * @return
      */
 
@@ -57,6 +59,7 @@ public class Account {
 
     /**
      * чтобы проверить идентичны ли оъекты, необходимо сравнивать оба его  поля
+     *
      * @param o
      * @return
      */
@@ -65,17 +68,18 @@ public class Account {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
-        return  Objects.equals(reqs, account.reqs);
+        return Objects.equals(reqs, account.reqs);
     }
 
     /**
      * хеш код должен показывать идентичны объекты или нет, если ммы будем высчитывать хеш код только по одному стринг значению,
      * то хеш коды могут часто совпадать, а объекты не будут равны к примеру значение полей values  будет разное
+     *
      * @return
      */
     @Override
     public int hashCode() {
 
-        return Objects.hash(reqs);
+        return Objects.hash(values, reqs);
     }
 }

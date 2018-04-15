@@ -1,8 +1,6 @@
 package ru.job4j.controlvopros;
 
 
-
-
 import ru.job4j.convertlistinmap.User;
 
 import java.util.ArrayList;
@@ -40,7 +38,7 @@ public class Bank {
     }
 
     public boolean transfer(User user1, Account account1,
-                                 User user2, Account account2, double amount) {
+                            User user2, Account account2, double amount) {
         return this.treemap.get(user1).contains(account1)
                 && this.treemap.get(user2).contains(account2)
                 && getActualAccount(user1, account1).transfer(

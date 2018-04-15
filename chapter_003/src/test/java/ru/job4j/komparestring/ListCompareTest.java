@@ -2,6 +2,10 @@ package ru.job4j.komparestring;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
@@ -58,5 +62,12 @@ public class ListCompareTest {
         );
         assertThat(rst, lessThan(0));
     }
-
+    @Test
+    public void secondCharOfLeftLessThanRightShouldBesada() {
+        List<String> list = new ArrayList<String>();
+        list.add("Petia");
+        list.add("Asiaoooooo");
+        list.sort(new ListCompare());
+        System.out.println(list);
+    }
 }

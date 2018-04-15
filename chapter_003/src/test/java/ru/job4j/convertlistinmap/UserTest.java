@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 public class UserTest {
     @Test
-    public void testDefoltRelizComporable(){
+    public void testDefoltRelizComporable() {
         User user1 = new User("Вася", 34, "Sib");
         User user2 = new User("Саша", 30, "ChanyCity");
         List<User> listUser = new ArrayList<>();
