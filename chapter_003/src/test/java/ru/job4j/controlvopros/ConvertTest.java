@@ -1,10 +1,8 @@
 package ru.job4j.controlvopros;
 
 import org.junit.Test;
-import ru.job4j.generic.Convertlisttomas;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.core.Is.is;

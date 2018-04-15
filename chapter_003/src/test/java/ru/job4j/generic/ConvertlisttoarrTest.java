@@ -10,10 +10,10 @@ import static org.hamcrest.core.Is.is;
 
 import static org.junit.Assert.*;
 
-public class ConvertlisttomasTest {
+public class ConvertlisttoarrTest {
     @Test
     public void convertListtest() {
-        Convertlisttomas convertList = new Convertlisttomas();
+        Convertlisttoarr convertList = new Convertlisttoarr();
         List<int[]> list = new ArrayList<>();
         list.add(new int[]{1, 2});
         list.add(new int[]{3, 4, 5, 6});

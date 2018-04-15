@@ -19,13 +19,21 @@ public class User implements Comparable<User> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         User user = (User) o;
 
-        if (!name.equals(user.name)) return false;
-        if (!age.equals(user.age)) return false;
+        if (!name.equals(user.name)) {
+            return false;
+        }
+        if (!age.equals(user.age)) {
+            return false;
+        }
         return city.equals(user.city);
     }
 

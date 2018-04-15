@@ -12,9 +12,9 @@ public class AccountTest {
      */
     @Test
     public void transferTesttrue() {
-        Account destantion = new Account(65654654,"Дистанция чего то там");
+        Account destantion = new Account(65654654, "Дистанция чего то там");
         System.out.println(destantion);
-        boolean res = destantion.transfer(destantion,211);
+        boolean res = destantion.transfer(destantion, 211);
         System.out.println(destantion);
         boolean expected = true;
         assertThat(expected, Is.is(res));
@@ -26,9 +26,9 @@ public class AccountTest {
      */
     @Test
     public void transfer() {
-        Account destantion = new Account(65654654,"Дистанция чего то там");
+        Account destantion = new Account(65654654, "Дистанция чего то там");
         System.out.println(destantion);
-        boolean res = destantion.transfer(destantion,656546545);
+        boolean res = destantion.transfer(destantion, 656546545);
         System.out.println(destantion);
         boolean expected = false;
         assertThat(expected, Is.is(res));
