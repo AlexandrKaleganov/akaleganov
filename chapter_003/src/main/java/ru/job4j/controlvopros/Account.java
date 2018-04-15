@@ -19,7 +19,6 @@ public class Account {
         return this.values;
     }
 
-
     public String getReqs() {  //пробел после имени метода
         return this.reqs;
     }

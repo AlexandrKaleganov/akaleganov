@@ -21,7 +21,7 @@ public class BankTest {
         Bank bank = new Bank();
         ArrayList<Account> accountList = new ArrayList<>();
         User user1 = new User("Peter", 30, "Piter");
-        User user2 = new User("Sasha", 30, "Novosib");
+        User user2 = new User("Sasha", 31, "Novosib");
         bank.addUser(user1);
         bank.addUser(user2);
         TreeMap<User, ArrayList<Account>> expected = new TreeMap<>();
@@ -43,7 +43,7 @@ public class BankTest {
         Account account4 = new Account(654654, "foo");
         accountList.addAll(Arrays.asList(account1, account2, account3, account4));
         User user1 = new User("User1", 30, "Piter");
-        User user2 = new User("User2", 30, "Novosib");
+        User user2 = new User("User2", 31, "Novosib");
         System.out.println(user1 + " " + user1.hashCode());
         System.out.println(user2 + " " + user2.hashCode());
         bank.addUser(user1);
@@ -53,10 +53,6 @@ public class BankTest {
         bank.add(user2, account2);
         bank.add(user2, account3);
         bank.add(user2, account4);
-
-//        System.out.println(bank.getAccounts(user1));
-//        System.out.println(bank.getAccounts(user2));
-
         TreeMap<User, ArrayList<Account>> expected = new TreeMap<>();
         expected.put(user1, new ArrayList<Account>());
         expected.put(user2, new ArrayList<Account>());
@@ -64,20 +60,7 @@ public class BankTest {
         expected.get(user2).add(account2);
         expected.get(user2).add(account3);
         expected.get(user2).add(account4);
-        System.out.println(expected);
-
-        System.out.println(expected.get(user1));
-        System.out.println(expected.get(user2));
-
-        TreeMap<String, ArrayList<String>> test = new TreeMap<>();
-        test.put("вася", new ArrayList<String>());
-        test.put("винни", new ArrayList<String>());
-        test.get("винни").add("тест 1");
-        test.get("винни").add("тест 2");
-
-        System.out.println(test);
-        assertThat(accountList, Is.is(bank.getAccounts(user1)));
-
+        assertThat(accountList, Is.is(bank.getAccounts(user2)));
     }
 
     /**
@@ -87,7 +70,7 @@ public class BankTest {
     public void delete() {
         Bank bank = new Bank();
         User user1 = new User("Peter", 30, "Piter");
-        User user2 = new User("Sasha", 30, "Novosib");
+        User user2 = new User("Sasha", 31, "Novosib");
         bank.addUser(user1);
         bank.addUser(user2);
         bank.delete(user1);
@@ -105,7 +88,7 @@ public class BankTest {
         Account account4 = new Account(654654, "foo");
         accountList.addAll(Arrays.asList(account1, account2, account3));
         User user1 = new User("Peter", 30, "Piter");
-        User user2 = new User("Sasha", 30, "Novosib");
+        User user2 = new User("Sasha", 31, "Novosib");
         bank.addUser(user1);
         bank.addUser(user2);
         bank.add(user2, account1);
@@ -115,9 +98,5 @@ public class BankTest {
         bank.deleteAccount(user2, account4);
         assertThat(accountList, Is.is(bank.getAccounts(user2)));
 
-    }
-
-    @Test
-    public void transfer() {
     }
 }

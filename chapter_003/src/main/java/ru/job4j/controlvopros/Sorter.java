@@ -1,10 +1,11 @@
 package ru.job4j.controlvopros;
-
+/**
+ * ещё мне не нравится то что мы используем объект анонимного класса,
+ * из-за этого лишние строки получаются, я бы записал короче но в принципе и так всё будет работать
+ */
 
 import ru.job4j.convertlistinmap.User;
-
 import java.util.*;
-
 public class Sorter {
 
     public Sorter() { // пробела не хватает
@@ -17,7 +18,7 @@ public class Sorter {
         return sortedList;
     }
 
-    List<User> sortnamelength(List<User> list) { //пробел после имени метода
+    List<User> sortnameLength(List<User> list) { //пробел после имени метода
         Comparator<User> compar = new Comparator<User>() {
             @Override
             public int compare(User o1, User o2) { //пробел после имени метода
@@ -28,10 +29,11 @@ public class Sorter {
         list.sort(compar);
         return list;
     }
+
     /**
-     * поменял бы название метода sortnameandAge
+     * поменял бы название метода sortnameandLexicandAge
      */
-    List<User> sortnameandAge(List<User> list) {                //после названия метода пробел аж в глаза бросается его я убрал
+    List<User> sortnameandLexicandAge(List<User> list) {                //после названия метода пробел  его  убрал
         Comparator<User> compar1 = new Comparator<User>() {
             @Override
             public int compare(User o1, User o2) {            //после названия метода пробел
