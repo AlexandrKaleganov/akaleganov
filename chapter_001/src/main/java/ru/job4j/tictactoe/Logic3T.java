@@ -8,7 +8,16 @@ public class Logic3T {
     }
 
     public boolean isWinnerX() {
-        return false;
+        boolean res = false;
+        int diaganal = 0;
+        int vertikal = 0;
+        for (int i = 0; i <table.length; i++) {
+            for (int j = 0; j <table[i].length ; j++) {
+
+            }
+
+        }
+        return res;
     }
 
     public boolean isWinnerO() {
