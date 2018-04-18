@@ -1,6 +1,7 @@
 package ru.job4j.startcollection;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class CollectionMap {
@@ -10,6 +11,7 @@ public class CollectionMap {
         student.put("Peter", 3);
         student.put("Alxandr", 3);
         student.put("Miha", 3);
+        Iterator<Map.Entry<String,Integer>> iterator = student.entrySet().iterator();
 
         for (String name:student.keySet()) {
             System.out.println(String.format("%s:%s", name,  student.get(name)));
