@@ -42,6 +42,7 @@ public class TicTacToe extends Application {
         return group;
     }
 
+
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle(JOB4J);

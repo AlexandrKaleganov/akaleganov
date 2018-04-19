@@ -6,6 +6,7 @@ public class Figure3T extends Rectangle {
     private boolean markX = false;
     private boolean markO = false;
 
+
     public Figure3T() {
         this(false);
     }
