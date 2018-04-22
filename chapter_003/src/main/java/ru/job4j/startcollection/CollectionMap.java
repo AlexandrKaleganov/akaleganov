@@ -11,6 +11,8 @@ public class CollectionMap {
         student.put("Peter", 3);
         student.put("Alxandr", 3);
         student.put("Miha", 3);
+        student.put(null, 11);
+        student.put(null, 12);
         Iterator<Map.Entry<String,Integer>> iterator = student.entrySet().iterator();
 
         for (String name:student.keySet()) {

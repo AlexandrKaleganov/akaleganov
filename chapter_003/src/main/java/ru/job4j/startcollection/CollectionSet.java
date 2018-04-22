@@ -22,7 +22,6 @@ public class CollectionSet {
         sortSet.add(4);
         sortSet.add(15);
         sortSet.add(2);
-
         for (Integer value2:sortSet) {
             System.out.println(value2);
 
