@@ -13,7 +13,7 @@ public class CollectionMap {
         student.put("Miha", 3);
         student.put(null, 11);
         student.put(null, 12);
-        Iterator<Map.Entry<String,Integer>> iterator = student.entrySet().iterator();
+        Iterator<Map.Entry<String, Integer>> iterator = student.entrySet().iterator();
 
         for (String name:student.keySet()) {
             System.out.println(String.format("%s:%s", name,  student.get(name)));
