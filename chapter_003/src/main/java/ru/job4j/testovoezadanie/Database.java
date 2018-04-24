@@ -1,9 +1,9 @@
 package ru.job4j.testovoezadanie;
 /**
  * Класс для хранения базы данных справочников
+ *
  * @author Alexande Kaleganov
  * @since 23/04/2018
- *
  */
 
 import java.util.ArrayList;
@@ -16,7 +16,9 @@ public class Database {
     }
 
     public void addDeportament(String s) {
-        this.spravocnik.add(s);
+        if (!this.spravocnik.contains(s)) {
+            this.spravocnik.add(s);
+        }
     }
 
     public void addDeportamentList(List<String> spisok) {

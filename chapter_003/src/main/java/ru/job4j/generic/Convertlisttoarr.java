@@ -1,6 +1,7 @@
 package ru.job4j.generic;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -13,8 +14,8 @@ public class Convertlisttoarr {
      * @param list
      * @return
      */
-    public List<Integer> convert(List<int[]> list) {
-        List<Integer> returnList = new ArrayList<>();
+    public ArrayList<Integer> convert(ArrayList<int[]> list) {
+        ArrayList<Integer> returnList = new ArrayList<>();
         for (int[]k:list) {
             for (Integer n:k) {
                 returnList.add(n);

@@ -56,13 +56,29 @@ public class Utilites {
         this.temp.forEach(stroka -> {
             for (int i = 6; i >= 2; i -= 4) {
                 String deportament = stroka.substring(0, i);
-                    if (!database.getSpravocnik().contains(deportament)) {
-                        database.addDeportament(deportament);
-                    }
+                if (!database.getSpravocnik().contains(deportament)) {
+                    database.addDeportament(deportament);
+                }
             }
         });
         this.temp.clear();
     }
+
+//    public void refactorDatabaseV2(Database database) {
+//            ListIterator<String> data = database.getSpravocnik().listIterator();
+//            while (data.hasNext()) {
+//            String stroka = data.next();
+//            System.out.println(stroka);
+//            if (stroka.length() == 11) {
+//                for (int i = 6; i >= 2; i -= 4) {
+//                    String deportament = stroka.substring(0, i);
+//                    if (!database.getSpravocnik().contains(deportament)) {
+//                        database.addDeportament(deportament);
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     /**
      * тут мы будем создавать временный лист, в котором будем хранить все строки нижнего уровня
