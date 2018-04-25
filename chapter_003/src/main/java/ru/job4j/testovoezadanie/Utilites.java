@@ -51,8 +51,8 @@ public class Utilites {
      * @param database
      */
     public void refactorDatabase(Database database) {
-            ListIterator<String> data = database.getSpravocnik().listIterator();
-            while (data.hasNext()) {
+        ListIterator<String> data = database.getSpravocnik().listIterator();
+        while (data.hasNext()) {
             String temp = data.next();
             if (temp.length() == 11) {
                 for (int i = 6; i >= 2; i -= 4) {
@@ -64,5 +64,4 @@ public class Utilites {
             }
         }
     }
-
 }
