@@ -30,14 +30,16 @@ public class Iteratrormatrixmass implements Iterator {
     @Override
     public Object next() {
         int res = 0;
-        if (this.i < this.arr.length && j < this.arr[i].length) {
-            res = arr[i][j++];
-        } else {
-            j = 0;
-            i++;
-            res = arr[i][j++];
-        }               //кажый раз когда мы берём следующий текущий элемент двухмерного массива,
-        index++;        // каретка сдвигается и шаг этот отмечается в индексе чтоб потом сравнить его со всей длинной массива
+        if (hasNext()) {
+            if (this.i < this.arr.length && j < this.arr[i].length) {
+                res = arr[i][j++];
+            } else {
+                j = 0;
+                i++;
+                res = arr[i][j++];
+            }               //кажый раз когда мы берём следующий текущий элемент двухмерного массива,
+            index++;        // каретка сдвигается и шаг этот отмечается в индексе чтоб потом сравнить его со всей длинной массива
+        }
         return res;
     }
 }
