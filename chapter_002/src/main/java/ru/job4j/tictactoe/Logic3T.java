@@ -20,15 +20,17 @@ int vertical;
 int diaganalOne = 0;
 int diaganalTwo;
         for (int i = 0; i < table.length; i++) {
+            gorizont = 0;
             for (int j = 0; j < table[i].length; j++) {
                 if (table[i][j].hasMarkX()) {
+                  gorizont++;
+                    if (i == j) {
+                        diaganalOne++;
+                    }
+                }
 
                 }
-                 if (i == j) {
-                     diaganalOne++;
-                 }
-                }
-            if (gorizont == 3 ){
+            if (gorizont == 3 || diaganalOne == 3){
                 rsl = true;
                 break;
             }
