@@ -12,17 +12,20 @@ public class Logic3T {
     public boolean isWinnerX() {
         boolean rsl = false;
 
-        int gorizont = 0;
-        int vertical = 0;
+        int gorizont;
+        int vertical;
         int diaganalOne = 0;
         int diaganalTwo = 0;
-        int index = table.length - 1;
+
+        int index = table.length - 1;         //индекс для хода по диаганали с права на лево
+
         for (int i = 0; i < table.length; i++) {
             gorizont = 0;
             vertical = 0;
-            if (table[i][index - 1].hasMarkX()) {
+            if (table[i][index].hasMarkX()) {
                 diaganalTwo++;
             }
+            index--;
             for (int j = 0; j < table[i].length; j++) {
                 if (table[i][j].hasMarkX()) {
                     gorizont++;
@@ -33,7 +36,6 @@ public class Logic3T {
                 if (table[j][i].hasMarkX()) {
                     vertical++;
                 }
-
             }
             if (gorizont == 3 ||  vertical == 3 ){
                 rsl = true;
