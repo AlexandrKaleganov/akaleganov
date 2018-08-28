@@ -11,32 +11,39 @@ public class Logic3T {
 
     public boolean isWinnerX() {
         boolean rsl = false;
-        boolean isflagHorizont = false;
-        boolean isflagVertikal = false;
-        boolean isflagDiagonalLeft = false;
-        boolean isflagDiagonalRair = false;
-int gorizont = 0;
-int vertical;
-int diaganalOne = 0;
-int diaganalTwo;
+
+        int gorizont = 0;
+        int vertical = 0;
+        int diaganalOne = 0;
+        int diaganalTwo = 0;
+        int index = table.length - 1;
         for (int i = 0; i < table.length; i++) {
             gorizont = 0;
+            vertical = 0;
+            if (table[i][index - 1].hasMarkX()) {
+                diaganalTwo++;
+            }
             for (int j = 0; j < table[i].length; j++) {
                 if (table[i][j].hasMarkX()) {
-                  gorizont++;
+                    gorizont++;
                     if (i == j) {
                         diaganalOne++;
                     }
                 }
-
+                if (table[j][i].hasMarkX()) {
+                    vertical++;
                 }
-            if (gorizont == 3 || diaganalOne == 3){
+
+            }
+            if (gorizont == 3 ||  vertical == 3 ){
                 rsl = true;
                 break;
             }
-
+            if (diaganalOne == 3|| diaganalTwo == 3) {
+                rsl = true;
+            }
         }
-return rsl;
+        return rsl;
     }
     public boolean isWinnerO() {
         return false;
