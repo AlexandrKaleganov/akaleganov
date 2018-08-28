@@ -15,8 +15,9 @@ public class Figure3T extends Rectangle {
     }
 
     public void take(boolean markX) {
-        this.markX = markX;
-        this.markO = !markX;
+        if (!markO) {
+            this.markX = markX;
+            this.markO = !markX;}
     }
 
     public boolean hasMarkX() {

@@ -17,15 +17,14 @@ public class Logic3T {
         int diaganalOne = 0;
         int diaganalTwo = 0;
 
-        int index = table.length - 1;         //индекс для хода по диаганали с права на лево
+        int index = table.length-1;         //индекс для хода по диаганали с права на лево
 
         for (int i = 0; i < table.length; i++) {
             gorizont = 0;
             vertical = 0;
-            if (table[i][index].hasMarkX()) {
+            if (table[i][index--].hasMarkX()) {
                 diaganalTwo++;
             }
-            index--;
             for (int j = 0; j < table[i].length; j++) {
                 if (table[i][j].hasMarkX()) {
                     gorizont++;
@@ -48,10 +47,52 @@ public class Logic3T {
         return rsl;
     }
     public boolean isWinnerO() {
-        return false;
-    }
+        boolean rsl = false;
 
+        int gorizont;
+        int vertical;
+        int diaganalOne = 0;
+        int diaganalTwo = 0;
+
+        int index = table.length-1;         //индекс для хода по диаганали с права на лево
+
+        for (int i = 0; i < table.length; i++) {
+            gorizont = 0;
+            vertical = 0;
+            if (table[i][index--].hasMarkO()) {
+                diaganalTwo++;
+            }
+            for (int j = 0; j < table[i].length; j++) {
+                if (table[i][j].hasMarkO()) {
+                    gorizont++;
+                    if (i == j) {
+                        diaganalOne++;
+                    }
+                }
+                if (table[j][i].hasMarkO()) {
+                    vertical++;
+                }
+            }
+            if (gorizont == 3 ||  vertical == 3 ){
+                rsl = true;
+                break;
+            }
+            if (diaganalOne == 3|| diaganalTwo == 3) {
+                rsl = true;
+            }
+        }
+        return rsl;
+    }
     public boolean hasGap() {
-        return true;
+        boolean rsl = false;
+        for (int i = 0; i < this.table.length; i++) {
+            for (int i1 = 0; i1 < this.table[i].length; i1++) {
+                if (!table[i][i1].hasMarkO() && !table[i][i1].hasMarkX()) {
+                    rsl = true;
+                    break;
+                }
+            }
+        }
+        return rsl;
     }
 }
