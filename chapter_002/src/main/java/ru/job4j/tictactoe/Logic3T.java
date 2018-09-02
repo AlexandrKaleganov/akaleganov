@@ -46,11 +46,11 @@ public class Logic3T {
                     vertical++;
                 }
             }
-            if (gorizont == 3 || vertical == 3) {
+            if (gorizont == table.length || vertical == table.length) {
                 rsl = true;
                 break;
             }
-            if (diaganalOne == 3 || diaganalTwo == 3) {
+            if (diaganalOne == table.length || diaganalTwo == table.length) {
                 rsl = true;
             }
         }
