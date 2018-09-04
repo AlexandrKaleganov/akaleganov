@@ -57,8 +57,5 @@ public class ConvertList2Array {
         return max;
     }
 
-    public static void main(String[] args) {
-        ConvertList2Array convertList2Array = new ConvertList2Array();
-        convertList2Array.test();
-    }
+
 }
