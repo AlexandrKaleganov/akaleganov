@@ -112,6 +112,8 @@ public class Logic3T {
                     rsl = true;
                     break;
                 }
+            } if (rsl){
+                break;
             }
         }
         return rsl;
