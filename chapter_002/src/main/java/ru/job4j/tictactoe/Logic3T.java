@@ -3,7 +3,7 @@ package ru.job4j.tictactoe;
 /**
  * @author Alexander Kaleganov
  * @since 28.08.2018
- *
+ * <p>
  * методы реализовал без формул в один проход по матрице,
  */
 public class Logic3T {
@@ -59,6 +59,7 @@ public class Logic3T {
 
     /**
      * проверяет выигрышное положение нолики
+     *
      * @return
      */
     public boolean isWinnerO() {
@@ -112,7 +113,8 @@ public class Logic3T {
                     rsl = true;
                     break;
                 }
-            } if (rsl){
+            }
+            if (rsl) {
                 break;
             }
         }
