@@ -7,6 +7,7 @@ import ru.job4j.tracker.modules.Items;
 import ru.job4j.tracker.modules.Tracker;
 
 import java.util.ArrayList;
+import java.util.function.Consumer;
 
 /**
  * внешний класс
@@ -21,7 +22,6 @@ class EditItemsclass extends BaseAction {
         String id = input.inputCommand("Введите id заявки, которую вы хтите изменить");
         Items items = new Items(input.inputCommand("Введите новое им заявки"), input.inputCommand("Введите новое описание заявки"));
         tracker.replace(id, items);
-        MenuTracker rt = new MenuTracker();
     }
 }
 
@@ -33,7 +33,6 @@ public class MenuTracker {
     private Tracker tracker;
     private ArrayList<UserAction> actions = new ArrayList<>();
     private Output output = new OutConsole();
-    private int position = 0;
 
     public MenuTracker(Input input, Tracker tracker) {
         this.input = input;
@@ -45,12 +44,6 @@ public class MenuTracker {
 
     public ArrayList<UserAction> getActions() {
         return actions;
-    }
-
-    public static void fillactions() {
-        MenuTracker tr = new MenuTracker();
-        Deleteitems items = new MenuTracker.Deleteitems(3, "Delete item");
-
     }
 
     public void fillAction() {
@@ -86,10 +79,10 @@ public class MenuTracker {
         this.actions.get(key).execute(this.input, this.tracker);
     }
 
-    public void shou() {
+    public void shou(Consumer<String> out) {
         for (UserAction action : this.actions) {
             if (action != null) {
-                output.outthet(action.info().toString());
+                out.accept(action.info());
             }
         }
     }
@@ -97,7 +90,7 @@ public class MenuTracker {
     /**
      * внутренние не статичные классы
      */
-    private class AddItem extends BaseAction {
+    private static class AddItem extends BaseAction {
         AddItem(int key, String name) {
             super(key, name);
         }
