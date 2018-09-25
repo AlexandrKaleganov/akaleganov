@@ -14,10 +14,7 @@ public abstract class Figure {
     /**
      * автоматическая генерация положения фигыру на доске
      */
-    Random rn = new Random();
-    private int x = rn.nextInt(8) + 1;
-    private int y = rn.nextInt(8) + 1;
-    private Cell start = new Cell(x, y);
+
 
     private Cell begincoordinat;
 
@@ -26,18 +23,11 @@ public abstract class Figure {
      * то генератор её сам сгенерирует
      */
     Figure() {
-        this.begincoordinat = start;
+        this.begincoordinat = new Cell(new Random().nextInt(8) + 1, new Random().nextInt(8) + 1);
     }
 
     Figure(Cell begincoordinat) {
         this.begincoordinat = begincoordinat;
-    }
-
-    /**
-     * рамндомная генерация положения фигуры
-     */
-    public void randomGeneratorfiger(Figure figure) {
-        figure.begincoordinat = start;
     }
 
     /**
@@ -51,6 +41,11 @@ public abstract class Figure {
     abstract Cell[] way(Cell source, Cell dest) throws ImpossibleMoveException;
 
     abstract Figure figureCopy(Cell dest);
+
+
+    public Cell getBegincoordinat() {
+        return begincoordinat;
+    }
 
     /**
      * переопределим метод экуалс, зараза ссылки сравнивает
@@ -77,18 +72,9 @@ public abstract class Figure {
         return test;
     }
 
-    /**
-     * переопределим метод хеш код от класса обжект
-     * так же как и хеш код координат возвращает интовое значение которое будет идентично
-     * так получится сравнивать абсолютно разные классы , а именно параметры классов
-     * изначально я через тостринг начал сравнивать с помощью contains  но совсем забыл про то что можно также переопределить
-     * методы хеш код и  экуалс для удобства
-     *
-     * @return
-     */
     @Override
     public int hashCode() {
-        return this.begincoordinat.getX() * 10 + this.begincoordinat.getY();
+        return begincoordinat != null ? begincoordinat.hashCode() : 0;
     }
 
     /**
@@ -98,6 +84,7 @@ public abstract class Figure {
      */
     @Override
     public String toString() {
-        return "клетка, занимаемая aигурой " + "X: " + begincoordinat.getX() + "; Y: " + begincoordinat.getY();
+        return "На клетке" + "X: " + begincoordinat.getX() + "; Y: " + begincoordinat.getY() + "стоит фигура" + this.getClass();
     }
+
 }

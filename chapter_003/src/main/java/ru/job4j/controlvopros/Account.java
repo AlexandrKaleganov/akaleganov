@@ -36,9 +36,6 @@ public class Account {
         boolean success = false;
         if (amount > 0 && amount < this.values && destination != null) {
             success = true;
-            //две строки лишние
-//            this.values -= amount;
-//            destination.values += amount;
         }
         return success;
     }

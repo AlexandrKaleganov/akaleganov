@@ -8,7 +8,6 @@ import ru.job4j.chess.exception.ImpossibleMoveException;
 
 public class Ladia extends Figure {
 
-
     public Ladia(Cell begincoordinat) {
         super(begincoordinat);
     }
@@ -29,24 +28,29 @@ public class Ladia extends Figure {
         Cell[] result = new Cell[8];
         int x = source.getX();
         int y = source.getY();
-        boolean exit = true;
-        for (int i = 0; i < result.length; i++) {
-            if (source.hashCode() == dest.hashCode()) {
-                result[0] = source;
-                break;
-            } else if (source.getX() != dest.getX() && source.getY() == dest.getY()) {
-                result[i] = new Cell(x < dest.getX() ? x++ : x--, y);
-            } else if (source.getX() == dest.getX() && source.getY() != dest.getY()) {
-                result[i] = new Cell(x, y < dest.getY() ? y++ : y--);
-            } else {
-                exit = false;
-            }
-        }
-        if (exit) {
-            return result;
+        int index = 0;
+        if (x == dest.getX() && y != dest.getY() || x != dest.getX() && y == dest.getY()) {
+            do {
+                if (x != dest.getX()) {
+                    if (x < dest.getX()) {
+                        x++;
+                    } else {
+                        x--;
+                    }
+                } else {
+                    if (y < dest.getY()) {
+                        y++;
+                    } else {
+                        y--;
+                    }
+                }
+                result[index++] = new Cell(x, y);
+            } while (x != dest.getX() || y != dest.getY());
         } else {
             throw new ImpossibleMoveException();
         }
+        return result;
+
     }
 
     /**
@@ -55,7 +59,7 @@ public class Ladia extends Figure {
      * @param dest
      * @return
      */
-    public Figure figureCopy(Cell dest) {
+    public Ladia figureCopy(Cell dest) {
         Ladia ladia = new Ladia(dest);
         return ladia;
     }

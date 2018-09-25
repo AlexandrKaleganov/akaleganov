@@ -5,7 +5,6 @@ import java.util.Random;
 public class Cell {
     private int x;
     private int y;
-    private Random rn = new Random();
 
     /**
      * это у нас будет конструктор ИМЕННО для ввода координат
@@ -66,6 +65,7 @@ public class Cell {
         return test;
     }
 
+
     /**
      * мне иногда необходимо будет проверять находится ли объект по заданным координатам,
      * для этого разумней использовать хешь код, только мы его переопределим,
@@ -74,13 +74,11 @@ public class Cell {
      *
      * @return
      */
-    @Override
-    public int hashCode() {
-        return this.x * 10 + this.y;
-    }
 
     @Override
     public String toString() {
         return "X: " + this.x + "; Y: " + this.y;
     }
+
+
 }

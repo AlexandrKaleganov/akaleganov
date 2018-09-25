@@ -24,13 +24,14 @@ public class Slon extends Figure {
         Cell[] result = new Cell[8];
         int x = source.getX();
         int y = source.getY();
+        int index=0;
         boolean exit = true;
-        for (int i = 0; i < result.length; i++) {
+        while (x != dest.getX() && y!=dest.getY()){
             if (source.hashCode() == dest.hashCode()) {
                 result[0] = source;
                 break;
             } else if (source.getX() != dest.getX() && source.getY() != dest.getY()) {
-                result[i] = new Cell(x < dest.getX() ? x++ : x--, y < dest.getY() ? y++ : y--);
+                result[index++] = new Cell(x < dest.getX() ? x++ : x--, y < dest.getY() ? y++ : y--);
             }
             if (x == dest.getX() && y != dest.getY() || x != dest.getX() && y == dest.getY()) {
                 exit = false;
