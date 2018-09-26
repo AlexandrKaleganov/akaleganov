@@ -26,7 +26,7 @@ public class Slon extends Figure {
         int y = source.getY();
         int index = 0;
         if ((x > dest.getX() ? x - dest.getX() : dest.getX() - x) == (y > dest.getY() ? y - dest.getY() : dest.getY() - y)) {
-            while (x != dest.getX() && y != dest.getY()) {
+            while (x != dest.getX() || y != dest.getY()) {
                 if (x < dest.getX()) {
                     x++;
                 } else {

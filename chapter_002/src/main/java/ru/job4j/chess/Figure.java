@@ -3,6 +3,9 @@ package ru.job4j.chess;
 import ru.job4j.chess.exception.ImpossibleMoveException;
 
 import java.util.Random;
+import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 /**
  * @author Alexander KAleganov
@@ -38,7 +41,8 @@ public abstract class Figure {
      * @return
      * @throws ImpossibleMoveException
      */
-    abstract Cell[] way(Cell source, Cell dest) throws ImpossibleMoveException;
+    abstract public Cell[] way(Cell source, Cell dest) throws ImpossibleMoveException;
+
 
     abstract Figure figureCopy(Cell dest);
 
@@ -70,6 +74,7 @@ public abstract class Figure {
         }
         return test;
     }
+
     @Override
     public int hashCode() {
         return begincoordinat != null ? begincoordinat.hashCode() : 0;

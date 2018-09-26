@@ -12,8 +12,14 @@ public class LadiaTest {
         Board board = new Board();
         Ladia ladia = new Ladia(new Cell(2, 2));
         board.add(ladia);
-        assertThat(true, is(board.move(new Cell(2, 2), new Cell(2, 5))));
+        for (Cell cell : ladia.way(new Cell(2, 2), new Cell(2, 7))
+                ) {
+            System.out.println(cell);
+
+        }
+        assertThat(true, is(board.move(new Cell(2, 2), new Cell(2, 7))));
     }
+
     @Test(expected = ImpossibleMoveException.class)
     public void ladiaReturnwaynonValid() {
         Board board = new Board();

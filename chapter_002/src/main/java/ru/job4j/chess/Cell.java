@@ -40,6 +40,13 @@ public class Cell {
         return y;
     }
 
+    @Override
+    public int hashCode() {
+        int result = x;
+        result = 31 * result + y;
+        return result;
+    }
+
     /**
      * для координат тоже переопределим метод экуалс чтобы можно было сравнивать координаты между собой
      * в противном случае он сравнивает ссылки, а ссылка одний координаты отличается от другой
@@ -48,6 +55,7 @@ public class Cell {
      * @param obj
      * @return
      */
+
     @Override
     public boolean equals(Object obj) {
         boolean test = true;

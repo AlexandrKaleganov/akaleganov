@@ -25,6 +25,7 @@ public class Ladia extends Figure {
      * @throws ImpossibleMoveException
      */
     public Cell[] way(Cell source, Cell dest) throws ImpossibleMoveException {
+
         Cell[] result = new Cell[8];
         int x = source.getX();
         int y = source.getY();
