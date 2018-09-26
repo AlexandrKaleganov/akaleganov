@@ -59,7 +59,6 @@ public abstract class Figure {
     public boolean equals(Object obj) {
         boolean test = true;
         if (obj instanceof Figure) {
-
             Figure valid = (Figure) obj;
             if (obj != null && begincoordinat.getX() == valid.begincoordinat.getX() && begincoordinat.getY() == valid.begincoordinat.getY()) {
                 test = true;
@@ -71,7 +70,6 @@ public abstract class Figure {
         }
         return test;
     }
-
     @Override
     public int hashCode() {
         return begincoordinat != null ? begincoordinat.hashCode() : 0;
