@@ -24,25 +24,25 @@ public class Slon extends Figure {
         Cell[] result = new Cell[8];
         int x = source.getX();
         int y = source.getY();
-        int index=0;
-        boolean exit = true;
-        while (x != dest.getX() && y!=dest.getY()){
-            if (source.hashCode() == dest.hashCode()) {
-                result[0] = source;
-                break;
-            } else if (source.getX() != dest.getX() && source.getY() != dest.getY()) {
-                result[index++] = new Cell(x < dest.getX() ? x++ : x--, y < dest.getY() ? y++ : y--);
+        int index = 0;
+        if ((x > dest.getX() ? x - dest.getX() : dest.getX() - x) == (y > dest.getY() ? y - dest.getY() : dest.getY() - y)) {
+            while (x != dest.getX() && y != dest.getY()) {
+                if (x < dest.getX()) {
+                    x++;
+                } else {
+                    x--;
+                }
+                if (y < dest.getY()) {
+                    y++;
+                } else {
+                    y--;
+                }
+                result[index++] = new Cell(x, y);
             }
-            if (x == dest.getX() && y != dest.getY() || x != dest.getX() && y == dest.getY()) {
-                exit = false;
-                break;
-            }
-        }
-        if (exit) {
-            return result;
         } else {
             throw new ImpossibleMoveException();
         }
+        return result;
     }
 
     /**
@@ -55,5 +55,4 @@ public class Slon extends Figure {
         Slon slon = new Slon(dest);
         return slon;
     }
-
 }

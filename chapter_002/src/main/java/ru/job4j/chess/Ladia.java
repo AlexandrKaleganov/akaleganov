@@ -30,7 +30,7 @@ public class Ladia extends Figure {
         int y = source.getY();
         int index = 0;
         if (x == dest.getX() && y != dest.getY() || x != dest.getX() && y == dest.getY()) {
-            do {
+            while (x != dest.getX() || y != dest.getY()) {
                 if (x != dest.getX()) {
                     if (x < dest.getX()) {
                         x++;
@@ -45,7 +45,7 @@ public class Ladia extends Figure {
                     }
                 }
                 result[index++] = new Cell(x, y);
-            } while (x != dest.getX() || y != dest.getY());
+            }
         } else {
             throw new ImpossibleMoveException();
         }
