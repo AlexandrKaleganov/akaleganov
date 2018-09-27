@@ -1,12 +1,13 @@
 package ru.job4j.tracker;
 
 import ru.job4j.tracker.modules.Tracker;
+import ru.job4j.tracker.modules.Items;
 
 public class StartUI {
     private final Tracker tracker;
     private final Input input;
 
-
+//    private final Output output = new OutConsole();
 
     StartUI(Input input, Tracker tracker) {
         this.input = input;
@@ -44,11 +45,10 @@ public class StartUI {
 //    /**
 //     * вывод списка всех заявок
 //     */
-//    public void showALL(Consumer<String> out) {
+//    public void showALL() {
 //        for (Items items:tracker.findAll()) {
 //            if (items != null) {
-//                out.accept(items.toString());
-////               this.output.outthet(items.toString());
+//               this.output.outthet(items.toString());
 //            }
 //        }
 //    }
@@ -72,21 +72,21 @@ public class StartUI {
 //    /**
 //     * метод находит заявку по id
 //     */
-//    public void findIDITEMS(Consumer<String> out) {
-//        out.accept((tracker.findById(input.inputCommand("Введите id заявки, которую необходимо найти"))).toString());
+//    public void findIDITEMS() {
+//        output.outthet((tracker.findById(input.inputCommand("Введите id заявки, которую необходимо найти"))).toString());
 //    }
 //
 //    /**
 //     * находит все элементы завки с похожими именами и выводит их
 //     */
-//    public void findNAMEITEMS(Consumer<String> out) {
+//    public void findNAMEITEMS() {
 //        for (Items item: tracker.findByName(input.inputCommand("Введите имя заявки"))) {
 //            if (item != null) {
-//                out.accept(item.toString());
+//                output.outthet(item.toString());
 //            }
 //        }
 //    }
-
-
+//
+//
 
 }

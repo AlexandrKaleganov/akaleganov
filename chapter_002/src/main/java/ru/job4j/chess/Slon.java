@@ -12,6 +12,17 @@ public class Slon extends Figure {
         super();
     }
 
+    @Override
+    boolean isCondition(Cell source, Cell dest) {
+        boolean rsl = false;
+
+        if ((source.getX() > dest.getX() ? source.getY() - dest.getX() : dest.getX() - source.getX()) == (source.getY() > dest.getY() ? source.getY() - dest.getY() : dest.getY() - source.getY())) {
+
+            rsl = true;
+        }
+        return rsl;
+    }
+
     /**
      * возрващает путь пройденный фигурой
      *
@@ -25,22 +36,18 @@ public class Slon extends Figure {
         int x = source.getX();
         int y = source.getY();
         int index = 0;
-        if ((x > dest.getX() ? x - dest.getX() : dest.getX() - x) == (y > dest.getY() ? y - dest.getY() : dest.getY() - y)) {
-            while (x != dest.getX() || y != dest.getY()) {
-                if (x < dest.getX()) {
-                    x++;
-                } else {
-                    x--;
-                }
-                if (y < dest.getY()) {
-                    y++;
-                } else {
-                    y--;
-                }
-                result[index++] = new Cell(x, y);
+        while (x != dest.getX() || y != dest.getY()) {
+            if (x < dest.getX()) {
+                x++;
+            } else {
+                x--;
             }
-        } else {
-            throw new ImpossibleMoveException();
+            if (y < dest.getY()) {
+                y++;
+            } else {
+                y--;
+            }
+            result[index++] = new Cell(x, y);
         }
         return result;
     }

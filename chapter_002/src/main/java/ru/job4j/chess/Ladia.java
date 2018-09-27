@@ -16,6 +16,16 @@ public class Ladia extends Figure {
         super();
     }
 
+    @Override
+    boolean isCondition(Cell source, Cell dest) {
+        boolean rsl = false;
+
+        if (source.getX() == dest.getX() && source.getY() != dest.getY() || source.getX() != dest.getX() && source.getY() == dest.getY()) {
+            rsl = true;
+        }
+        return rsl;
+    }
+
     /**
      * возрващает путь пройденный фигурой
      *
@@ -24,34 +34,29 @@ public class Ladia extends Figure {
      * @return
      * @throws ImpossibleMoveException
      */
-    public Cell[] way(Cell source, Cell dest) throws ImpossibleMoveException {
+    public Cell[] way(Cell source, Cell dest) {
 
         Cell[] result = new Cell[8];
         int x = source.getX();
         int y = source.getY();
         int index = 0;
-        if (x == dest.getX() && y != dest.getY() || x != dest.getX() && y == dest.getY()) {
-            while (x != dest.getX() || y != dest.getY()) {
-                if (x != dest.getX()) {
-                    if (x < dest.getX()) {
-                        x++;
-                    } else {
-                        x--;
-                    }
+        while (x != dest.getX() || y != dest.getY()) {
+            if (x != dest.getX()) {
+                if (x < dest.getX()) {
+                    x++;
                 } else {
-                    if (y < dest.getY()) {
-                        y++;
-                    } else {
-                        y--;
-                    }
+                    x--;
                 }
-                result[index++] = new Cell(x, y);
+            } else {
+                if (y < dest.getY()) {
+                    y++;
+                } else {
+                    y--;
+                }
             }
-        } else {
-            throw new ImpossibleMoveException();
+            result[index++] = new Cell(x, y);
         }
         return result;
-
     }
 
     /**

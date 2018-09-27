@@ -41,8 +41,9 @@ public abstract class Figure {
      * @return
      * @throws ImpossibleMoveException
      */
-    abstract public Cell[] way(Cell source, Cell dest) throws ImpossibleMoveException;
+    abstract public Cell[] way(Cell source, Cell dest);
 
+    abstract boolean isCondition(Cell source, Cell dest);
 
     abstract Figure figureCopy(Cell dest);
 

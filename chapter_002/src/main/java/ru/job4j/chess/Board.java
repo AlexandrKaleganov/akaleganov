@@ -28,15 +28,19 @@ public class Board {
         }
     }
 
-    public boolean move(Cell source, Cell dest) throws OccupiedWayException, FigureNotFoundException {
+    public boolean move(Cell source, Cell dest) throws OccupiedWayException, FigureNotFoundException, ImpossibleMoveException {
         boolean result = true;
         Cell[] way;
         if ((this.figures[source.getX()][source.getY()]) != null) {
-            way = this.figures[source.getX()][source.getY()].way(source, dest);
-            for (Cell index : way) {
-                if (index != null && this.figures[index.getX()][index.getY()] != null) {
-                    throw new OccupiedWayException();
+            if (this.figures[source.getX()][source.getY()].isCondition(source, dest)) {
+                way = this.figures[source.getX()][source.getY()].way(source, dest);
+                for (Cell index : way) {
+                    if (index != null && this.figures[index.getX()][index.getY()] != null) {
+                        throw new OccupiedWayException();
+                    }
                 }
+            } else {
+                throw new ImpossibleMoveException();
             }
         } else {
             throw new FigureNotFoundException();
