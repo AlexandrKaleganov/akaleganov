@@ -78,7 +78,8 @@ public abstract class Figure {
 
     @Override
     public int hashCode() {
-        return begincoordinat != null ? begincoordinat.hashCode() : 0;
+
+        return this.getBegincoordinat().hashCode();
     }
 
     /**

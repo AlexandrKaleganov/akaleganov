@@ -6,7 +6,7 @@ import ru.job4j.chess.exception.ImpossibleMoveException;
 import ru.job4j.chess.exception.OccupiedWayException;
 
 public class Board {
-    private Figure[][] figures = new Figure[8][8];
+    private Figure[] figures = new Figure[32];
     private int position = 0;
 
     private boolean searshLenght() {
@@ -20,39 +20,57 @@ public class Board {
      * @param newFigure
      */
     public void add(Figure newFigure) {
-        boolean add = false;
-        if (this.figures[newFigure.getBegincoordinat().getX()][newFigure.getBegincoordinat().getY()] != null) {
+        boolean add = true;
+        int temp = 0;
+        for (int i = 0; i < this.figures.length; i++) {
+            if (this.figures[i] != null) {
+                if (this.figures[i].equals(newFigure)) {
+                    add = false;
+                }
+            } else {
+                temp = i;
+            }
+        }
+        if (!add) {
             System.out.println(newFigure + ", фигуру нельзя поставить на клетку");
+
         } else {
-            this.figures[newFigure.getBegincoordinat().getX()][newFigure.getBegincoordinat().getY()] = newFigure;
+            this.figures[temp] = newFigure;
         }
     }
 
     public boolean move(Cell source, Cell dest) throws OccupiedWayException, FigureNotFoundException, ImpossibleMoveException {
         boolean result = true;
+        Figure temp = null;
+        boolean start = true;
         Cell[] way;
-        if ((this.figures[source.getX()][source.getY()]) != null) {
-            if (this.figures[source.getX()][source.getY()].isCondition(source, dest)) {
-                way = this.figures[source.getX()][source.getY()].way(source, dest);
-                for (Cell index : way) {
-                    if (index != null && this.figures[index.getX()][index.getY()] != null) {
-                        throw new OccupiedWayException();
-                    }
-                }
-            } else {
+        for (int i = 0; i < this.figures.length; i++) {
+            if ((this.figures[i] != null) &&
+                    (this.figures[i].getBegincoordinat().getX() == source.getX() &&
+                            this.figures[i].getBegincoordinat().getY() == source.getY())) {
+                start = false;
+                temp = this.figures[i];
+                break;
+            }
+        }
+        if (!start) {
+            if (!temp.isCondition(source, dest)) {
                 throw new ImpossibleMoveException();
             }
         } else {
-            throw new FigureNotFoundException();
-        }
-        if (result) {
-            this.figures[dest.getX()][dest.getY()] = this.figures[source.getX()][source.getY()].figureCopy(dest);
-            this.figures[source.getX()][source.getY()] = null;
+            way = temp.way(source, dest);
+            for (int i = 0; i < way.length; i++) {
+                for (int j = 0; j < this.figures.length; j++) {
+                    if (way[i].hashCode() == this.figures[j].hashCode()) {
+                        throw new OccupiedWayException();
+                    }
+                }
+            }
         }
         return result;
     }
 
-    public Figure[][] getFigures() {
+    public Figure[] getFigures() {
         return figures;
     }
 }

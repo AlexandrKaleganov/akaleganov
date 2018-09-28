@@ -42,9 +42,7 @@ public class Cell {
 
     @Override
     public int hashCode() {
-        int result = x;
-        result = 31 * result + y;
-        return result;
+        return this.x * 10 + this.y;
     }
 
     /**
