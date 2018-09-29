@@ -14,12 +14,11 @@ public class LadiaTest {
         Board board = new Board();
         Ladia ladia = new Ladia(new Cell(2, 2));
         board.add(ladia);
-        for (Cell cell : ladia.way(new Cell(2, 2), new Cell(2, 7))
-                ) {
-            System.out.println(cell);
-
-        }
+        assertThat(board.getFigures()[31].hashCode(), is(22));
         assertThat(true, is(board.move(new Cell(2, 2), new Cell(2, 7))));
+        assertThat(board.getFigures()[31].hashCode(), is(27));
+
+
     }
 
     @Test(expected = ImpossibleMoveException.class)

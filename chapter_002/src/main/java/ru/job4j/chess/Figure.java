@@ -89,7 +89,7 @@ public abstract class Figure {
      */
     @Override
     public String toString() {
-        return "На клетке" + "X: " + begincoordinat.getX() + "; Y: " + begincoordinat.getY() + "стоит фигура" + this.getClass();
+        return "На клетке" + "X: " + begincoordinat.getX() + "; Y: " + begincoordinat.getY() + " стоит фигура" + this.getClass();
     }
 
 }
