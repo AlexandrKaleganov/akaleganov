@@ -3,6 +3,7 @@ package ru.job4j.tracker.modules;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 
 /**
@@ -42,12 +43,13 @@ public class Tracker {
         this.items.add(item);
         return item;
     }
-//метод который будет отвечать за работу функции
+
+    //метод который будет отвечать за работу функции
     private Items searshItem(String sears, Function<Integer, Items> fanc) {
         Items result = null;
         for (int i = 0; i < this.items.size(); i++) {
-            if (this.items.get(i).equals(items)) {
-                fanc.apply(i);
+            if (this.items.get(i).getId().contains(sears)) {
+                result = fanc.apply(i);
                 break;
             }
         }
@@ -63,8 +65,10 @@ public class Tracker {
      * @param
      */
     public void replace(String id, Items item) {
-
-        searshItem(id, (i) -> this.items.set(i, item));
+        item.setId(id);
+        searshItem(id, (i) -> {
+            return this.items.set(i, item);
+        });
     }
 
     /**
@@ -74,11 +78,23 @@ public class Tracker {
      * @param id
      */
     public void delete(String id) {
-        searshItem(id, i -> {
-            this.items.remove(i);
-            return this.items.get(i);
-        });
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getId().contains(id)) {
+                this.items.remove(i);
+                break;
+            }
+        }
     }
+//    public void delete(String id) {
+//        searshItem(id, i -> {
+//            System.out.println(i);
+//            System.out.println(this.items.get(i));
+//            this.items.remove(i);
+//            System.out.println(this.items.get(i));
+//            System.out.println(this.items.size());
+//            return this.items.get(i);
+//        });
+//    }
 
     /**
      * получение списка всех заявок - этот метод нам просто возвращает массив заявок
