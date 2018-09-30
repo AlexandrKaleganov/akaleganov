@@ -14,7 +14,6 @@ import java.util.function.Predicate;
  */
 public class Tracker {
     private ArrayList<Items> items = new ArrayList<>();
-    private int index = 0;
     private Random rn = new Random();
     private boolean exitProgramm = true; //пока параметр переменной будет равен шести, программу будет продолжнать работать
 
@@ -77,24 +76,21 @@ public class Tracker {
      *
      * @param id
      */
-    public void delete(String id) {
-        for (int i = 0; i < items.size(); i++) {
-            if (items.get(i).getId().contains(id)) {
-                this.items.remove(i);
-                break;
-            }
-        }
-    }
 //    public void delete(String id) {
-//        searshItem(id, i -> {
-//            System.out.println(i);
-//            System.out.println(this.items.get(i));
-//            this.items.remove(i);
-//            System.out.println(this.items.get(i));
-//            System.out.println(this.items.size());
-//            return this.items.get(i);
-//        });
+//        for (int i = 0; i < items.size(); i++) {
+//            if (items.get(i).getId().contains(id)) {
+//                this.items.remove(i);
+//                break;
+//            }
+//        }
 //    }
+    public void delete(String id) {
+        searshItem(id, i -> {
+            Items rsl = this.items.get(i);
+            this.items.remove(i);
+            return rsl;
+        });
+    }
 
     /**
      * получение списка всех заявок - этот метод нам просто возвращает массив заявок
