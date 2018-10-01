@@ -76,19 +76,11 @@ public class Tracker {
      *
      * @param id
      */
-//    public void delete(String id) {
-//        for (int i = 0; i < items.size(); i++) {
-//            if (items.get(i).getId().contains(id)) {
-//                this.items.remove(i);
-//                break;
-//            }
-//        }
-//    }
+
     public void delete(String id) {
         searshItem(id, i -> {
-            Items rsl = this.items.get(i);
-            this.items.remove(i);
-            return rsl;
+            int k = i;
+            return this.items.remove(k);
         });
     }
 

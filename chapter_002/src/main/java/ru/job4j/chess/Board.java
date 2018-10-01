@@ -15,7 +15,7 @@ public class Board {
         boolean isEquals = false;
         for (int i = 0; i < this.figures.length; i++) {
             if (this.figures[i] != null) {
-                if (this.figures[i].hashCode() == cell.hashCode()) {
+                if (this.figures[i].getBegincoordinat().getX() == cell.getX() && this.figures[i].getBegincoordinat().getY() == cell.getY()) {
                     isEquals = true;
                     rsl = i;
                     break;
@@ -54,8 +54,8 @@ public class Board {
                 } else {
                     Cell[] way = this.figures[i].way(source, dest);
                     for (int j = 0; j < way.length; j++) {
-                        if (way[i] != null) {
-                            this.lambdaRefactor(way[i], (n, isTest) -> {
+                        if (way[j] != null) {
+                            this.lambdaRefactor(way[j], (n, isTest) -> {
                                 if (isTest) {
                                     throw new OccupiedWayException();
                                 }
