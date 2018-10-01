@@ -15,7 +15,7 @@ public class Board {
         boolean isEquals = false;
         for (int i = 0; i < this.figures.length; i++) {
             if (this.figures[i] != null) {
-                if (this.figures[i].getBegincoordinat().getX() == cell.getX() && this.figures[i].getBegincoordinat().getY() == cell.getY()) {
+                if (this.figures[i].hashCode() == cell.hashCode()) {
                     isEquals = true;
                     rsl = i;
                     break;

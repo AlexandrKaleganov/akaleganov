@@ -21,9 +21,9 @@ public class SlonTest {
         Board board = new Board();
         Slon slon = new Slon(new Cell(2, 2));
         board.add(slon);
-        assertThat(board.getFigures()[31].hashCode(), is(22));
+        assertThat(board.getFigures()[0].hashCode(), is(22));
         assertThat(true, is(board.move(new Cell(2, 2), new Cell(5, 5))));
-        assertThat(board.getFigures()[31].hashCode(), is(55));
+        assertThat(board.getFigures()[0].hashCode(), is(55));
 
     }
 
