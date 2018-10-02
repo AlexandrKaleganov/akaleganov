@@ -1,8 +1,9 @@
 package ru.job4j.generic;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Конвертация листа массивов в один лист Integer
@@ -14,13 +15,7 @@ public class Convertlisttoarr {
      * @param list
      * @return
      */
-    public ArrayList<Integer> convert(ArrayList<int[]> list) {
-        ArrayList<Integer> returnList = new ArrayList<>();
-        for (int[]k:list) {
-            for (Integer n:k) {
-                returnList.add(n);
-            }
-        }
-        return returnList;
+    public List<Integer> convert(ArrayList<int[]> list) {
+          return list.stream().flatMap(e -> IntStream.of(e).boxed()).collect(Collectors.toList());
     }
 }

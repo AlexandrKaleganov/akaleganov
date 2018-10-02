@@ -1,6 +1,8 @@
 package ru.job4j.phonelist;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * этот класс будет осуществлть работу телефонного справочника
@@ -12,13 +14,9 @@ public class PhoneList {
         this.spravochnik.add(person);
     }
 
-    public ArrayList<Person> search(String key) {
-        ArrayList<Person> result = new ArrayList<>();
-        for (Person i : spravochnik) {
-            if (key.contains(i.getAdres()) || key.contains(i.getName()) || key.contains(i.getPhone()) || key.contains(i.getSurname())) {
-                result.add(i);
-            }
-        }
-        return result;
+    public List<Person> search(String key) {
+        return spravochnik.stream().filter(i-> key.contains(i.getAdres()) || key.contains(i.getName()) || key.contains(i.getPhone()) || key.contains(i.getSurname())
+
+        ).collect(Collectors.toList());
     }
 }
