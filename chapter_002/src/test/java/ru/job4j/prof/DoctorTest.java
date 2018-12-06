@@ -13,7 +13,7 @@ import ru.job4j.prof.dopclass.*;
 
 public class DoctorTest {
 
-    @Test
+  /*  @Test
     public void pacientDiagnoztikLechenie() {
         Diagnoz expected;
         Doctor inna = new Doctor("Инна", Sex.Ж, 10, Education.ДОКТОРАНТУРА, Position.ЛОР, 20);
@@ -38,5 +38,5 @@ public class DoctorTest {
             expected = Diagnoz.ЗДОРОВ;
         }
 //        assertThat(kostia.getDiagnoz(), is(expected));
-    }
+    }*/
 }
